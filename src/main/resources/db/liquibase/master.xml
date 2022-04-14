@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
+
+    <include file="changelog/202204140001_add_entity_Exercise.xml" relativeToChangelogFile="true"/>
+
+
+    <!--    COMMON data (dane test dla prod i dev)    -->
+
+
+    <!--    PROD data     -->
+
+
+    <!--    DEV data     -->
+    <include file="testdata/202204140001_dev_import_exercise.xml" relativeToChangelogFile="true"/>
+
+
+</databaseChangeLog>
+
