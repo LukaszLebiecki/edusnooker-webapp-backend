@@ -1,6 +1,7 @@
 package pl.edusnooker.webapp.component.exercise;
 
 import lombok.Data;
+import pl.edusnooker.webapp.component.user.Level;
 
 import javax.persistence.*;
 
@@ -14,4 +15,5 @@ class Exercise {
     private String description;
     private String gif;
     private int numberPointsToPassed;
+    private Level level;
 }

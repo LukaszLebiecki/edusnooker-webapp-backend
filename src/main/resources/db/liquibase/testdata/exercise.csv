@@ -1,6 +1,6 @@
-id;name;description;gif;numberPointsToPassed
-1;Ćwiczenie1;Opis ćwiczenia1;plik01.gif;10
-2;Ćwiczenie2;Opis ćwiczenia2;plik02.gif;20
-3;Ćwiczenie3;Opis ćwiczenia3;plik03.gif;30
-4;Ćwiczenie4;Opis ćwiczenia4;plik04.gif;40
-5;Ćwiczenie5;Opis ćwiczenia5;plik05.gif;50
+id;name;description;gif;number_points_to_passed;level
+1;Ćwiczenie1;Opis ćwiczenia1;plik01.gif;10;WHITE
+2;Ćwiczenie2;Opis ćwiczenia2;plik02.gif;20;RED
+3;Ćwiczenie3;Opis ćwiczenia3;plik03.gif;30;YELLOW
+4;Ćwiczenie4;Opis ćwiczenia4;plik04.gif;40;GREEN
+5;Ćwiczenie5;Opis ćwiczenia5;plik05.gif;50;GREEN
