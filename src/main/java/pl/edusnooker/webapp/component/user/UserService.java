@@ -1,0 +1,23 @@
+package pl.edusnooker.webapp.component.user;
+
+import org.springframework.stereotype.Service;
+import pl.edusnooker.webapp.component.user.dto.UserCredentialsDto;
+
+import java.util.Optional;
+
+@Service
+public
+class UserService {
+
+    private final UserRepository userRepository;
+
+
+    UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    public Optional<UserCredentialsDto> findCredentialsByEmail(String email) {
+        return userRepository.findByEmail(email)
+                .map(UserCredentialsDtoMapper::map);
+    }
+}

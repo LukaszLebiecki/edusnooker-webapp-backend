@@ -1,0 +1,2 @@
+name;email;password
+Łukasz;admin@admin.com;{bcrypt}$2a$10$Ruu5GtmSVkfLeuGfz/wHUuzflCcMbwJHSBo/.Wui0EM0KIM52Gs2S

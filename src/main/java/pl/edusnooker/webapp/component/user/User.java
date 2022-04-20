@@ -1,24 +1,25 @@
 package pl.edusnooker.webapp.component.user;
-
 import lombok.Data;
-
 import javax.persistence.*;
-import java.time.LocalDateTime;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
+@Table(name = "application_user")
 class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String email;
     private String password;
-    private LocalDateTime registerDate;
-    private Level level;
-    @OneToMany
-    @JoinColumn(name = "user_id")
-    private List<Statistics> statistics;
-
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "user_roles",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
+    )
+    private Set<UserRole> roles = new HashSet<>();
 
 }
