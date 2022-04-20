@@ -1,7 +1,6 @@
 package pl.edusnooker.webapp.component.exercise;
 
 import lombok.Data;
-import pl.edusnooker.webapp.component.user.Level;
 
 import javax.persistence.*;
 
