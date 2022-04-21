@@ -12,7 +12,7 @@
             <column name="name" type="VARCHAR(100)"/>
             <column name="description" type="VARCHAR(1000)"/>
             <column name="gif" type="VARCHAR(20)"/>
-            <column name="number_points_to_passed" type="INT"/>
+            <column name="number_of_points_to_passed" type="INT"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>

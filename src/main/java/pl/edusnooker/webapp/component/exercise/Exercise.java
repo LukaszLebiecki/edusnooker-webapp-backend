@@ -11,8 +11,10 @@ class Exercise {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String shortDescription;
     private String description;
     private String gif;
-    private int numberPointsToPassed;
+    private String img;
+    private int numberOfPointsToPassed;
     private Level level;
 }
