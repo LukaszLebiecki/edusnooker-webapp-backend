@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
+    <changeSet id="202204240001" author="lebiecki">
+        <createTable tableName="progress">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="id_exercise" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date_time_exercise" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="resultNumberOfPoint" type="INT" defaultValue="0"/>
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="progress"
+                                 baseColumnNames="user_id"
+                                 constraintName="fk_progress_user_id_user_id"
+                                 referencedTableName="application_user"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>

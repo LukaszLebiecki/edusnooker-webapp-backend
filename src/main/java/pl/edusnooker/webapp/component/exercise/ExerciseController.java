@@ -1,14 +1,10 @@
 package pl.edusnooker.webapp.component.exercise;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseDto;
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseLevelInfoDto;
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseListDto;
-import pl.edusnooker.webapp.component.exercise.dto.ExerciseListLevelDto;
 import java.util.List;
 
 
@@ -21,16 +17,20 @@ class ExerciseController {
         this.exerciseService = exerciseService;
     }
 
+
     @GetMapping("/level")
-    ResponseEntity<List<ExerciseListLevelDto>> getLevelAll() {
-        if (exerciseService.getAllLevel().isEmpty()) {
+    @CrossOrigin(origins="*", maxAge=3600) //todo tymczasowe rozwiązanie do testów
+    ResponseEntity<List<ExerciseLevelInfoDto>> getLevelAll() {
+
+        if (exerciseService.getAllLevelInfo().isEmpty()) {
             return ResponseEntity.notFound().build();
         } else {
-            return ResponseEntity.ok(exerciseService.getAllLevel());
+            return ResponseEntity.ok(exerciseService.getAllLevelInfo());
         }
     }
 
     @GetMapping("/level/{idLevel}")
+    @CrossOrigin(origins="*", maxAge=3600) //todo tymczasowe rozwiązanie do testów
     ResponseEntity<ExerciseLevelInfoDto> getLevel(@PathVariable int idLevel) {
         Level[] values = Level.values();
         String name = values[idLevel].name();
@@ -43,6 +43,7 @@ class ExerciseController {
     }
 
     @GetMapping("/level/{idLevel}/exercise")
+    @CrossOrigin(origins="*", maxAge=3600) //todo tymczasowe rozwiązanie do testów
     ResponseEntity<List<ExerciseListDto>> getAllExerciseByLevel(@PathVariable int idLevel) {
         Level[] values = Level.values();
         String name = values[idLevel].name();
@@ -55,6 +56,7 @@ class ExerciseController {
     }
 
     @GetMapping("/exercise/{id}")
+    @CrossOrigin(origins="*", maxAge=3600) //todo tymczasowe rozwiązanie do testów
     ResponseEntity<ExerciseDto> getExerciseById(@PathVariable Long id) {
         if (exerciseService.getExerciseById(id).isEmpty()) {
             return ResponseEntity.notFound().build();

@@ -13,6 +13,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.sql.DataSource;
 
@@ -38,6 +41,7 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED));
         http.formLogin();
         http.httpBasic();
+//        http.cors().disable();
 
 
         http.headers().frameOptions().disable();
@@ -51,5 +55,21 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
         authenticationFilter.setAuthenticationManager(super.authenticationManager());
         return authenticationFilter;
     }
+
+//    @Configuration
+//    @EnableWebMvc
+//    public class WebConfig implements WebMvcConfigurer {
+//
+//        @Override
+//        public void addCorsMappings(CorsRegistry corsRegistry) {
+//            corsRegistry.addMapping("/**")
+//                    .allowedOrigins("http://localhost:4200")
+//                    .allowedMethods("*")
+//                    .maxAge(3600L)
+//                    .allowedHeaders("*")
+//                    .exposedHeaders("Authorization")
+//                    .allowCredentials(true);
+//        }
+//    }
 
 }

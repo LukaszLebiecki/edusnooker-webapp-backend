@@ -4,11 +4,9 @@ import org.springframework.stereotype.Service;
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseDto;
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseLevelInfoDto;
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseListDto;
-import pl.edusnooker.webapp.component.exercise.dto.ExerciseListLevelDto;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+
+import java.util.*;
 
 
 @Service
@@ -41,16 +39,18 @@ class ExerciseService {
         return exerciseLevelInfoDto;
     }
 
-    List<ExerciseListLevelDto> getAllLevel() {
-        List<ExerciseListLevelDto> listLevelDto = new ArrayList<>();
-        listLevelDto.add(new ExerciseListLevelDto(Level.WHITE.name(), Level.WHITE.getNumberLevel()));
-        listLevelDto.add(new ExerciseListLevelDto(Level.RED.name(), Level.RED.getNumberLevel()));
-        listLevelDto.add(new ExerciseListLevelDto(Level.YELLOW.name(), Level.YELLOW.getNumberLevel()));
-        listLevelDto.add(new ExerciseListLevelDto(Level.GREEN.name(), Level.GREEN.getNumberLevel()));
-        listLevelDto.add(new ExerciseListLevelDto(Level.BROWN.name(), Level.BROWN.getNumberLevel()));
-        listLevelDto.add(new ExerciseListLevelDto(Level.BLUE.name(), Level.BLUE.getNumberLevel()));
-        listLevelDto.add(new ExerciseListLevelDto(Level.PINK.name(), Level.PINK.getNumberLevel()));
-        listLevelDto.add(new ExerciseListLevelDto(Level.BLACK.name(), Level.BLACK.getNumberLevel()));
-        return listLevelDto;
+    List<ExerciseLevelInfoDto> getAllLevelInfo() {
+        List<ExerciseLevelInfoDto> levelInfoDtoList = new ArrayList<>();
+        levelInfoDtoList.add(getLevelInfo(Level.WHITE));
+        levelInfoDtoList.add(getLevelInfo(Level.RED));
+        levelInfoDtoList.add(getLevelInfo(Level.YELLOW));
+        levelInfoDtoList.add(getLevelInfo(Level.GREEN));
+        levelInfoDtoList.add(getLevelInfo(Level.BROWN));
+        levelInfoDtoList.add(getLevelInfo(Level.BLUE));
+        levelInfoDtoList.add(getLevelInfo(Level.PINK));
+        levelInfoDtoList.add(getLevelInfo(Level.BLACK));
+        return levelInfoDtoList;
     }
+
+
 }
