@@ -9,13 +9,19 @@
             <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
+            <column name="number_level" type="INT">
+                <constraints nullable="false"/>
+            </column>
             <column name="id_exercise" type="INT">
                 <constraints nullable="false"/>
             </column>
+            <column name="number_of_points_to_passed" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="result_number_of_point" type="INT" defaultValue="0"/>
             <column name="date_time_exercise" type="TIMESTAMP">
                 <constraints nullable="false"/>
             </column>
-            <column name="resultNumberOfPoint" type="INT" defaultValue="0"/>
             <column name="user_id" type="BIGINT">
                 <constraints nullable="false"/>
             </column>

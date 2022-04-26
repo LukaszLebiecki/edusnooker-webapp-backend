@@ -3,10 +3,7 @@ package pl.edusnooker.webapp.component.progress;
 import lombok.Data;
 import org.springframework.security.core.userdetails.User;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -16,10 +13,13 @@ public class Progress {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private User user;
+    private int numberLevel;
     private int idExercise;
-    private LocalDateTime dateTimeExercise;
+    private int numberOfPointsToPassed;
     private int resultNumberOfPoint;
+    private LocalDateTime dateTimeExercise;
+    @Column(name = "user_id")
+    private int userId;
 
 
 }
