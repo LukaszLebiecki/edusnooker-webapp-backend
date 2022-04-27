@@ -9,6 +9,8 @@ import java.util.Set;
 @AllArgsConstructor
 public class UserCredentialsDto {
     @Getter
+    private final String name;
+    @Getter
     private final String email;
     @Getter
     private final String password;
