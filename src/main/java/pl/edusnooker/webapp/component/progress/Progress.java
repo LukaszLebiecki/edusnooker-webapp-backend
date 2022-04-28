@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 @Entity
 @Data
@@ -20,5 +21,16 @@ public class Progress {
     @Column(name = "user_id")
     private int userId;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Progress progress = (Progress) o;
+        return idExercise == progress.idExercise;
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(idExercise);
+    }
 }

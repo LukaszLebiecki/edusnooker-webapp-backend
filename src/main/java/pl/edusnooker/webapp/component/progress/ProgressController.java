@@ -3,6 +3,7 @@ package pl.edusnooker.webapp.component.progress;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pl.edusnooker.webapp.component.progress.dto.ProgressExerciseDto;
 import pl.edusnooker.webapp.component.progress.dto.ProgressLevelInfoDto;
 
 import java.util.List;
@@ -26,4 +27,16 @@ class ProgressController {
             return ResponseEntity.ok(allProgressLevelInfoByUser);
         }
     }
+
+    @GetMapping("{userId}/progress/{levelId}")
+    @CrossOrigin(origins = "*", maxAge = 3600) //todo tymczasowe rozwiązanie do testów
+    ResponseEntity<List<ProgressExerciseDto>> getAllProgressExercise(@PathVariable int userId, @PathVariable int levelId) {
+        List<ProgressExerciseDto> progressExerciseInfo = progressService.getProgressExerciseInfo(levelId, userId);
+        if (progressExerciseInfo.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.ok(progressExerciseInfo);
+        }
+    }
+
 }
