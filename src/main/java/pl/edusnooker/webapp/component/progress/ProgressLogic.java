@@ -30,8 +30,10 @@ class ProgressLogic {
         dto.setRecentActivity(getNumberDaysOfLastExercise(progress.getIdExercise(), userId));
         dto.setLastResult(getLastResult(progress.getIdExercise(), userId));
         dto.setTheBestResult(getTheBestResult(progress.getIdExercise(), userId));
+        dto.setResultToPass(progress.getNumberOfPointsToPassed());
         return dto;
     }
+
 
 
     public ProgressLevelInfoDto getByLevel(int numberLevel, int userId) {

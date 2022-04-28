@@ -36,6 +36,12 @@ class ProgressService {
     List<ProgressExerciseDto> getProgressExerciseInfo(int numberLevel, int userId) {
         List<Progress> allProgressByLevel = progressLogic.getAllProgressByLevel(numberLevel, userId);
         Set<ProgressExerciseDto> collect = allProgressByLevel.stream().map(p -> progressLogic.create(p, userId))
+                .peek(e -> {
+                    int theBestResult = e.getTheBestResult();
+                    int resultToPass = e.getResultToPass();
+                    if (theBestResult >= resultToPass)
+                        e.setPass(true);
+                })
                 .collect(Collectors.toSet());
         List<ProgressExerciseDto> progressExerciseDtoList = collect.stream().toList();
         return progressExerciseDtoList.stream().sorted().toList();

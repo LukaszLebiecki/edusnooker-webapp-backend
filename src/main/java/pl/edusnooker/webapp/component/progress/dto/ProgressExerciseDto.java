@@ -11,6 +11,8 @@ public class ProgressExerciseDto implements Comparable<ProgressExerciseDto> {
     private int recentActivity;
     private int lastResult;
     private int theBestResult;
+    private int resultToPass;
+    private boolean isPass = false;
 
 
     @Override
