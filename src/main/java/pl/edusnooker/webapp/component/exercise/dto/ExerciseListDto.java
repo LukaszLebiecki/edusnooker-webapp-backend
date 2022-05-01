@@ -7,4 +7,5 @@ public class ExerciseListDto {
     private String name;
     private String shortDescription;
     private String img;
+    private int idExercise;
 }

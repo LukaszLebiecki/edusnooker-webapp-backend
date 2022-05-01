@@ -1,14 +1,14 @@
 package pl.edusnooker.webapp.component.exercise;
 
 public enum Level {
-    WHITE(0, 8),
-    RED(1,12),
-    YELLOW(2, 5),
-    GREEN(3,13),
-    BROWN(4,23),
-    BLUE(5, 14),
-    PINK(6, 21),
-    BLACK(7, 27);
+    WHITE(0, 3),
+    RED(1,5),
+    YELLOW(2, 7),
+    GREEN(3,7),
+    BROWN(4,7),
+    BLUE(5, 7),
+    PINK(6, 7),
+    BLACK(7, 7);
 
     private int numberOfPointToTarget;
     private int numberLevel;

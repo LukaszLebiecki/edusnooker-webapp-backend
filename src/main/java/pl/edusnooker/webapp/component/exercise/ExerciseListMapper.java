@@ -9,6 +9,7 @@ class ExerciseListMapper {
         dto.setName(exercise.getName());
         dto.setShortDescription(exercise.getShortDescription());
         dto.setImg(exercise.getImg());
+        dto.setIdExercise(Math.toIntExact(exercise.getId()));
         return dto;
     }
 }
