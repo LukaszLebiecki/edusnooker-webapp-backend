@@ -2,8 +2,8 @@ package pl.edusnooker.webapp.component.exercise;
 
 public enum Level {
     WHITE(0, 3),
-    RED(1,5),
-    YELLOW(2, 7),
+    RED(1,1),
+    YELLOW(2, 1),
     GREEN(3,7),
     BROWN(4,7),
     BLUE(5, 7),
