@@ -7,13 +7,10 @@ import java.util.stream.Collectors;
 
 class UserCredentialsDtoMapper {
     static UserCredentialsDto map(User user) {
-        String name = user.getName();
+        String name = user.getUsername();
         String email = user.getEmail();
         String password = user.getPassword();
-        Set<String> roles = user.getRoles()
-                .stream()
-                .map(UserRole::getName)
-                .collect(Collectors.toSet());
-        return new UserCredentialsDto(name, email, password, roles);
+
+        return new UserCredentialsDto(name, email, password);
     }
 }

@@ -27,7 +27,6 @@ class CustomInMemoryUserDetailsManager implements UserDetailsService {
         return User.builder()
                 .username(credentials.getEmail())
                 .password(credentials.getPassword())
-                .roles(credentials.getRoles().toArray(String[]::new))
                 .build();
     }
 }

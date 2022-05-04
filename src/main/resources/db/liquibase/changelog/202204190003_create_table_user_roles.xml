@@ -19,7 +19,7 @@
         <addForeignKeyConstraint baseTableName="user_roles"
                                  baseColumnNames="user_id"
                                  constraintName="fk_user_id"
-                                 referencedTableName="application_user"
+                                 referencedTableName="user"
                                  referencedColumnNames="id"/>
         <addForeignKeyConstraint baseTableName="user_roles"
                                  baseColumnNames="role_id"

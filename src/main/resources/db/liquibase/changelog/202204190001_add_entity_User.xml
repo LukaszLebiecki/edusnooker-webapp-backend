@@ -5,13 +5,22 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
     <changeSet id="202204190001" author="lebiecki">
-        <createTable tableName="application_user">
+        <createTable tableName="user">
             <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
-            <column name="name" type="VARCHAR(50)"/>
+            <column name="user_id" type="VARCHAR(20)"/>
+            <column name="first_name" type="VARCHAR(50)"/>
+            <column name="last_name" type="VARCHAR(50)"/>
+            <column name="username" type="VARCHAR(50)"/>
             <column name="email" type="VARCHAR(100)"/>
             <column name="password" type="VARCHAR(200)"/>
+            <column name="profile_image_url" type="VARCHAR(200)"/>
+            <column name="last_login_date" type="DATE"/>
+            <column name="last_login_date_display" type="DATE"/>
+            <column name="joinD_date" type="DATE"/>
+            <column name="is_active" type="BOOLEAN"/>
+            <column name="is_not_locked" type="BOOLEAN"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>

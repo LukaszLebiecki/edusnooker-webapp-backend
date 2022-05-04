@@ -9,7 +9,7 @@
         <loadData encoding="UTF-8"
                   file="db/liquibase/testdata/test_users.csv"
                   separator=";"
-                  tableName="application_user">
+                  tableName="user">
         </loadData>
         <loadData encoding="UTF-8"
                   file="db/liquibase/testdata/test_user_to_roles.csv"

@@ -1,36 +1,35 @@
 package pl.edusnooker.webapp.component.user;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import pl.edusnooker.webapp.component.progress.Progress;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.io.Serializable;
+import java.util.*;
 
 @Entity
 @Data
-@Table(name = "application_user")
-public class User {
+@NoArgsConstructor
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String userId;
+    private String firstName;
+    private String lastName;
+    private String username;
     private String email;
     private String password;
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "user_roles",
-            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
-    )
-    private Set<UserRole> roles = new HashSet<>();
-
+    private String profileImageUrl;
+    private Date lastLoginDate;
+    private Date lastLoginDateDisplay;
+    private Date joinDate;
+    private String[] roles; // todo
+    private String[] authorities; //todo
+    private boolean isActive;
+    private boolean isNotLocked;
     @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private List<Progress> progressList = new ArrayList<>();
-
-//    private LocalDate dateRegister; //todo dodać kolumne do tabeli oraz zaimpelentować tworzenie daty przy rejestracji uzytkownika
-//    private boolean isPaid = false; //todo dodać kolumne do tabeli z wartością domyślną false
 
 }

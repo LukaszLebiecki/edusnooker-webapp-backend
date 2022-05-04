@@ -14,7 +14,6 @@ public class UserCredentialsDto {
     private final String email;
     @Getter
     private final String password;
-    @Getter
-    private final Set<String> roles;
+
 
 }

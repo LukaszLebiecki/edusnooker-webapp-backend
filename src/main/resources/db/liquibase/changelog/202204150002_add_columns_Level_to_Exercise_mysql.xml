@@ -4,11 +4,11 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
-    <changeSet id="202204150001" author="lebiecki" context="dev">
-        <sql>CREATE TYPE level_enum AS ENUM ('WHITE', 'RED', 'YELLOW', 'GREEN', 'BROWN', 'BLUE', 'PINK', 'BLACK')</sql>
+    <changeSet id="202204150001" author="lebiecki" context="prod">
+<!--        <sql>CREATE TYPE level_enum AS ENUM ('WHITE', 'RED', 'YELLOW', 'GREEN', 'BROWN', 'BLUE', 'PINK', 'BLACK')</sql>-->
         <addColumn tableName="exercise">
             <column name="level"
-                    type="level_enum"/>
+                    type="VARCHAR(100)"/>
         </addColumn>
     </changeSet>
 </databaseChangeLog>

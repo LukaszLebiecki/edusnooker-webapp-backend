@@ -28,7 +28,7 @@ class WebController {
     @PostMapping("sign_up")
     public void signUp(@RequestBody UserCredentialsDto credentials) {
         User user = new User();
-        user.setName(credentials.getName());
+        user.setUsername(credentials.getName());
         user.setEmail(credentials.getEmail());
         user.setPassword(credentials.getPassword());
         signUpService.signUpUser(user);

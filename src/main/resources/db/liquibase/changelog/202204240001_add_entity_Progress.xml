@@ -29,7 +29,7 @@
         <addForeignKeyConstraint baseTableName="progress"
                                  baseColumnNames="user_id"
                                  constraintName="fk_progress_user_id_user_id"
-                                 referencedTableName="application_user"
+                                 referencedTableName="user"
                                  referencedColumnNames="id"/>
     </changeSet>
 </databaseChangeLog>

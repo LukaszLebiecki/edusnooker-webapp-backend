@@ -1,4 +1,4 @@
-name;email;password
+username;email;password
 admin;admin@admin;$2a$10$TcLLcKHZzsGK4J0ioKqdRueJf.RgFUgvDEf3e0XtFuLmLrsoyRe0C
 user;user@user;$2a$10$2AXoF6KvVTAxJclCWTTolepjC4j2Hr2xvheWWqpgRMmjtRTsXNymq
 
