@@ -1,4 +1,5 @@
 package pl.edusnooker.webapp.component.user;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import pl.edusnooker.webapp.component.progress.Progress;
@@ -9,6 +10,7 @@ import java.util.*;
 
 @Entity
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
 public class User implements Serializable {
     @Id
