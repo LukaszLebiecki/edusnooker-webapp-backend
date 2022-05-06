@@ -1,4 +1,4 @@
-package pl.edusnooker.webapp.component.exercise;
+package pl.edusnooker.webapp.enumeration;
 
 public enum Level {
     WHITE(0, 3),

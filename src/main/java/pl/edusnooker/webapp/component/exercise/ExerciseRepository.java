@@ -1,6 +1,8 @@
 package pl.edusnooker.webapp.component.exercise;
 
 import org.springframework.data.repository.CrudRepository;
+import pl.edusnooker.webapp.enumeration.Level;
+
 import java.util.List;
 import java.util.Optional;
 

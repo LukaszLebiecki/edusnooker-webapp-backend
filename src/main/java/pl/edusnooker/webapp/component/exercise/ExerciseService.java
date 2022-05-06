@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseDto;
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseLevelInfoDto;
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseListDto;
+import pl.edusnooker.webapp.enumeration.Level;
 
 
 import java.util.*;

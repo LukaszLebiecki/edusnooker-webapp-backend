@@ -1,16 +1,27 @@
 package pl.edusnooker.webapp.component.user;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import pl.edusnooker.webapp.exception.domain.EmailExistException;
+import pl.edusnooker.webapp.exception.domain.ExceptionHandling;
+import pl.edusnooker.webapp.exception.domain.UserNotFoundException;
+import pl.edusnooker.webapp.exception.domain.UsernameExistException;
 
 @RestController
-@RequestMapping("/user")
-class UserController {
+@RequestMapping(path = {"/", "/user"})
+public class UserController extends ExceptionHandling {
 
-    @GetMapping("/home")
-    public String showUser() {
-        return "application works";
+    private UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
+    @PostMapping("/register")
+    public ResponseEntity<User> register(@RequestBody User user) throws UserNotFoundException, EmailExistException, UsernameExistException {
+        User newUser = userService.register(user.getFirstName(), user.getLastName(), user.getUsername(), user.getEmail());
+        return new ResponseEntity<>(newUser, HttpStatus.OK);
     }
 
 }

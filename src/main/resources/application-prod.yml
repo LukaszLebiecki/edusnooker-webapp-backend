@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/edusnooker?useSSL=false&serverTimezone=Europe/Warsaw
+    url: jdbc:mysql://localhost:3306/edusnooker?allowPublicKeyRetrieval=true&useSSL=false
     username: root
     password: admin
 

@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.*;
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseDto;
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseLevelInfoDto;
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseListDto;
+import pl.edusnooker.webapp.enumeration.Level;
+
 import java.util.List;
 
 

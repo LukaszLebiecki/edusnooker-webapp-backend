@@ -26,7 +26,7 @@ public class User implements Serializable {
     private Date lastLoginDate;
     private Date lastLoginDateDisplay;
     private Date joinDate;
-    private String[] roles; // todo
+    private String role;
     private String[] authorities; //todo
     private boolean isActive;
     private boolean isNotLocked;

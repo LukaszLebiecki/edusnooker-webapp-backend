@@ -18,7 +18,9 @@
             <column name="profile_image_url" type="VARCHAR(200)"/>
             <column name="last_login_date" type="DATE"/>
             <column name="last_login_date_display" type="DATE"/>
-            <column name="joinD_date" type="DATE"/>
+            <column name="join_date" type="DATE"/>
+            <column name="role" type="VARCHAR(100)"/>
+            <column name="authorities" type="TINYBLOB"/>
             <column name="is_active" type="BOOLEAN"/>
             <column name="is_not_locked" type="BOOLEAN"/>
         </createTable>
