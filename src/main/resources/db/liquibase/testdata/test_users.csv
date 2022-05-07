@@ -1,4 +1,5 @@
-username;email;password;user_id;is_active;is_not_locked
-admin;admin@admin;$2a$10$TcLLcKHZzsGK4J0ioKqdRueJf.RgFUgvDEf3e0XtFuLmLrsoyRe0C;0000000000;true;true
-user;user@user;$2a$10$2AXoF6KvVTAxJclCWTTolepjC4j2Hr2xvheWWqpgRMmjtRTsXNymq;1111111111;true;true
+user_id;first_name;last_name;username;email;password;profile_image_url;role;authorities;is_active;is_not_locked
+6449201505;Łukasz;Lebiecki;admin;luki163@wp1.pl;$2a$10$rVKEIyE3yOksPGXXH5OABewKs7vwu1rMyFMtf0oaN30C4NCThdco6;http://localhost:8080/user/image/profile/temp;ROLE_USER;null;true;true
+9740328203;Nikodem;Lebiecki;user;lukasz.lebiecki@gmail1.com;$2a$10$BtexMU7BFAcDshrmG3ofU.VZdPje1ToZzllfgNKW6gWQGhncnJ.eW;http://localhost:8080/user/image/profile/temp;ROLE_USER;null;true;true
+
 

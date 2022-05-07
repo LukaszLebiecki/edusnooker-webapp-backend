@@ -12,6 +12,8 @@ import pl.edusnooker.webapp.exception.domain.UserNotFoundException;
 import pl.edusnooker.webapp.exception.domain.UsernameExistException;
 import pl.edusnooker.webapp.utility.JWTTokenProvider;
 
+import javax.mail.MessagingException;
+
 import static pl.edusnooker.webapp.constant.SecurityConstant.JWT_TOKEN_HEADER;
 
 @RestController
@@ -38,7 +40,7 @@ public class UserController extends ExceptionHandling {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<User> register(@RequestBody User user) throws EmailExistException, UsernameExistException {
+    public ResponseEntity<User> register(@RequestBody User user) throws EmailExistException, UsernameExistException, MessagingException {
         User newUser = userService.register(user.getFirstName(), user.getLastName(), user.getUsername(), user.getEmail());
         return new ResponseEntity<>(newUser, HttpStatus.OK);
     }
