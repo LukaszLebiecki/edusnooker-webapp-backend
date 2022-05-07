@@ -16,7 +16,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import pl.edusnooker.webapp.filter.JwtAccessDeniedHandler;
 import pl.edusnooker.webapp.filter.JwtAuthenticationEntryPoint;
 import pl.edusnooker.webapp.filter.JwtAuthorizationFilter;
-import pl.edusnooker.webapp.security.SecurityConstant;
+import pl.edusnooker.webapp.constant.SecurityConstant;
 
 @Configuration
 @EnableWebSecurity
@@ -66,7 +66,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     @Override
-    public AuthenticationManager authenticationManager() throws Exception{
+    public AuthenticationManager authenticationManagerBean() throws Exception{
         return super.authenticationManagerBean();
     }
 }

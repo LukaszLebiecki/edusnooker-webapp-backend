@@ -13,7 +13,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import pl.edusnooker.webapp.component.user.UserPrincipal;
-import pl.edusnooker.webapp.security.SecurityConstant;
+import pl.edusnooker.webapp.constant.SecurityConstant;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;

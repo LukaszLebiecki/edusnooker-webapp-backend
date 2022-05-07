@@ -7,7 +7,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-import pl.edusnooker.webapp.security.SecurityConstant;
+import pl.edusnooker.webapp.constant.SecurityConstant;
 import pl.edusnooker.webapp.utility.JWTTokenProvider;
 
 import javax.servlet.FilterChain;

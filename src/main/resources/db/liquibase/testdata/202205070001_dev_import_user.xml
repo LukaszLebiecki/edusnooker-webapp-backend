@@ -5,11 +5,11 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
 
-    <changeSet id="202204190002_dev_import_user_and_roles" author="lebiecki">
+    <changeSet id="202205070001_dev_import_user" author="lebiecki" context="dev">
         <loadData encoding="UTF-8"
-                  file="db/liquibase/testdata/roles.csv"
+                  file="db/liquibase/testdata/test_users.csv"
                   separator=";"
-                  tableName="user_role">
+                  tableName="user">
         </loadData>
     </changeSet>
 </databaseChangeLog>

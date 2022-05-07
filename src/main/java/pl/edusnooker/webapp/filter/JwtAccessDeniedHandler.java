@@ -6,7 +6,7 @@ import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;
 import pl.edusnooker.webapp.http.HttpResponse;
-import pl.edusnooker.webapp.security.SecurityConstant;
+import pl.edusnooker.webapp.constant.SecurityConstant;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

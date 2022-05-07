@@ -6,7 +6,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.Http403ForbiddenEntryPoint;
 import org.springframework.stereotype.Component;
 import pl.edusnooker.webapp.http.HttpResponse;
-import pl.edusnooker.webapp.security.SecurityConstant;
+import pl.edusnooker.webapp.constant.SecurityConstant;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

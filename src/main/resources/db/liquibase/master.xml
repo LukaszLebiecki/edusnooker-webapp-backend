@@ -9,21 +9,19 @@
     <include file="changelog/202204150001_add_columns_Level_to_Exercise_.xml" relativeToChangelogFile="true"/>
     <include file="changelog/202204150002_add_columns_Level_to_Exercise_mysql.xml" relativeToChangelogFile="true"/>
     <include file="changelog/202204190001_add_entity_User.xml" relativeToChangelogFile="true"/>
-    <include file="changelog/202204190002_add_entity_UserRole.xml" relativeToChangelogFile="true"/>
-    <include file="changelog/202204190003_create_table_user_roles.xml" relativeToChangelogFile="true"/>
     <include file="changelog/202204210001_add_columns_img_shortDescription_to_Exercise_.xml" relativeToChangelogFile="true"/>
     <include file="changelog/202204240001_add_entity_Progress.xml" relativeToChangelogFile="true"/>
 
 
     <!--    COMMON data (dane test dla prod i dev)    -->
-    <include file="testdata/202204190002_common_import_roles.xml" relativeToChangelogFile="true"/>
+
 
     <!--    PROD data     -->
 
 
     <!--    DEV data     -->
+    <include file="testdata/202205070001_dev_import_user.xml" relativeToChangelogFile="true"/>
     <include file="testdata/202204140001_dev_import_exercise.xml" relativeToChangelogFile="true"/>
-    <include file="testdata/202204190001_dev_import_user_and_roles.xml" relativeToChangelogFile="true"/>
     <include file="testdata/202204240003_dev_import_progress.xml" relativeToChangelogFile="true"/>
 
 

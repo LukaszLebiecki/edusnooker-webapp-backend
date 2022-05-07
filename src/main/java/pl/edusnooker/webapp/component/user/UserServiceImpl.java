@@ -17,8 +17,8 @@ import pl.edusnooker.webapp.exception.domain.UsernameExistException;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Random;
 
+import static pl.edusnooker.webapp.constant.UserImplConstant.*;
 import static pl.edusnooker.webapp.enumeration.Role.ROLE_USER;
 
 @Service
@@ -29,27 +29,44 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     private Logger LOGGER = LoggerFactory.getLogger(getClass());
     private UserRepository userRepository;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
+    private LoginAttemptService loginAttemptService;
 
-    public UserServiceImpl(UserRepository userRepository, BCryptPasswordEncoder bCryptPasswordEncoder) {
+    public UserServiceImpl(UserRepository userRepository,
+                           BCryptPasswordEncoder bCryptPasswordEncoder,
+                           LoginAttemptService loginAttemptService) {
         this.userRepository = userRepository;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+        this.loginAttemptService = loginAttemptService;
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByUsername(username);
         if (user == null) {
-            LOGGER.error("User not found by username: " + username);
-            throw new UsernameNotFoundException("User not found by username: " + username);
+            LOGGER.error(NO_USER_FOUND_BY_USERNAME + username);
+            throw new UsernameNotFoundException(NO_USER_FOUND_BY_USERNAME + username);
         } else {
+            validateLoginAttempt(user);
             user.setLastLoginDateDisplay(user.getLastLoginDate());
             user.setLastLoginDate(new Date());
             userRepository.save(user);
             UserPrincipal userPrincipal = new UserPrincipal(user);
-            LOGGER.info("Returning found user by username: " + username);
+            LOGGER.info(FOUND_USER_BY_USERNAME + username);
             return userPrincipal;
         }
 
+    }
+
+    private void validateLoginAttempt(User user) {
+        if (user.isNotLocked()) {
+            if (loginAttemptService.hasExceededMaxAttempts(user.getUsername())) {
+                user.setNotLocked(false);
+            } else {
+                user.setNotLocked(true);
+            }
+        } else {
+            loginAttemptService.evictUserFromLoginAttemptCache(user.getUsername());
+        }
     }
 
     @Override
@@ -76,7 +93,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     private String getTemporaryProfileImageUrl() {
-        return ServletUriComponentsBuilder.fromCurrentContextPath().path("/user/image/profile/temp").toUriString();
+        return ServletUriComponentsBuilder.fromCurrentContextPath().path(DEFAULT_USER_IMAGE_PATH).toUriString();
     }
 
     private String encodePassword(String password) {
@@ -92,28 +109,26 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     private User validateNewUsernameAndEmail(String currentUsername, String newUsername, String newEmail) throws UsernameExistException, EmailExistException {
+        User userByNewUsername = findUserByUsername(newUsername);
+        User userByNewEmail = findUserByEmail(newEmail);
         if (StringUtils.isNotBlank(currentUsername)) {
             User currentUser = findUserByUsername(currentUsername);
             if (currentUser == null) {
-                throw new UsernameNotFoundException("No user found by username " + currentUsername);
+                throw new UsernameNotFoundException(NO_USER_FOUND_BY_USERNAME + currentUsername);
             }
-            User userByNewUsername = findUserByUsername(newUsername);
             if (userByNewUsername != null && !currentUser.getId().equals(userByNewUsername.getId())) {
-                throw new UsernameExistException("Username already exist");
+                throw new UsernameExistException(USERNAME_ALREADY_EXIST);
             }
-            User userByNewEmail = findUserByEmail(newEmail);
             if (userByNewEmail != null && !currentUser.getId().equals(userByNewEmail.getId())) {
-                throw new EmailExistException("Email already exist");
+                throw new EmailExistException(EMAIL_ALREADY_EXIST);
             }
             return currentUser;
         } else {
-            User userByUsername = findUserByUsername(newUsername);
-            if (userByUsername != null) {
-                throw new UsernameExistException("Username already exist");
+            if (userByNewUsername != null) {
+                throw new UsernameExistException(USERNAME_ALREADY_EXIST);
             }
-            User userByEmail = findUserByEmail(newEmail);
-            if (userByEmail != null) {
-                throw new EmailExistException("Email already exist");
+            if (userByNewEmail != null) {
+                throw new EmailExistException(EMAIL_ALREADY_EXIST);
             }
             return null;
         }
@@ -121,16 +136,16 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     public List<User> getUsers() {
-        return null;
+        return userRepository.findAll();
     }
 
     @Override
     public User findUserByUsername(String username) {
-        return null;
+        return userRepository.findByUsername(username);
     }
 
     @Override
     public User findUserByEmail(String email) {
-        return null;
+        return userRepository.findByEmail(email);
     }
 }
