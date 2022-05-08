@@ -5,7 +5,6 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -26,8 +25,7 @@ import static java.util.Arrays.stream;
 @Component
 public class JWTTokenProvider {
 
-    @Value("${jwt.secret}")
-    private String secret;
+    private final String secret = "sfc45vCrwer34c34cAEWRCGWEafcwAsfmo34rcfc2gvtyv45$FF";
 
     public String generateJwtToken(UserPrincipal userPrincipal) {
         String[] claims = getClaimsFormUser(userPrincipal);
@@ -58,7 +56,7 @@ public class JWTTokenProvider {
 
     public boolean isTokenValid(String username, String token) {
         JWTVerifier verifier = getJWTVerifier();
-        return StringUtils.isNoneEmpty(username) && isTokenExpired(verifier, token);
+        return StringUtils.isNoneEmpty(username) && !isTokenExpired(verifier, token);
     }
 
     public String getSubject(String token) {

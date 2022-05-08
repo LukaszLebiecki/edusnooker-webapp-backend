@@ -1,6 +1,3 @@
-jwt:
-  secret: 'sfc45v{@Crwerc]34cAEWRCGWEafcwAsfmo34rcfc]%^2gvtyv45$FF'
-
 spring:
   liquibase:
     change-log: classpath:db/liquibase/master.xml
