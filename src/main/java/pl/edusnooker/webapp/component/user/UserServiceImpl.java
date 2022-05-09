@@ -21,6 +21,7 @@ import pl.edusnooker.webapp.exception.domain.UsernameExistException;
 
 import javax.mail.MessagingException;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -31,6 +32,7 @@ import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 import static org.apache.commons.lang3.StringUtils.*;
 import static pl.edusnooker.webapp.constant.FileConstant.*;
 import static pl.edusnooker.webapp.constant.UserImplConstant.*;
+import static pl.edusnooker.webapp.enumeration.Role.ROLE_SUPER_ADMIN;
 import static pl.edusnooker.webapp.enumeration.Role.ROLE_USER;
 
 @Service
