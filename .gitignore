@@ -38,4 +38,5 @@ out/
 .vscode/
 
 ### Privet data ###
+
 /src/main/java/pl/edusnooker/webapp/constant/EmailConstant.java
