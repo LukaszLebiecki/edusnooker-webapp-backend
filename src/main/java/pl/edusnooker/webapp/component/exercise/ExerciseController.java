@@ -21,7 +21,6 @@ class ExerciseController {
 
 
     @GetMapping("/level")
-    @CrossOrigin(origins="*", maxAge=3600) //todo tymczasowe rozwiązanie do testów
     ResponseEntity<List<ExerciseLevelInfoDto>> getLevelAll() {
 
         if (exerciseService.getAllLevelInfo().isEmpty()) {
@@ -32,7 +31,6 @@ class ExerciseController {
     }
 
     @GetMapping("/level/{idLevel}")
-    @CrossOrigin(origins="*", maxAge=3600) //todo tymczasowe rozwiązanie do testów
     ResponseEntity<ExerciseLevelInfoDto> getLevel(@PathVariable int idLevel) {
         Level[] values = Level.values();
         String name = values[idLevel].name();
@@ -45,7 +43,6 @@ class ExerciseController {
     }
 
     @GetMapping("/level/{idLevel}/exercise")
-    @CrossOrigin(origins="*", maxAge=3600) //todo tymczasowe rozwiązanie do testów
     ResponseEntity<List<ExerciseListDto>> getAllExerciseByLevel(@PathVariable int idLevel) {
         Level[] values = Level.values();
         String name = values[idLevel].name();
@@ -58,7 +55,6 @@ class ExerciseController {
     }
 
     @GetMapping("/exercise/{id}")
-    @CrossOrigin(origins="*", maxAge=3600) //todo tymczasowe rozwiązanie do testów
     ResponseEntity<ExerciseDto> getExerciseById(@PathVariable Long id) {
         if (exerciseService.getExerciseById(id).isEmpty()) {
             return ResponseEntity.notFound().build();

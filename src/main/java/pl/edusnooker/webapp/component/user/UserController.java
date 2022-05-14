@@ -32,7 +32,7 @@ import static pl.edusnooker.webapp.constant.SecurityConstant.JWT_TOKEN_HEADER;
 @RequestMapping(path = {"/", "/user"})
 public class UserController extends ExceptionHandling {
 
-    public static final String EMAIL_SENT = "An email with a new pasword was sent to: ";
+    public static final String EMAIL_SENT = "An email with a new password was sent to: ";
     public static final String USER_DELETE_SUCCESSFULLY = "User delete successfully";
     private UserService userService;
     private AuthenticationManager authenticationManager;

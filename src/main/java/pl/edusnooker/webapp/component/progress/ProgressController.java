@@ -18,7 +18,6 @@ class ProgressController {
     }
 
     @GetMapping("{userId}/progress")
-    @CrossOrigin(origins = "*", maxAge = 3600) //todo tymczasowe rozwiązanie do testów
     ResponseEntity<List<ProgressLevelInfoDto>> getAllProgressByLevel(@PathVariable int userId) {
         List<ProgressLevelInfoDto> allProgressLevelInfoByUser = progressService.getAllProgressLevelInfoByUser(userId);
         if (allProgressLevelInfoByUser.isEmpty()) {
@@ -29,7 +28,6 @@ class ProgressController {
     }
 
     @GetMapping("{userId}/progress/{levelId}")
-    @CrossOrigin(origins = "*", maxAge = 3600) //todo tymczasowe rozwiązanie do testów
     ResponseEntity<List<ProgressExerciseDto>> getAllProgressExercise(@PathVariable int userId, @PathVariable int levelId) {
         List<ProgressExerciseDto> progressExerciseInfo = progressService.getProgressExerciseInfo(levelId, userId);
         if (progressExerciseInfo.isEmpty()) {
