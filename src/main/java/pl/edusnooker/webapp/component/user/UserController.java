@@ -108,7 +108,7 @@ public class UserController extends ExceptionHandling {
     @PreAuthorize("hasAnyAuthority('user:delete')")
     public ResponseEntity<HttpResponse> deleteUser(@PathVariable("id") long id) {
         userService.deleteUser(id);
-        return response(HttpStatus.NO_CONTENT, USER_DELETE_SUCCESSFULLY);
+        return response(HttpStatus.OK, USER_DELETE_SUCCESSFULLY);
     }
 
     @PostMapping("/updateProfileImage")
@@ -139,7 +139,7 @@ public class UserController extends ExceptionHandling {
 
     private ResponseEntity<HttpResponse> response(HttpStatus httpStatus, String message) {
         return new ResponseEntity<>(new HttpResponse(httpStatus.value(), httpStatus,
-                httpStatus.getReasonPhrase().toUpperCase(), message.toUpperCase()), httpStatus);
+                httpStatus.getReasonPhrase().toUpperCase(), message), httpStatus);
     }
 
     private HttpHeaders getJwtHeader(UserPrincipal user) {
