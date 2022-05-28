@@ -8,10 +8,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import pl.edusnooker.webapp.exception.domain.EmailExistException;
-import pl.edusnooker.webapp.exception.domain.EmailNotFoundException;
-import pl.edusnooker.webapp.exception.domain.ExceptionHandling;
-import pl.edusnooker.webapp.exception.domain.UsernameExistException;
+import pl.edusnooker.webapp.exception.domain.*;
 import pl.edusnooker.webapp.http.HttpResponse;
 import pl.edusnooker.webapp.utility.JWTTokenProvider;
 
@@ -67,7 +64,7 @@ public class UserController extends ExceptionHandling {
                                            @RequestParam("role") String role,
                                            @RequestParam("isActive") String isActive,
                                            @RequestParam("isNotLocked") String isNotLocked,
-                                           @RequestParam(value = "profileImage", required = false) MultipartFile profileImage) throws EmailExistException, IOException, UsernameExistException {
+                                           @RequestParam(value = "profileImage", required = false) MultipartFile profileImage) throws EmailExistException, IOException, UsernameExistException, NotAnImageFileException {
         User newUser = userService.addNewUser(firstName, lastName, username, email, role, Boolean.parseBoolean(isActive), Boolean.parseBoolean(isNotLocked), profileImage);
         return new ResponseEntity<>(newUser, HttpStatus.OK);
     }
@@ -81,7 +78,7 @@ public class UserController extends ExceptionHandling {
                                        @RequestParam("role") String role,
                                        @RequestParam("isActive") String isActive,
                                        @RequestParam("isNotLocked") String isNotLocked,
-                                       @RequestParam(value = "profileImage", required = false) MultipartFile profileImage) throws EmailExistException, IOException, UsernameExistException {
+                                       @RequestParam(value = "profileImage", required = false) MultipartFile profileImage) throws EmailExistException, IOException, UsernameExistException, NotAnImageFileException {
         User updatedUser = userService.updateUser(currentUsername, firstName, lastName, username, email, role, Boolean.parseBoolean(isActive), Boolean.parseBoolean(isNotLocked), profileImage);
         return new ResponseEntity<>(updatedUser, HttpStatus.OK);
     }
@@ -104,16 +101,16 @@ public class UserController extends ExceptionHandling {
         return response(HttpStatus.OK, EMAIL_SENT + email);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/delete/{username}")
     @PreAuthorize("hasAnyAuthority('user:delete')")
-    public ResponseEntity<HttpResponse> deleteUser(@PathVariable("id") long id) {
-        userService.deleteUser(id);
+    public ResponseEntity<HttpResponse> deleteUser(@PathVariable("username") String username) throws IOException {
+        userService.deleteUser(username);
         return response(HttpStatus.OK, USER_DELETE_SUCCESSFULLY);
     }
 
     @PostMapping("/updateProfileImage")
     public ResponseEntity<User> updateProfileImage(@RequestParam("username") String username,
-                                                   @RequestParam(value = "profileImage") MultipartFile profileImage) throws EmailExistException, IOException, UsernameExistException {
+                                                   @RequestParam(value = "profileImage") MultipartFile profileImage) throws EmailExistException, IOException, UsernameExistException, NotAnImageFileException {
         User user = userService.updateProfileImage(username, profileImage);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
