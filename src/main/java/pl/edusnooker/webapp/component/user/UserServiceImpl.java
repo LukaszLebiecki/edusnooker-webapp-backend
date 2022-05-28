@@ -36,7 +36,7 @@ import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.springframework.http.MediaType.*;
 import static pl.edusnooker.webapp.constant.FileConstant.*;
 import static pl.edusnooker.webapp.constant.UserImplConstant.*;
-import static pl.edusnooker.webapp.enumeration.Role.ROLE_USER;
+import static pl.edusnooker.webapp.enumeration.Role.ROLE_DEMO;
 
 @Service
 @Transactional
@@ -91,8 +91,8 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         user.setPassword(encodePassword(password));
         user.setActive(true);
         user.setNotLocked(true);
-        user.setRole(ROLE_USER.name());
-        user.setAuthorities(ROLE_USER.getAuthorities());
+        user.setRole(ROLE_DEMO.name());
+        user.setAuthorities(ROLE_DEMO.getAuthorities());
         user.setProfileImageUrl(getTemporaryProfileImageUrl(username));
         userRepository.save(user);
 //        LOGGER.info("New user password: " + password);
