@@ -19,8 +19,8 @@ class ExerciseService {
     }
 
 
-    Optional<ExerciseDto> getExerciseById(Long id) {
-        return exerciseRepository.findById(id).map(ExerciseMapper::map);
+    Optional<ExerciseDto> getExerciseById(String id) {
+        return exerciseRepository.findByExerciseId(id).map(ExerciseMapper::map);
     }
 
     List<ExerciseListDto> getAllExerciseByLevel(Level level) {
@@ -53,5 +53,9 @@ class ExerciseService {
         return levelInfoDtoList;
     }
 
+    List<Exercise> getAllExercises() {
+        List<Exercise> exerciseList = exerciseRepository.findAll();
+        return exerciseList;
+    }
 
 }

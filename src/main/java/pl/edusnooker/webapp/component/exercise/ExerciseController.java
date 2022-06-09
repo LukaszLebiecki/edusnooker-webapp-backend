@@ -55,11 +55,28 @@ class ExerciseController {
     }
 
     @GetMapping("/exercise/{id}")
-    ResponseEntity<ExerciseDto> getExerciseById(@PathVariable Long id) {
+    ResponseEntity<ExerciseDto> getExerciseById(@PathVariable String id) {
         if (exerciseService.getExerciseById(id).isEmpty()) {
             return ResponseEntity.notFound().build();
         } else {
             return ResponseEntity.ok(exerciseService.getExerciseById(id).get());
         }
     }
+
+    @GetMapping("/exercise")
+    ResponseEntity<List<ExerciseDto>> getExercises() {
+        if (exerciseService.getAllExercises().isEmpty()) {
+            return ResponseEntity.notFound().build();
+        } else {
+            List<Exercise> allExercises = exerciseService.getAllExercises();
+            List<ExerciseDto> exerciseDtoList = allExercises.stream()
+                    .map(ExerciseMapper::map)
+                    .toList();
+            return ResponseEntity.ok(exerciseDtoList);
+        }
+    }
+
+// TODO
+//    Wykonać endpointy dla class exercise:
+//            - addExercise - updateExercise - deleteExercise
 }

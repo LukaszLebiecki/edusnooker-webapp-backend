@@ -7,7 +7,7 @@ class ExerciseListMapper {
     static ExerciseListDto map(Exercise exercise) {
         ExerciseListDto dto = new ExerciseListDto();
         dto.setName(exercise.getName());
-        dto.setShortDescription(exercise.getShortDescription());
+        dto.setDescription(exercise.getDescription());
         dto.setImg(exercise.getImg());
         dto.setIdExercise(Math.toIntExact(exercise.getId()));
         return dto;

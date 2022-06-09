@@ -1,21 +1,21 @@
-id;name;description;gif;number_of_points_to_passed;level;short_description;img
-1;Pink spot run-through;Opis ćwiczenia;plik.gif;7;WHITE;This exercise is aimed at practising secure potting of pink into the corner pockets while at the same time practising the run-through technique.;test1.png
-2;Around pink;Opis ćwiczenia;plik.gif;11;WHITE;This exercise trains secure potting of pink. In addition, it enhances cue ball control.;test2.png
-3;21 set-up;Opis ćwiczenia;plik.gif;12;WHITE;21 set-up trains pots, in particular long pots. In addition to potting, this exercise trains the basic of break building.;test3.png
-4;Blue screw;Opis ćwiczenia;plik.gif;9;WHITE;This exercise is aimed at practising the screw technique.;test4.png
-5;Nazwa ćwiczenia;Opis ćwiczenia;plik.gif;50;WHITE;krótki opis ćwiczenia;e001.png
-6;Nazwa ćwiczenia;Opis ćwiczenia;plik.gif;50;WHITE;krótki opis ćwiczenia;e002.png
-7;Nazwa ćwiczenia;Opis ćwiczenia;plik.gif;50;WHITE;krótki opis ćwiczenia;e003.png
-8;Nazwa ćwiczenia;Opis ćwiczenia;plik.gif;50;WHITE;krótki opis ćwiczenia;e004.png
-9;Nazwa ćwiczenia;Opis ćwiczenia;plik.gif;50;WHITE;krótki opis ćwiczenia;e005.png
-10;Nazwa ćwiczenia;Opis ćwiczenia;plik.gif;50;WHITE;krótki opis ćwiczenia;e006.png
-11;Nazwa ćwiczenia;Opis ćwiczenia;plik.gif;50;WHITE;krótki opis ćwiczenia;e007.png
-12;Nazwa ćwiczenia;Opis ćwiczenia;plik.gif;50;RED;krótki opis ćwiczenia;e101.png
-13;Nazwa ćwiczenia;Opis ćwiczenia;plik.gif;50;RED;krótki opis ćwiczenia;e102.png
-14;Nazwa ćwiczenia;Opis ćwiczenia;plik.gif;50;RED;krótki opis ćwiczenia;e103.png
-15;Nazwa ćwiczenia;Opis ćwiczenia;plik.gif;50;RED;krótki opis ćwiczenia;e104.png
-16;Nazwa ćwiczenia;Opis ćwiczenia;plik.gif;50;RED;krótki opis ćwiczenia;e105.png
-17;Nazwa ćwiczenia;Opis ćwiczenia;plik.gif;50;RED;krótki opis ćwiczenia;e106.png
-18;Nazwa ćwiczenia;Opis ćwiczenia;plik.gif;50;RED;krótki opis ćwiczenia;e107.png
-19;Nazwa ćwiczenia;Opis ćwiczenia;plik.gif;50;YELLOW;krótki opis ćwiczenia;e201.png
-
+id;exercise_id;name;description;video_url;number_of_points_to_passed;img;max_points;number_of_attempts;is_white;is_red;is_yellow;is_green;is_brown;is_blue;is_pink;is_black;is_button_pass;is_bonus_point;bonus_info;bonus_number_of_points;level
+1;e001;Pink spot run-through;This exercise is aimed at practising secure potting of pink into the corner pockets while at the same time practising the run-through technique.;https://player.vimeo.com/video/716137858?h=2b7303636f;7;test1.png;50;2;TRUE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;TRUE;TRUE;Jakis tekst wyswietlanyw oknie o tym kiedy przyznac punkty bonus;1;WHITE
+2;e002;Around pink;"This exercise trains secure potting of pink. In addition, it enhances cue ball control.";adres_URL;11;test2.png;50;2;TRUE;TRUE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;TRUE;Jakis tekst wyswietlanyw oknie o tym kiedy przyznac punkty bonus;1;WHITE
+3;e003;21 set-up;"21 set-up trains pots, in particular long pots. In addition to potting, this exercise trains the basic of break building.";adres_URL;12;test3.png;50;2;TRUE;TRUE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;Jakis tekst wyswietlanyw oknie o tym kiedy przyznac punkty bonus;0;WHITE
+4;e004;Blue screw;This exercise is aimed at practising the screw technique.;adres_URL;9;test4.png;50;2;TRUE;TRUE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;Jakis tekst wyswietlanyw oknie o tym kiedy przyznac punkty bonus;0;WHITE
+5;e005;Nazwa cwiczenia;Opis cwiczenia;adres_URL;50;e001.png;50;2;TRUE;TRUE;TRUE;TRUE;TRUE;TRUE;TRUE;TRUE;FALSE;FALSE;Jakis tekst wyswietlanyw oknie o tym kiedy przyznac punkty bonus;0;WHITE
+6;e006;Nazwa cwiczenia;Opis cwiczenia;adres_URL;50;e002.png;50;2;TRUE;TRUE;TRUE;TRUE;TRUE;TRUE;TRUE;TRUE;FALSE;FALSE;Jakis tekst wyswietlanyw oknie o tym kiedy przyznac punkty bonus;0;WHITE
+7;e007;Nazwa cwiczenia;Opis cwiczenia;adres_URL;50;e003.png;50;2;TRUE;TRUE;TRUE;TRUE;TRUE;TRUE;TRUE;TRUE;FALSE;FALSE;Jakis tekst wyswietlanyw oknie o tym kiedy przyznac punkty bonus;0;WHITE
+8;e008;Nazwa cwiczenia;Opis cwiczenia;adres_URL;50;e004.png;50;2;TRUE;TRUE;TRUE;TRUE;TRUE;TRUE;TRUE;TRUE;FALSE;FALSE;Jakis tekst wyswietlanyw oknie o tym kiedy przyznac punkty bonus;0;WHITE
+9;e009;Nazwa cwiczenia;Opis cwiczenia;adres_URL;50;e005.png;50;2;TRUE;TRUE;TRUE;TRUE;FALSE;FALSE;TRUE;TRUE;FALSE;FALSE;Jakis tekst wyswietlanyw oknie o tym kiedy przyznac punkty bonus;0;WHITE
+10;e010;Nazwa cwiczenia;Opis cwiczenia;adres_URL;50;e006.png;50;2;TRUE;TRUE;TRUE;TRUE;FALSE;FALSE;TRUE;FALSE;FALSE;FALSE;Jakis tekst wyswietlanyw oknie o tym kiedy przyznac punkty bonus;0;WHITE
+11;e011;Nazwa cwiczenia;Opis cwiczenia;adres_URL;50;e007.png;50;2;TRUE;TRUE;TRUE;FALSE;FALSE;FALSE;TRUE;FALSE;FALSE;FALSE;Jakis tekst wyswietlanyw oknie o tym kiedy przyznac punkty bonus;0;WHITE
+12;e101;Nazwa cwiczenia;Opis cwiczenia;adres_URL;50;e101.png;50;2;TRUE;TRUE;TRUE;FALSE;FALSE;FALSE;TRUE;FALSE;FALSE;FALSE;Jakis tekst wyswietlanyw oknie o tym kiedy przyznac punkty bonus;0;RED
+13;e102;Nazwa cwiczenia;Opis cwiczenia;adres_URL;50;e102.png;50;2;TRUE;TRUE;TRUE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;Jakis tekst wyswietlanyw oknie o tym kiedy przyznac punkty bonus;0;RED
+14;e103;Nazwa cwiczenia;Opis cwiczenia;adres_URL;50;e103.png;50;2;TRUE;TRUE;TRUE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;Jakis tekst wyswietlanyw oknie o tym kiedy przyznac punkty bonus;0;RED
+15;e104;Nazwa cwiczenia;Opis cwiczenia;adres_URL;50;e104.png;50;2;TRUE;TRUE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;Jakis tekst wyswietlanyw oknie o tym kiedy przyznac punkty bonus;0;RED
+16;e105;Nazwa cwiczenia;Opis cwiczenia;adres_URL;50;e105.png;50;2;TRUE;TRUE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;Jakis tekst wyswietlanyw oknie o tym kiedy przyznac punkty bonus;0;RED
+17;e106;Nazwa cwiczenia;Opis cwiczenia;adres_URL;50;e106.png;50;2;TRUE;TRUE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;Jakis tekst wyswietlanyw oknie o tym kiedy przyznac punkty bonus;0;RED
+18;e107;Nazwa cwiczenia;Opis cwiczenia;adres_URL;50;e107.png;50;2;TRUE;TRUE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;Jakis tekst wyswietlanyw oknie o tym kiedy przyznac punkty bonus;0;RED
+19;e201;Nazwa cwiczenia;Opis cwiczenia;adres_URL;51;e201.png;50;2;TRUE;TRUE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;FALSE;Jakis tekst wyswietlanyw oknie o tym kiedy przyznac punkty bonus;0;YELLOW
+20;e301;Nazwa cwiczenia;Opis cwiczenia;adres_URL;50;e201.png;50;2;TRUE;TRUE;TRUE;TRUE;TRUE;TRUE;TRUE;TRUE;TRUE;TRUE;Jakis tekst wyswietlanyw oknie o tym kiedy przyznac punkty bonus;1;GREEN

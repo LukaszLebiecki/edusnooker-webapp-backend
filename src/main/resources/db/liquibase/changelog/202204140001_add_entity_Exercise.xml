@@ -9,10 +9,26 @@
             <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
+            <column name="exercise_id" type="VARCHAR(100)"/>
             <column name="name" type="VARCHAR(100)"/>
             <column name="description" type="VARCHAR(1000)"/>
-            <column name="gif" type="VARCHAR(20)"/>
+            <column name="video_url" type="VARCHAR(100)"/>
+            <column name="img" type="VARCHAR(50)"/>
             <column name="number_of_points_to_passed" type="INT"/>
+            <column name="max_points" type="INT"/>
+            <column name="number_of_attempts" type="INT"/>
+            <column name="is_white" type="BOOLEAN"/>
+            <column name="is_red" type="BOOLEAN"/>
+            <column name="is_yellow" type="BOOLEAN"/>
+            <column name="is_green" type="BOOLEAN"/>
+            <column name="is_brown" type="BOOLEAN"/>
+            <column name="is_blue" type="BOOLEAN"/>
+            <column name="is_pink" type="BOOLEAN"/>
+            <column name="is_black" type="BOOLEAN"/>
+            <column name="is_button_pass" type="BOOLEAN"/>
+            <column name="is_bonus_point" type="BOOLEAN"/>
+            <column name="bonus_info" type="VARCHAR(1000)"/>
+            <column name="bonus_number_of_points" type="INT"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>
