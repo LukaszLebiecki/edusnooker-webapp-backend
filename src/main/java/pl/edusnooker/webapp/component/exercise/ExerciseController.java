@@ -1,5 +1,6 @@
 package pl.edusnooker.webapp.component.exercise;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseDto;
@@ -76,7 +77,34 @@ class ExerciseController {
         }
     }
 
+    @PostMapping("/exercise/add")
+    ResponseEntity<Exercise> addNewExercise(@RequestParam("name") String name,
+                                            @RequestParam("description") String description,
+                                            @RequestParam("videoUrl") String videoUrl,
+                                            @RequestParam("img") String img,
+                                            @RequestParam("numberOfPointsToPassed") int numberOfPointsToPassed,
+                                            @RequestParam("maxPoints") int maxPoints,
+                                            @RequestParam("numberOfAttempts") int numberOfAttempts,
+                                            @RequestParam("level") Level level,
+                                            @RequestParam("isWhite") boolean isWhite,
+                                            @RequestParam("isRed") boolean isRed,
+                                            @RequestParam("isYellow") boolean isYellow,
+                                            @RequestParam("isGreen") boolean isGreen,
+                                            @RequestParam("isBrown") boolean isBrown,
+                                            @RequestParam("isBlue") boolean isBlue,
+                                            @RequestParam("isPink") boolean isPink,
+                                            @RequestParam("isBlack") boolean isBlack,
+                                            @RequestParam("isButtonPass") boolean isButtonPass,
+                                            @RequestParam("isBonusPoint") boolean isBonusPoint,
+                                            @RequestParam("bonusInfo") String bonusInfo,
+                                            @RequestParam("bonusNumberOfPoints") int bonusNumberOfPoints) {
+        Exercise newExercise = exerciseService.addNewExercise(name, description, videoUrl, img, numberOfPointsToPassed,
+                maxPoints, numberOfAttempts, level, isWhite, isRed, isYellow, isGreen, isBrown, isBlue, isPink, isBlack,
+                isButtonPass, isBonusPoint, bonusInfo, bonusNumberOfPoints);
+        return new ResponseEntity<>(newExercise, HttpStatus.OK);
+    }
+
 // TODO
 //    Wykonać endpointy dla class exercise:
-//            - addExercise - updateExercise - deleteExercise
+//            - updateExercise - deleteExercise
 }

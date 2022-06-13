@@ -13,9 +13,11 @@ import java.util.*;
 @Service
 class ExerciseService {
     private final ExerciseRepository exerciseRepository;
+    private final ExerciseLogic exerciseLogic;
 
-    public ExerciseService(ExerciseRepository exerciseRepository) {
+    public ExerciseService(ExerciseRepository exerciseRepository, ExerciseLogic exerciseLogic) {
         this.exerciseRepository = exerciseRepository;
+        this.exerciseLogic = exerciseLogic;
     }
 
 
@@ -56,6 +58,37 @@ class ExerciseService {
     List<Exercise> getAllExercises() {
         List<Exercise> exerciseList = exerciseRepository.findAll();
         return exerciseList;
+    }
+
+    Exercise addNewExercise(String name, String description, String videoUrl, String img, int numberOfPointsToPassed,
+                            int maxPoints, int numberOfAttempts, Level level, boolean isWhite, boolean isRed,
+                            boolean isYellow, boolean isGreen, boolean isBrown, boolean isBlue, boolean isPink,
+                            boolean isBlack, boolean isButtonPass, boolean isBonusPoint, String bonusInfo,
+                            int bonusNumberOfPoints) {
+        Exercise exercise = new Exercise();
+        exercise.setExerciseId(exerciseLogic.generateExerciseId(level));
+        exercise.setName(name);
+        exercise.setDescription(description);
+        exercise.setVideoUrl(videoUrl);
+        exercise.setImg(img);
+        exercise.setNumberOfPointsToPassed(numberOfPointsToPassed);
+        exercise.setMaxPoints(maxPoints);
+        exercise.setNumberOfAttempts(numberOfAttempts);
+        exercise.setLevel(level);
+        exercise.setWhite(isWhite);
+        exercise.setRed(isRed);
+        exercise.setYellow(isYellow);
+        exercise.setGreen(isGreen);
+        exercise.setBrown(isBrown);
+        exercise.setBlue(isBlue);
+        exercise.setPink(isPink);
+        exercise.setBlack(isBlack);
+        exercise.setButtonPass(isButtonPass);
+        exercise.setBonusPoint(isBonusPoint);
+        exercise.setBonusInfo(bonusInfo);
+        exercise.setBonusNumberOfPoints(bonusNumberOfPoints);
+        exerciseRepository.save(exercise);
+        return exercise;
     }
 
 }
