@@ -14,4 +14,6 @@ public interface ExerciseRepository extends CrudRepository<Exercise, Long> {
 
     Optional<Exercise> findByExerciseId(String id);
 
+    List<Exercise> findAllByLevelOrderByExerciseIdDesc(Level level);
+
 }
