@@ -104,7 +104,35 @@ class ExerciseController {
         return new ResponseEntity<>(newExercise, HttpStatus.OK);
     }
 
+    @PostMapping("/exercise/update")
+    ResponseEntity<Exercise> updateExercise(@RequestParam("currentExerciseId") String currentExerciseId,
+                                            @RequestParam("name") String name,
+                                            @RequestParam("description") String description,
+                                            @RequestParam("videoUrl") String videoUrl,
+                                            @RequestParam("img") String img,
+                                            @RequestParam("numberOfPointsToPassed") int numberOfPointsToPassed,
+                                            @RequestParam("maxPoints") int maxPoints,
+                                            @RequestParam("numberOfAttempts") int numberOfAttempts,
+                                            @RequestParam("level") Level level,
+                                            @RequestParam("isWhite") boolean isWhite,
+                                            @RequestParam("isRed") boolean isRed,
+                                            @RequestParam("isYellow") boolean isYellow,
+                                            @RequestParam("isGreen") boolean isGreen,
+                                            @RequestParam("isBrown") boolean isBrown,
+                                            @RequestParam("isBlue") boolean isBlue,
+                                            @RequestParam("isPink") boolean isPink,
+                                            @RequestParam("isBlack") boolean isBlack,
+                                            @RequestParam("isButtonPass") boolean isButtonPass,
+                                            @RequestParam("isBonusPoint") boolean isBonusPoint,
+                                            @RequestParam("bonusInfo") String bonusInfo,
+                                            @RequestParam("bonusNumberOfPoints") int bonusNumberOfPoints) {
+        Exercise updatedExercise = exerciseService.updateExercise(currentExerciseId, name, description, videoUrl, img, numberOfPointsToPassed,
+                maxPoints, numberOfAttempts, level, isWhite, isRed, isYellow, isGreen, isBrown, isBlue, isPink, isBlack,
+                isButtonPass, isBonusPoint, bonusInfo, bonusNumberOfPoints);
+        return new ResponseEntity<>(updatedExercise, HttpStatus.OK);
+    }
+
 // TODO
 //    Wykonać endpointy dla class exercise:
-//            - updateExercise - deleteExercise
+//             - deleteExercise
 }

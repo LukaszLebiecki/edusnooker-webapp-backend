@@ -91,4 +91,34 @@ class ExerciseService {
         return exercise;
     }
 
+    Exercise updateExercise(String currentExerciseId, String name, String description, String videoUrl,
+                                   String img, int numberOfPointsToPassed, int maxPoints, int numberOfAttempts,
+                                   Level level, boolean isWhite, boolean isRed, boolean isYellow, boolean isGreen,
+                                   boolean isBrown, boolean isBlue, boolean isPink, boolean isBlack,
+                                   boolean isButtonPass, boolean isBonusPoint, String bonusInfo,
+                                   int bonusNumberOfPoints) {
+        Exercise currentExercise = exerciseRepository.findByExerciseId(currentExerciseId).get(); // TODO obsłużyć jak nie znajdzie ćwiczenia w bazie!
+        currentExercise.setName(name);
+        currentExercise.setDescription(description);
+        currentExercise.setVideoUrl(videoUrl);
+        currentExercise.setImg(img);
+        currentExercise.setNumberOfPointsToPassed(numberOfPointsToPassed);
+        currentExercise.setMaxPoints(maxPoints);
+        currentExercise.setNumberOfAttempts(numberOfAttempts);
+        currentExercise.setLevel(level);
+        currentExercise.setWhite(isWhite);
+        currentExercise.setRed(isRed);
+        currentExercise.setYellow(isYellow);
+        currentExercise.setGreen(isGreen);
+        currentExercise.setBrown(isBrown);
+        currentExercise.setBlue(isBlue);
+        currentExercise.setPink(isPink);
+        currentExercise.setBlack(isBlack);
+        currentExercise.setButtonPass(isButtonPass);
+        currentExercise.setBonusPoint(isBonusPoint);
+        currentExercise.setBonusInfo(bonusInfo);
+        currentExercise.setBonusNumberOfPoints(bonusNumberOfPoints);
+        exerciseRepository.save(currentExercise);
+        return currentExercise;
+    }
 }
