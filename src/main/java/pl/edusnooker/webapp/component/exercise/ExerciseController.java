@@ -2,13 +2,18 @@ package pl.edusnooker.webapp.component.exercise;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseDto;
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseLevelInfoDto;
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseListDto;
 import pl.edusnooker.webapp.enumeration.Level;
+import pl.edusnooker.webapp.http.HttpResponse;
 
+import java.io.IOException;
 import java.util.List;
+
+import static pl.edusnooker.webapp.component.user.UserController.USER_DELETE_SUCCESSFULLY;
 
 
 @RestController
@@ -132,7 +137,11 @@ class ExerciseController {
         return new ResponseEntity<>(updatedExercise, HttpStatus.OK);
     }
 
-// TODO
-//    Wykonać endpointy dla class exercise:
-//             - deleteExercise
+    @DeleteMapping("/exercise/delete/{exerciseId}")
+    @PreAuthorize("hasAnyAuthority('user:delete')")
+    public ResponseEntity<HttpResponse> deleteUser(@PathVariable("exerciseId") String exerciseId) {
+        exerciseService.deleteExercise(exerciseId);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }

@@ -121,4 +121,9 @@ class ExerciseService {
         exerciseRepository.save(currentExercise);
         return currentExercise;
     }
+
+    void deleteExercise(String exerciseId) {
+        Exercise exercise = exerciseRepository.findByExerciseId(exerciseId).get();
+        exerciseRepository.delete(exercise);
+    }
 }
