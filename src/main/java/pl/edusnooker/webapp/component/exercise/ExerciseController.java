@@ -91,21 +91,23 @@ class ExerciseController {
                                             @RequestParam("maxPoints") int maxPoints,
                                             @RequestParam("numberOfAttempts") int numberOfAttempts,
                                             @RequestParam("level") Level level,
-                                            @RequestParam("isWhite") boolean isWhite,
-                                            @RequestParam("isRed") boolean isRed,
-                                            @RequestParam("isYellow") boolean isYellow,
-                                            @RequestParam("isGreen") boolean isGreen,
-                                            @RequestParam("isBrown") boolean isBrown,
-                                            @RequestParam("isBlue") boolean isBlue,
-                                            @RequestParam("isPink") boolean isPink,
-                                            @RequestParam("isBlack") boolean isBlack,
-                                            @RequestParam("isButtonPass") boolean isButtonPass,
-                                            @RequestParam("isBonusPoint") boolean isBonusPoint,
+                                            @RequestParam("isWhite") String isWhite,
+                                            @RequestParam("isRed") String isRed,
+                                            @RequestParam("isYellow") String isYellow,
+                                            @RequestParam("isGreen") String isGreen,
+                                            @RequestParam("isBrown") String isBrown,
+                                            @RequestParam("isBlue") String isBlue,
+                                            @RequestParam("isPink") String isPink,
+                                            @RequestParam("isBlack") String isBlack,
+                                            @RequestParam("isButtonPass") String isButtonPass,
+                                            @RequestParam("isBonusPoint") String isBonusPoint,
                                             @RequestParam("bonusInfo") String bonusInfo,
                                             @RequestParam("bonusNumberOfPoints") int bonusNumberOfPoints) {
         Exercise newExercise = exerciseService.addNewExercise(name, description, videoUrl, img, numberOfPointsToPassed,
-                maxPoints, numberOfAttempts, level, isWhite, isRed, isYellow, isGreen, isBrown, isBlue, isPink, isBlack,
-                isButtonPass, isBonusPoint, bonusInfo, bonusNumberOfPoints);
+                maxPoints, numberOfAttempts, level, Boolean.parseBoolean(isWhite), Boolean.parseBoolean(isRed),
+                Boolean.parseBoolean(isYellow), Boolean.parseBoolean(isGreen), Boolean.parseBoolean(isBrown),
+                Boolean.parseBoolean(isBlue), Boolean.parseBoolean(isPink), Boolean.parseBoolean(isBlack),
+                Boolean.parseBoolean(isButtonPass), Boolean.parseBoolean(isBonusPoint), bonusInfo, bonusNumberOfPoints);
         return new ResponseEntity<>(newExercise, HttpStatus.OK);
     }
 

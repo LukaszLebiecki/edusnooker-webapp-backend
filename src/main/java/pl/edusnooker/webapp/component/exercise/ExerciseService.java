@@ -57,6 +57,7 @@ class ExerciseService {
 
     List<Exercise> getAllExercises() {
         List<Exercise> exerciseList = exerciseRepository.findAll();
+        exerciseList.sort(Comparator.comparing(Exercise::getExerciseId));
         return exerciseList;
     }
 
