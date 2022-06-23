@@ -19,6 +19,7 @@ import static pl.edusnooker.webapp.component.user.UserController.USER_DELETE_SUC
 @RestController
 @RequestMapping("api")
 class ExerciseController {
+    public static final String EXERCISE_DELETE_SUCCESSFULLY = "Exercise delete successfully";
     private final ExerciseService exerciseService;
 
     public ExerciseController(ExerciseService exerciseService) {
@@ -143,7 +144,11 @@ class ExerciseController {
     @PreAuthorize("hasAnyAuthority('user:delete')")
     public ResponseEntity<HttpResponse> deleteUser(@PathVariable("exerciseId") String exerciseId) {
         exerciseService.deleteExercise(exerciseId);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return response(HttpStatus.OK, EXERCISE_DELETE_SUCCESSFULLY);
     }
 
+    private ResponseEntity<HttpResponse> response(HttpStatus httpStatus, String message) {
+        return new ResponseEntity<>(new HttpResponse(httpStatus.value(), httpStatus,
+                httpStatus.getReasonPhrase().toUpperCase(), message), httpStatus);
+    }
 }
