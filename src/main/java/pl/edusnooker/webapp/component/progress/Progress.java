@@ -13,8 +13,8 @@ public class Progress {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String idExercise;
     private int numberLevel;
-    private int idExercise;
     private int numberOfPointsToPassed;
     private int resultNumberOfPoint;
     private LocalDateTime dateTimeExercise;
@@ -26,7 +26,7 @@ public class Progress {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Progress progress = (Progress) o;
-        return idExercise == progress.idExercise;
+        return Objects.equals(idExercise, progress.idExercise);
     }
 
     @Override

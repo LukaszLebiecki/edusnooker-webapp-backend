@@ -46,6 +46,5 @@ class ProgressService {
         List<ProgressExerciseDto> progressExerciseDtoList = collect.stream().toList();
         return progressExerciseDtoList.stream().sorted().toList();
     }
-
 }
 

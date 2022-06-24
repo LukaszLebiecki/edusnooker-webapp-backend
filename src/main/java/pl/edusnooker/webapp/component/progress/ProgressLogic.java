@@ -43,13 +43,13 @@ class ProgressLogic {
         return dto;
     }
 
-    private int getTheBestResult(int idExercise, String userId) {
+    private int getTheBestResult(String idExercise, String userId) {
         List<Progress> result = progressRepository
                 .findAllByIdExerciseAndUserIdOrderByResultNumberOfPointDesc(idExercise, userId);
         return result.get(0).getResultNumberOfPoint();
     }
 
-    private int getNumberDaysOfLastExercise(int idExercise, String userId) {
+    private int getNumberDaysOfLastExercise(String idExercise, String userId) {
         Progress lastProgress = getLastProgress(idExercise, userId);
         LocalDateTime lastProgressDateTimeExercise = lastProgress.getDateTimeExercise();
         LocalDateTime now = LocalDateTime.now();
@@ -58,12 +58,12 @@ class ProgressLogic {
         return (int) daysAgo;
     }
 
-    private int getLastResult(int idExercise, String userId) {
+    private int getLastResult(String idExercise, String userId) {
         Progress progress = getLastProgress(idExercise, userId);
         return progress.getResultNumberOfPoint();
     }
 
-    private Progress getLastProgress(int idExercise, String userId) {
+    private Progress getLastProgress(String idExercise, String userId) {
         List<Progress> allByIdExerciseAndUserIdOrderByDateTimeExercise = progressRepository
                 .findAllByIdExerciseAndUserIdOrderByDateTimeExerciseDesc(idExercise, userId);
         Progress progress = allByIdExerciseAndUserIdOrderByDateTimeExercise.get(0);
@@ -71,14 +71,14 @@ class ProgressLogic {
     }
 
     private int getAttempts(Progress progress, String userId) {
-        int idExercise = progress.getIdExercise();
+        String idExercise = progress.getIdExercise();
         return progressRepository.findAllByIdExerciseAndUserId(idExercise, userId)
                 .size();
     }
 
     private String getNameExercise(Progress progress) {
-        int id = progress.getIdExercise();
-        return exerciseRepository.findById((long) id)
+        String id = progress.getIdExercise();
+        return exerciseRepository.findByExerciseId(id)
                 .map(Exercise::getName)
                 .orElse("");
     }

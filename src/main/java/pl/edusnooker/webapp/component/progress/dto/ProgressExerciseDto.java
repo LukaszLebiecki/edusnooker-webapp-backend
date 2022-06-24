@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class ProgressExerciseDto implements Comparable<ProgressExerciseDto> {
 
-    private int idExercise;
+    private String idExercise;
     private String nameExercise;
     private int numberOfAttempts;
     private int recentActivity;
@@ -16,13 +16,7 @@ public class ProgressExerciseDto implements Comparable<ProgressExerciseDto> {
 
 
     @Override
-    public int compareTo(ProgressExerciseDto e) {
-        if (idExercise > e.idExercise)
-            return 1;
-        else if (idExercise < e.idExercise)
-            return -1;
-        return 0;
+    public int compareTo(ProgressExerciseDto o) {
+        return this.idExercise.compareTo(o.idExercise);
     }
-
-
 }

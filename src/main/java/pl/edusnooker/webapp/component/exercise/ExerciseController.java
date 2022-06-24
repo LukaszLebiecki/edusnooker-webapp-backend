@@ -50,7 +50,7 @@ class ExerciseController {
     }
 
     @GetMapping("/level/{idLevel}/exercise")
-    ResponseEntity<List<ExerciseListDto>> getAllExerciseByLevel(@PathVariable int idLevel) {
+    ResponseEntity<List<ExerciseDto>> getAllExerciseByLevel(@PathVariable int idLevel) {
         Level[] values = Level.values();
         String name = values[idLevel].name();
         Level level = Level.valueOf(name);

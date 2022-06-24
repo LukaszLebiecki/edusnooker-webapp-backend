@@ -12,7 +12,7 @@
             <column name="number_level" type="INT">
                 <constraints nullable="false"/>
             </column>
-            <column name="id_exercise" type="INT">
+            <column name="id_exercise" type="VARCHAR(10)">
                 <constraints nullable="false"/>
             </column>
             <column name="number_of_points_to_passed" type="INT">

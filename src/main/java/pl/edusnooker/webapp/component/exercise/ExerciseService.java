@@ -25,10 +25,10 @@ class ExerciseService {
         return exerciseRepository.findByExerciseId(id).map(ExerciseMapper::map);
     }
 
-    List<ExerciseListDto> getAllExerciseByLevel(Level level) {
-        List<ExerciseListDto> exerciseListDtoList = exerciseRepository.findAllByLevel(level)
+    List<ExerciseDto> getAllExerciseByLevel(Level level) {
+        List<ExerciseDto> exerciseListDtoList = exerciseRepository.findAllByLevel(level)
                 .stream()
-                .map(ExerciseListMapper::map)
+                .map(ExerciseMapper::map)
                 .toList();
         return exerciseListDtoList;
     }

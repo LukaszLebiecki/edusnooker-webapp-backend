@@ -8,11 +8,11 @@ public interface ProgressRepository extends CrudRepository<Progress, Long> {
 
     List<Progress> findAllByNumberLevelAndUserId(int numberLevel, String userId);
 
-    List<Progress> findAllByIdExerciseAndUserId(int idExercise, String userId);
+    List<Progress> findAllByIdExerciseAndUserId(String idExercise, String userId);
 
-    List<Progress> findAllByIdExerciseAndUserIdOrderByDateTimeExerciseDesc(int idExercise, String userId);
+    List<Progress> findAllByIdExerciseAndUserIdOrderByDateTimeExerciseDesc(String idExercise, String userId);
 
-    List<Progress> findAllByIdExerciseAndUserIdOrderByResultNumberOfPointDesc(int idExercise, String userId);
+    List<Progress> findAllByIdExerciseAndUserIdOrderByResultNumberOfPointDesc(String idExercise, String userId);
 
 
 }
