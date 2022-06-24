@@ -22,7 +22,7 @@
             <column name="date_time_exercise" type="TIMESTAMP">
                 <constraints nullable="false"/>
             </column>
-            <column name="user_id" type="BIGINT">
+            <column name="user_id" type="VARCHAR(20)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
@@ -30,6 +30,6 @@
                                  baseColumnNames="user_id"
                                  constraintName="fk_progress_user_id_user_id"
                                  referencedTableName="user"
-                                 referencedColumnNames="id"/>
+                                 referencedColumnNames="user_id"/>
     </changeSet>
 </databaseChangeLog>

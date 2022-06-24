@@ -19,7 +19,7 @@ public class Progress {
     private int resultNumberOfPoint;
     private LocalDateTime dateTimeExercise;
     @Column(name = "user_id")
-    private int userId;
+    private String userId;
 
     @Override
     public boolean equals(Object o) {

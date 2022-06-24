@@ -20,7 +20,7 @@ class ProgressService {
     }
 
 
-    List<ProgressLevelInfoDto> getAllProgressLevelInfoByUser(int userId) {
+    List<ProgressLevelInfoDto> getAllProgressLevelInfoByUser(String userId) {
         List<ProgressLevelInfoDto> progressLevelInfoDtoList = new ArrayList<>();
         progressLevelInfoDtoList.add(progressLogic.getByLevel(0, userId));
         progressLevelInfoDtoList.add(progressLogic.getByLevel(1, userId));
@@ -33,7 +33,7 @@ class ProgressService {
         return progressLevelInfoDtoList;
     }
 
-    List<ProgressExerciseDto> getProgressExerciseInfo(int numberLevel, int userId) {
+    List<ProgressExerciseDto> getProgressExerciseInfo(int numberLevel, String userId) {
         List<Progress> allProgressByLevel = progressLogic.getAllProgressByLevel(numberLevel, userId);
         Set<ProgressExerciseDto> collect = allProgressByLevel.stream().map(p -> progressLogic.create(p, userId))
                 .peek(e -> {

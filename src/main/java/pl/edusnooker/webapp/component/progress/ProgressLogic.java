@@ -22,7 +22,7 @@ class ProgressLogic {
     }
 
 
-    public ProgressExerciseDto create(Progress progress, int userId) {
+    public ProgressExerciseDto create(Progress progress, String userId) {
         ProgressExerciseDto dto = new ProgressExerciseDto();
         dto.setIdExercise(progress.getIdExercise());
         dto.setNameExercise(getNameExercise(progress));
@@ -36,20 +36,20 @@ class ProgressLogic {
 
 
 
-    public ProgressLevelInfoDto getByLevel(int numberLevel, int userId) {
+    public ProgressLevelInfoDto getByLevel(int numberLevel, String userId) {
         ProgressLevelInfoDto dto = new ProgressLevelInfoDto();
         dto.setNumberLevel(numberLevel);
         dto.setNumberOfCompletedExercises(numberOfCompleteExercise(getAllProgressByLevel(numberLevel, userId)));
         return dto;
     }
 
-    private int getTheBestResult(int idExercise, int userId) {
+    private int getTheBestResult(int idExercise, String userId) {
         List<Progress> result = progressRepository
                 .findAllByIdExerciseAndUserIdOrderByResultNumberOfPointDesc(idExercise, userId);
         return result.get(0).getResultNumberOfPoint();
     }
 
-    private int getNumberDaysOfLastExercise(int idExercise, int userId) {
+    private int getNumberDaysOfLastExercise(int idExercise, String userId) {
         Progress lastProgress = getLastProgress(idExercise, userId);
         LocalDateTime lastProgressDateTimeExercise = lastProgress.getDateTimeExercise();
         LocalDateTime now = LocalDateTime.now();
@@ -58,19 +58,19 @@ class ProgressLogic {
         return (int) daysAgo;
     }
 
-    private int getLastResult(int idExercise, int userId) {
+    private int getLastResult(int idExercise, String userId) {
         Progress progress = getLastProgress(idExercise, userId);
         return progress.getResultNumberOfPoint();
     }
 
-    private Progress getLastProgress(int idExercise, int userId) {
+    private Progress getLastProgress(int idExercise, String userId) {
         List<Progress> allByIdExerciseAndUserIdOrderByDateTimeExercise = progressRepository
                 .findAllByIdExerciseAndUserIdOrderByDateTimeExerciseDesc(idExercise, userId);
         Progress progress = allByIdExerciseAndUserIdOrderByDateTimeExercise.get(0);
         return progress;
     }
 
-    private int getAttempts(Progress progress, int userId) {
+    private int getAttempts(Progress progress, String userId) {
         int idExercise = progress.getIdExercise();
         return progressRepository.findAllByIdExerciseAndUserId(idExercise, userId)
                 .size();
@@ -83,7 +83,7 @@ class ProgressLogic {
                 .orElse("");
     }
 
-    public List<Progress> getAllProgressByLevel(int numberLevel, int userId) {
+    public List<Progress> getAllProgressByLevel(int numberLevel, String userId) {
         return progressRepository.findAllByNumberLevelAndUserId(numberLevel, userId);
     }
 

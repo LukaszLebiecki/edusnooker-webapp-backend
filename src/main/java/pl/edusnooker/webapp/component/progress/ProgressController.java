@@ -18,7 +18,7 @@ class ProgressController {
     }
 
     @GetMapping("{userId}/progress")
-    ResponseEntity<List<ProgressLevelInfoDto>> getAllProgressByLevel(@PathVariable int userId) {
+    ResponseEntity<List<ProgressLevelInfoDto>> getAllProgressByLevel(@PathVariable String userId) {
         List<ProgressLevelInfoDto> allProgressLevelInfoByUser = progressService.getAllProgressLevelInfoByUser(userId);
         if (allProgressLevelInfoByUser.isEmpty()) {
             return ResponseEntity.notFound().build();
@@ -28,7 +28,7 @@ class ProgressController {
     }
 
     @GetMapping("{userId}/progress/{levelId}")
-    ResponseEntity<List<ProgressExerciseDto>> getAllProgressExercise(@PathVariable int userId, @PathVariable int levelId) {
+    ResponseEntity<List<ProgressExerciseDto>> getAllProgressExercise(@PathVariable String userId, @PathVariable int levelId) {
         List<ProgressExerciseDto> progressExerciseInfo = progressService.getProgressExerciseInfo(levelId, userId);
         if (progressExerciseInfo.isEmpty()) {
             return ResponseEntity.notFound().build();

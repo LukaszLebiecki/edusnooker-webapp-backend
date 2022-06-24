@@ -6,13 +6,13 @@ import java.util.List;
 
 public interface ProgressRepository extends CrudRepository<Progress, Long> {
 
-    List<Progress> findAllByNumberLevelAndUserId(int numberLevel, int userId);
+    List<Progress> findAllByNumberLevelAndUserId(int numberLevel, String userId);
 
-    List<Progress> findAllByIdExerciseAndUserId(int idExercise, int userId);
+    List<Progress> findAllByIdExerciseAndUserId(int idExercise, String userId);
 
-    List<Progress> findAllByIdExerciseAndUserIdOrderByDateTimeExerciseDesc(int idExercise, int userId);
+    List<Progress> findAllByIdExerciseAndUserIdOrderByDateTimeExerciseDesc(int idExercise, String userId);
 
-    List<Progress> findAllByIdExerciseAndUserIdOrderByResultNumberOfPointDesc(int idExercise, int userId);
+    List<Progress> findAllByIdExerciseAndUserIdOrderByResultNumberOfPointDesc(int idExercise, String userId);
 
 
 }
