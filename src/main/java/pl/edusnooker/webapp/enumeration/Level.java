@@ -4,11 +4,11 @@ public enum Level {
     WHITE(0, 3),
     RED(1,1),
     YELLOW(2, 1),
-    GREEN(3,7),
-    BROWN(4,7),
-    BLUE(5, 7),
-    PINK(6, 7),
-    BLACK(7, 7);
+    GREEN(3,1),
+    BROWN(4,1),
+    BLUE(5, 1),
+    PINK(6, 1),
+    BLACK(7, 1);
 
     private int numberOfPointToTarget;
     private int numberLevel;

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import pl.edusnooker.webapp.component.progress.dto.ProgressExerciseDto;
 import pl.edusnooker.webapp.component.progress.dto.ProgressLevelInfoDto;
 
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -14,9 +15,11 @@ class ProgressService {
 
 
     private final ProgressLogic progressLogic;
+    private final ProgressRepository progressRepository;
 
-    public ProgressService(ProgressLogic progressLogic) {
+    public ProgressService(ProgressLogic progressLogic, ProgressRepository progressRepository) {
         this.progressLogic = progressLogic;
+        this.progressRepository = progressRepository;
     }
 
 
@@ -45,6 +48,19 @@ class ProgressService {
                 .collect(Collectors.toSet());
         List<ProgressExerciseDto> progressExerciseDtoList = collect.stream().toList();
         return progressExerciseDtoList.stream().sorted().toList();
+    }
+
+    Progress addProgress(String idExercise, int numberLevel, int numberOfPointsToPassed,
+                         int resultNumberOfPoint, String userId) {
+        Progress progress = new Progress();
+        progress.setIdExercise(idExercise);
+        progress.setNumberLevel(numberLevel);
+        progress.setNumberOfPointsToPassed(numberOfPointsToPassed);
+        progress.setResultNumberOfPoint(resultNumberOfPoint);
+        progress.setUserId(userId);
+        progress.setDateTimeExercise(LocalDateTime.now());
+        progressRepository.save(progress);
+        return progress;
     }
 }
 
