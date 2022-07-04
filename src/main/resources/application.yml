@@ -1,7 +1,6 @@
 spring:
   liquibase:
     change-log: classpath:db/liquibase/master.xml
-
   jpa:
     show-sql: true
 

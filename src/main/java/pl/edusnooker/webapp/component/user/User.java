@@ -30,7 +30,7 @@ public class User implements Serializable {
     private Date lastLoginDateDisplay;
     private Date joinDate;
     private String role;
-    private String[] authorities; //todo
+    private String[] authorities;
     private boolean isActive;
     private boolean isNotLocked;
     @OneToMany(fetch = FetchType.EAGER)

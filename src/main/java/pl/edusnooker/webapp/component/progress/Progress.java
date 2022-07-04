@@ -18,7 +18,7 @@ public class Progress {
     private int numberOfPointsToPassed;
     private int resultNumberOfPoint;
     private LocalDateTime dateTimeExercise;
-    @Column(name = "user_id")
+    @Column(name = "user_id") // todo fix to key foreign
     private String userId;
 
     @Override

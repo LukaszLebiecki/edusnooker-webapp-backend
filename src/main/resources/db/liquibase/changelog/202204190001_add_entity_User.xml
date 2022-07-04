@@ -26,25 +26,26 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="202204190001" author="lebiecki" context="prod">
-        <createTable tableName="user">
-            <column name="id" type="BIGINT" autoIncrement="true">
-                <constraints nullable="false" primaryKey="true"/>
-            </column>
-            <column name="user_id" type="VARCHAR(20)"/>
-            <column name="first_name" type="VARCHAR(50)"/>
-            <column name="last_name" type="VARCHAR(50)"/>
-            <column name="username" type="VARCHAR(50)"/>
-            <column name="email" type="VARCHAR(100)"/>
-            <column name="password" type="VARCHAR(200)"/>
-            <column name="profile_image_url" type="VARCHAR(200)"/>
-            <column name="last_login_date" type="DATE"/>
-            <column name="last_login_date_display" type="DATE"/>
-            <column name="join_date" type="DATE"/>
-            <column name="role" type="VARCHAR(100)"/>
-            <column name="authorities" type="TINYBLOB" />
-            <column name="is_active" type="BOOLEAN"/>
-            <column name="is_not_locked" type="BOOLEAN"/>
-        </createTable>
-    </changeSet>
+<!--    <changeSet id="202204190001" author="lebiecki" context="prod">-->
+<!--        <createTable tableName="user">-->
+<!--            <column name="id" type="BIGINT" autoIncrement="true">-->
+<!--                <constraints nullable="false" primaryKey="true"/>-->
+<!--            </column>-->
+<!--            <column name="user_id" type="VARCHAR(20)"/>-->
+<!--            <column name="first_name" type="VARCHAR(50)"/>-->
+<!--            <column name="last_name" type="VARCHAR(50)"/>-->
+<!--            <column name="username" type="VARCHAR(50)"/>-->
+<!--            <column name="email" type="VARCHAR(100)"/>-->
+<!--            <column name="password" type="VARCHAR(200)"/>-->
+<!--            <column name="profile_image_url" type="VARCHAR(200)"/>-->
+<!--            <column name="last_login_date" type="DATE"/>-->
+<!--            <column name="last_login_date_display" type="DATE"/>-->
+<!--            <column name="join_date" type="DATE"/>-->
+<!--            <column name="role" type="VARCHAR(100)"/>-->
+<!--            <column name="authorities" type="TINYBLOB" />-->
+<!--            <column name="is_active" type="BOOLEAN"/>-->
+<!--            <column name="is_not_locked" type="BOOLEAN"/>-->
+<!--        </createTable>-->
+
+<!--    </changeSet>-->
 </databaseChangeLog>
