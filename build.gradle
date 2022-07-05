@@ -43,10 +43,4 @@ dependencies {
 
 }
 
-tasks.named('test') {
-    useJUnitPlatform()
-}
 
-task buildJar {
-    bootJar
-}
