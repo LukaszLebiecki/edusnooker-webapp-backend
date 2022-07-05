@@ -5,5 +5,6 @@ RUN gradle build --no-daemon
 
 FROM eclipse-temurin:17.0.3_7-jdk-alpine
 EXPOSE 8080
+RUN mkdir /app
 COPY --from=GRADLE_BUILD /home/gradle/src/build/libs/*.jar /app/edusnooker.jar
 ENTRYPOINT ["java","-jar","/app/edusnooker.jar","--spring.profiles.active=dev"]
