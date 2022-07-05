@@ -34,6 +34,7 @@ public class User implements Serializable {
     private boolean isActive;
     private boolean isNotLocked;
     @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
     private List<Progress> progressList = new ArrayList<>();
 
 }
