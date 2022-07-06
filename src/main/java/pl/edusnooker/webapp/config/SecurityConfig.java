@@ -86,7 +86,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 "http://localhost:4200",
                 "http://77.55.211.118:4200",
                 "http://edusnooker.com:4200",
+                "http://www.edusnooker.com:4200",
                 "http://edusnooker.com",
+                "http://www.edusnooker.com",
                 "https://edusnooker.com:4200",
                 "https://edusnooker.com"
                 ));
