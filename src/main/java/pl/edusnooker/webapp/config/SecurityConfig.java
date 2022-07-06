@@ -1,5 +1,6 @@
 package pl.edusnooker.webapp.config;
 
+import com.google.common.collect.ImmutableList;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -81,8 +82,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         corsConfiguration.setAllowCredentials(true);
-//        corsConfiguration.setAllowedOrigins(Collections.singletonList("http://localhost:4200"));
-        corsConfiguration.setAllowedOrigins(Collections.singletonList("http://77.55.211.118:4200"));
+        corsConfiguration.setAllowedOrigins(ImmutableList.of(
+                "http://localhost:4200",
+                "http://77.55.211.118:4200",
+                "http://edusnooker.com:4200",
+                "http://edusnooker.com",
+                "https://edusnooker.com:4200",
+                "https://edusnooker.com"
+                ));
         corsConfiguration.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type",
                 "Accept", "Jwt-Token", "Authorization", "Origin, Accept", "X-Requested-With",
                 "Access-Control-Request-Method", "Access-Control-Request-Headers"));
