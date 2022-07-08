@@ -13,6 +13,7 @@ public class ExerciseDto {
     private int numberOfPointsToPassed;
     private int maxPoints;
     private int numberOfAttempts;
+    private int numberOfStrokesInOneAttempt;
     private Level level;
     private boolean isWhite;
     private boolean isRed;

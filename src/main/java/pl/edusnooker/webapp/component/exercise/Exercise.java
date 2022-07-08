@@ -19,6 +19,7 @@ class Exercise {
     private String img;
     private int numberOfPointsToPassed;
     private int maxPoints;
+    private int numberOfStrokesInOneAttempt;
     private int numberOfAttempts;
     private Level level;
     private boolean isWhite;

@@ -91,6 +91,7 @@ class ExerciseController {
                                             @RequestParam("numberOfPointsToPassed") int numberOfPointsToPassed,
                                             @RequestParam("maxPoints") int maxPoints,
                                             @RequestParam("numberOfAttempts") int numberOfAttempts,
+                                            @RequestParam("numberOfStrokesInOneAttempt") int numberOfStrokesInOneAttempt,
                                             @RequestParam("level") Level level,
                                             @RequestParam("isWhite") String isWhite,
                                             @RequestParam("isRed") String isRed,
@@ -105,7 +106,7 @@ class ExerciseController {
                                             @RequestParam("bonusInfo") String bonusInfo,
                                             @RequestParam("bonusNumberOfPoints") int bonusNumberOfPoints) {
         Exercise newExercise = exerciseService.addNewExercise(name, description, videoUrl, img, numberOfPointsToPassed,
-                maxPoints, numberOfAttempts, level, Boolean.parseBoolean(isWhite), Boolean.parseBoolean(isRed),
+                maxPoints, numberOfAttempts, numberOfStrokesInOneAttempt,level, Boolean.parseBoolean(isWhite), Boolean.parseBoolean(isRed),
                 Boolean.parseBoolean(isYellow), Boolean.parseBoolean(isGreen), Boolean.parseBoolean(isBrown),
                 Boolean.parseBoolean(isBlue), Boolean.parseBoolean(isPink), Boolean.parseBoolean(isBlack),
                 Boolean.parseBoolean(isButtonPass), Boolean.parseBoolean(isBonusPoint), bonusInfo, bonusNumberOfPoints);
@@ -121,6 +122,7 @@ class ExerciseController {
                                             @RequestParam("numberOfPointsToPassed") int numberOfPointsToPassed,
                                             @RequestParam("maxPoints") int maxPoints,
                                             @RequestParam("numberOfAttempts") int numberOfAttempts,
+                                            @RequestParam("numberOfStrokesInOneAttempt") int numberOfStrokesInOneAttempt,
                                             @RequestParam("level") Level level,
                                             @RequestParam("isWhite") boolean isWhite,
                                             @RequestParam("isRed") boolean isRed,
@@ -135,7 +137,7 @@ class ExerciseController {
                                             @RequestParam("bonusInfo") String bonusInfo,
                                             @RequestParam("bonusNumberOfPoints") int bonusNumberOfPoints) {
         Exercise updatedExercise = exerciseService.updateExercise(currentExerciseId, name, description, videoUrl, img, numberOfPointsToPassed,
-                maxPoints, numberOfAttempts, level, isWhite, isRed, isYellow, isGreen, isBrown, isBlue, isPink, isBlack,
+                maxPoints, numberOfAttempts, numberOfStrokesInOneAttempt, level, isWhite, isRed, isYellow, isGreen, isBrown, isBlue, isPink, isBlack,
                 isButtonPass, isBonusPoint, bonusInfo, bonusNumberOfPoints);
         return new ResponseEntity<>(updatedExercise, HttpStatus.OK);
     }

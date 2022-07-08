@@ -13,6 +13,7 @@ class ExerciseMapper {
         dto.setNumberOfPointsToPassed(exercise.getNumberOfPointsToPassed());
         dto.setMaxPoints(exercise.getMaxPoints());
         dto.setNumberOfAttempts(exercise.getNumberOfAttempts());
+        dto.setNumberOfStrokesInOneAttempt(exercise.getNumberOfStrokesInOneAttempt());
         dto.setLevel(exercise.getLevel());
         dto.setWhite(exercise.isWhite());
         dto.setRed(exercise.isRed());

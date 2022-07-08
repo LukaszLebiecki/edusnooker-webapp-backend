@@ -62,7 +62,7 @@ class ExerciseService {
     }
 
     Exercise addNewExercise(String name, String description, String videoUrl, String img, int numberOfPointsToPassed,
-                            int maxPoints, int numberOfAttempts, Level level, boolean isWhite, boolean isRed,
+                            int maxPoints, int numberOfAttempts,int numberOfStrokesInOneAttempt ,Level level, boolean isWhite, boolean isRed,
                             boolean isYellow, boolean isGreen, boolean isBrown, boolean isBlue, boolean isPink,
                             boolean isBlack, boolean isButtonPass, boolean isBonusPoint, String bonusInfo,
                             int bonusNumberOfPoints) {
@@ -75,6 +75,7 @@ class ExerciseService {
         exercise.setNumberOfPointsToPassed(numberOfPointsToPassed);
         exercise.setMaxPoints(maxPoints);
         exercise.setNumberOfAttempts(numberOfAttempts);
+        exercise.setNumberOfStrokesInOneAttempt(numberOfStrokesInOneAttempt);
         exercise.setLevel(level);
         exercise.setWhite(isWhite);
         exercise.setRed(isRed);
@@ -93,7 +94,7 @@ class ExerciseService {
     }
 
     Exercise updateExercise(String currentExerciseId, String name, String description, String videoUrl,
-                                   String img, int numberOfPointsToPassed, int maxPoints, int numberOfAttempts,
+                                   String img, int numberOfPointsToPassed, int maxPoints, int numberOfAttempts, int numberOfStrokesInOneAttempt,
                                    Level level, boolean isWhite, boolean isRed, boolean isYellow, boolean isGreen,
                                    boolean isBrown, boolean isBlue, boolean isPink, boolean isBlack,
                                    boolean isButtonPass, boolean isBonusPoint, String bonusInfo,
@@ -106,6 +107,7 @@ class ExerciseService {
         currentExercise.setNumberOfPointsToPassed(numberOfPointsToPassed);
         currentExercise.setMaxPoints(maxPoints);
         currentExercise.setNumberOfAttempts(numberOfAttempts);
+        currentExercise.setNumberOfStrokesInOneAttempt(numberOfStrokesInOneAttempt);
         currentExercise.setLevel(level);
         currentExercise.setWhite(isWhite);
         currentExercise.setRed(isRed);

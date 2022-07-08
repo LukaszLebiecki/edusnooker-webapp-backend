@@ -17,6 +17,7 @@
             <column name="number_of_points_to_passed" type="INT"/>
             <column name="max_points" type="INT"/>
             <column name="number_of_attempts" type="INT"/>
+            <column name="number_of_strokes_in_one_attempt" type="INT"/>
             <column name="is_white" type="BOOLEAN"/>
             <column name="is_red" type="BOOLEAN"/>
             <column name="is_yellow" type="BOOLEAN"/>
