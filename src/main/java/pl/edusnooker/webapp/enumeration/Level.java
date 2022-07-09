@@ -1,7 +1,7 @@
 package pl.edusnooker.webapp.enumeration;
 
 public enum Level {
-    WHITE(0, 3),
+    WHITE(0, 2),
     RED(1,1),
     YELLOW(2, 1),
     GREEN(3,1),
