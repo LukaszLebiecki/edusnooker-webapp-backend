@@ -4,6 +4,7 @@ package pl.edusnooker.webapp.component.progress;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pl.edusnooker.webapp.component.exercise.dto.ExerciseDto;
 import pl.edusnooker.webapp.component.progress.dto.ProgressExerciseDto;
 import pl.edusnooker.webapp.component.progress.dto.ProgressLevelInfoDto;
 
@@ -36,6 +37,12 @@ class ProgressController {
         } else {
             return ResponseEntity.ok(progressExerciseInfo);
         }
+    }
+
+    @GetMapping("{userId}/progress/lastexercise")
+    ResponseEntity<ExerciseDto> getLastExercise(@PathVariable String userId) {
+        ExerciseDto exerciseLast = progressService.getLastExerciseInfo(userId);
+        return ResponseEntity.ok(exerciseLast);
     }
 
     @PostMapping("/progress/add")

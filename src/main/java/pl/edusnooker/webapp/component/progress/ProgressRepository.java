@@ -14,5 +14,7 @@ public interface ProgressRepository extends CrudRepository<Progress, Long> {
 
     List<Progress> findAllByIdExerciseAndUserIdOrderByResultNumberOfPointDesc(String idExercise, String userId);
 
+    List<Progress> findAllByUserIdOrderByDateTimeExerciseDesc(String userId);
+
 
 }

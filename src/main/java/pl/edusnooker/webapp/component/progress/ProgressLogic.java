@@ -9,6 +9,7 @@ import pl.edusnooker.webapp.component.progress.dto.ProgressLevelInfoDto;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 class ProgressLogic {
@@ -34,13 +35,21 @@ class ProgressLogic {
         return dto;
     }
 
-
-
     public ProgressLevelInfoDto getByLevel(int numberLevel, String userId) {
         ProgressLevelInfoDto dto = new ProgressLevelInfoDto();
         dto.setNumberLevel(numberLevel);
         dto.setNumberOfCompletedExercises(numberOfCompleteExercise(getAllProgressByLevel(numberLevel, userId)));
         return dto;
+    }
+
+    public Exercise lastExercise(String userId) {
+        List<Progress> allByUserIdOrderByDateTimeExerciseDesc = progressRepository.findAllByUserIdOrderByDateTimeExerciseDesc(userId);
+        if (allByUserIdOrderByDateTimeExerciseDesc.isEmpty()) {
+            return new Exercise();
+        }
+        Progress progress = allByUserIdOrderByDateTimeExerciseDesc.get(0);
+        Optional<Exercise> lastExercise = exerciseRepository.findByExerciseId(progress.getIdExercise());
+        return lastExercise.orElse(new Exercise());
     }
 
     private int getTheBestResult(String idExercise, String userId) {
@@ -94,6 +103,7 @@ class ProgressLogic {
     private int numberOfCompleteExercise(List<Progress> progress) {
         long count = progress.stream()
                 .filter(ProgressLogic::isCompleteExercise)
+                .distinct()
                 .count();
         return (int) count;
     }

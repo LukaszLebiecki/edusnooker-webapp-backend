@@ -2,6 +2,9 @@ package pl.edusnooker.webapp.component.progress;
 
 
 import org.springframework.stereotype.Service;
+import pl.edusnooker.webapp.component.exercise.Exercise;
+import pl.edusnooker.webapp.component.exercise.ExerciseMapper;
+import pl.edusnooker.webapp.component.exercise.dto.ExerciseDto;
 import pl.edusnooker.webapp.component.progress.dto.ProgressExerciseDto;
 import pl.edusnooker.webapp.component.progress.dto.ProgressLevelInfoDto;
 
@@ -61,6 +64,12 @@ class ProgressService {
         progress.setDateTimeExercise(LocalDateTime.now());
         progressRepository.save(progress);
         return progress;
+    }
+
+    public ExerciseDto getLastExerciseInfo(String userId) {
+        Exercise exercise = progressLogic.lastExercise(userId);
+        ExerciseDto exerciseDto = ExerciseMapper.map(exercise);
+        return exerciseDto;
     }
 }
 

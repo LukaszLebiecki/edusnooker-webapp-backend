@@ -2,8 +2,8 @@ package pl.edusnooker.webapp.component.exercise;
 
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseDto;
 
-class ExerciseMapper {
-    static ExerciseDto map(Exercise exercise) {
+public class ExerciseMapper {
+    public static ExerciseDto map(Exercise exercise) {
         ExerciseDto dto = new ExerciseDto();
         dto.setExerciseId(exercise.getExerciseId());
         dto.setName(exercise.getName());
@@ -29,4 +29,5 @@ class ExerciseMapper {
         dto.setBonusNumberOfPoints(exercise.getBonusNumberOfPoints());
         return dto;
     }
+
 }
