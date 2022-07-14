@@ -21,7 +21,7 @@ class ExerciseLogic {
         List<Exercise> allByLevelOrderByExerciseIdDesc = exerciseRepository.findAllByLevelOrderByExerciseIdDesc(level);
         Exercise exercise = allByLevelOrderByExerciseIdDesc.stream()
                 .findFirst()
-                .orElse(new Exercise());
+                .orElse(new Exercise("empty"));
 
         if (exercise.getExerciseId() != null) {
             String exerciseId = exercise.getExerciseId();

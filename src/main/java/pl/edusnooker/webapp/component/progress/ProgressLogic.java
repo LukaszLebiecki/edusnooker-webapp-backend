@@ -45,11 +45,11 @@ class ProgressLogic {
     public Exercise lastExercise(String userId) {
         List<Progress> allByUserIdOrderByDateTimeExerciseDesc = progressRepository.findAllByUserIdOrderByDateTimeExerciseDesc(userId);
         if (allByUserIdOrderByDateTimeExerciseDesc.isEmpty()) {
-            return new Exercise();
+            return new Exercise("empty");
         }
         Progress progress = allByUserIdOrderByDateTimeExerciseDesc.get(0);
         Optional<Exercise> lastExercise = exerciseRepository.findByExerciseId(progress.getIdExercise());
-        return lastExercise.orElse(new Exercise());
+        return lastExercise.orElse(new Exercise("empty"));
     }
 
     private int getTheBestResult(String idExercise, String userId) {

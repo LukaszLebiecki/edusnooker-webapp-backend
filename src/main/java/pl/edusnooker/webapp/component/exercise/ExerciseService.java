@@ -66,7 +66,7 @@ class ExerciseService {
                             boolean isYellow, boolean isGreen, boolean isBrown, boolean isBlue, boolean isPink,
                             boolean isBlack, boolean isButtonPass, boolean isBonusPoint, String bonusInfo,
                             int bonusNumberOfPoints) {
-        Exercise exercise = new Exercise();
+        Exercise exercise = new Exercise("empty");
         exercise.setExerciseId(exerciseLogic.generateExerciseId(level));
         exercise.setName(name);
         exercise.setDescription(description);

@@ -34,4 +34,10 @@ public class Exercise {
     private String bonusInfo;
     private int bonusNumberOfPoints;
 
+    public Exercise() {
+    }
+
+    public Exercise(String exerciseId) {
+        this.exerciseId = exerciseId;
+    }
 }
