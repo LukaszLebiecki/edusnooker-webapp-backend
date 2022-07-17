@@ -10,10 +10,6 @@
 }
 =================================
 
-edusnooker.com
-login: Niko
-password: v7Z7IxUVqx
-
 --spring.profiles.active=dev
 
 =================================
