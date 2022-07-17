@@ -1,0 +1,235 @@
+=================================
+{
+    "username": admin
+    "password": jxZXzFOZkp
+}
+=================================
+{
+    "username": user
+    "password": v7Z7IxUVqx
+}
+=================================
+
+edusnooker.com
+login: Niko
+password: v7Z7IxUVqx
+
+--spring.profiles.active=dev
+
+=================================
+
+Plan działania:
+
+1. Wykres aktywności na stronie home 
+(api na backend które wystawi tablice 0-11 miesiące 
+z liczbą wykonywanych ćwiczeń w danym miesiący czyli np [3,1,1...])
+
+
+2. Dodawanie ćwiczć do ulubionych
+	- tablica z trzema ulubionymi ćwiczeniami
+	- na początku deflautowe ćwiczenie ulubione czyli brak ćwiczenia - jeśli brak to wyświetla ... jeśli jest to karta ćwiczenia
+	- implementacja listy ćwiczeń dostępnych do wybrania do ulubionych
+	- lista ćwiczeń tylko dostępnych dla danego użytkownika (zczytanie z progress użytkownika i wywnioskowanie jakie to ćiwczenia logike zrobić po stronie backendu)
+	
+3. Sugerowane ćwiczenie 
+	- logica po stronie backendu po wywyłani api dostaje konkretne jedno ćwiczenie
+
+4. Dodać obsługe uderzenia bonus
+
+5. Naprawić możliwość przechodzenia do poziomów z poziomu paska przeglądarki a ćwiczenie nie odblokowane
+
+6. Dodać przekirowanie po udanej rejestracji do okna z informacja o wysłanym e-mailu i przyciskiem przekierowującym do strony logowania
+
+7. Obsłużyć zapytania do api progress gdy tego progresu nie ma!
+
+8. Naparawić tworzenie daty ostatniego logowania
+
+
+============================================
+
+UWAGA: mam duplikacje kodu który realizauje ćwiczenie!!!
+
+============================================
+SPIS KOSZTÓW:
+- opłata za domene - opłacona do 2025-06-08 ("edusnooker.com")
+- opłata za server VPS - 900zł
+- opłata za vimeo (filmy) - 300zł
+- opłata za płatności?
+- licencja intelij - 600zł
+- licencja github
+- licencja java (free) -> korzystać z open jdk 11!!!!
+- final cut pro - 1400zł
+- kurs docker - 300zł
+
+
+
+============================================
+>>>>>>>>> Luźne spisane pomysły <<<<<<<<<<<<
+============================================
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+==================================================
+
+nagrody za zaliczone ćwiczenia!:
+- kolejne odznaki doświadczenia
+- maskotka z gazdzetami za zaliczone ćwiczenie dostaje się gazety którymi można
+personalizować maskotke
+
+==================================================
+
+system przypinania etykiet do użytkowników
+
+===================================================
+
+- regularnie dodawać funkcjonalności (rozpisać funkcjonalności i kolejność dodawania)
+- poszerzać bazę ćwiczeń (regularnie dodawać ćwiczenia np jedno raz na dwa tygodnie)
+
+==================================================
+
+Zrobić koszulki eduSnooker !!!!!!!
+
+==================================================
+
+Zrobić onboarding (samouczek) !!!!!!!!!!
+Zrobić dobre pierwsze wrażenie
+Przycisk zachęcenie zaraz po zalogowaniu co użytkownik ma zrobić (rozpocznij ćwiczenie)
+
+
+==================================================
+
+Logowanie oAuth (logowanie przez google, facebook)
+
+==================================================
+
+- opcje społecznościowe?? dzielenie się wynikami postępem rywalizacja???
+- dodawanie respectów dla innych !!!
+- nagradzanie za wkład zbieranie monet za które mozna wykupić dodatkowy dostęp (dodatkowy 1 miesiąc sub premium)
+- fake users na początku
+- poziomy zaangażowania
+- powiadomienia o odbytym treningu 
+- plan powiadomien o treningach
+- przypomnienie o nadchodzącym treningu zaplanowanym po przez sms lub email
+- dawno nie trenowałeś przejdz i zaplanuj kolejy trening
+- nie masz zaplanowanego treningu przejdz i zaplanuj
+- możliwość włączania i wyłączania różnych powiadomień
+- personalizacja platformy!!! (wiadomości z imieniem, dopasowane powiadomienia, ...)
+- 
+
+
+===================================================
+
+Wykonać Landing page !!! ( landing page free template )
+
+na stronie: zdjęcie komputera, tableta i komórki z odpaloną platformą w przeglądarce
+przy stole snookerowym
+
+( how to add my website to google )
+
+
+=================================================
+
+implementacje płatności stirpe.com !!!
+
+==============================================
+
+wszystkie ikony dostępne ale po kliknięciu np w statystyki wyskakuje komunikat dostęp tylko dla pakietu pro
+wykup i odrazu możliwość i zachęta do przejścia do płatności
+
+========================================
+
+ROLE:
+- DEMO
+- BASIC
+- PREMIUM
+- ADMIN
+
+====================================
+
+Stronnicowanie uzytkowników oraz ćwiczeń np. wyświetlanie po 10 na stronie
+
+======================================
+
+Umożliwić klientowi dodanie opinie lub sugesti do każdego ćwiczenia lub ogólnie do platformy
+
+====================================
+
+Zaplanuj trening(funkcjonalność w wersji premium):
+- możliwość planowania następnego treningu (określenie jakie ćwiczenie (ćwiczenia)) - pokaże odrazu ile czasu potrzeba 
+na wykonanie treningu, określenia czasu kiedy - godzina przed treningiem przyjdzie przypomnienie na e-mail (sms) o zblizajacym
+sie zaplanowanym treningu,
+możliwość planowania treningów na miesiąc do przodu
+
+Zaplanuj trening(funkcjonalność w wersji basic):
+- mozliwość zaplanowania tylko jednego (następnego treningu)
+
+
+=============================================
+
+przesyłania pliku ze zdjęciem a w polu link do zdjęcia (nazwa)
+
+=======================================
+
+Wykonać na frontend liste leveli i cwiczen (wzorowac sie na strefa kursu)
+level i każdy level rozwija liste exercise 
+docelowo po kliknieciu cwiczenie ma sie zapisac do ulubionych (ULUBIONE ĆWICZENIA UŻYTKOWNIKA)
+
+=======================================================
+
+stworzyć cykliczne wykonywanie metody, np zmiana awatara na kolejny lub cos innego
+task Scheduler (wyrażenie - cron)
+można wysyłać e mail do użytkownika co miesiąc z podsumowaniem jego treningów!!!!
+(Kurs Spring Framework dla zaawansowanych: Task Scheduler)
+
+===========================================================
+
+pomysł na zaangazowanie, zdobywanie nagród?
+rankingi !!!!
+porównywanie sie z innymi,
+
+
+========================================================
+
+kilka wersiji subskrybcji:
+1. basic - dostęp do ćwiczeń (brak dostępu do statystyk tylko podstawowe)
+2. premium - dostęp do ćwiczeń oraz do statystyk zaawanosowanych statystyk i wykresów oraz rozbudowany moduł zplanuj trening
+
+========================================================
+
+Dodać tablice wyników ze zliczaniem statystyk
+
+Przycisk z zachętą do akcji "Zagraj mecz" 
+
+=================================================
+
+Dodać tablice wyników moduł zeby rozegrać mecz shotout (tylko w wersji premium)
+
+Przycisk z zachętą do akcji "Zagraj mecz shotout"
+
+=======================================================
+
+"Przejdź do ćwiczeń" na stronie głównej zachęta do ćwiczenia call to action example tmplate
+
+lub 
+
+Zachęta do rejestracji na stronie głównej gdy użytkownik nie jest zalogowany
+
+np. Join free for a month zachęta do rejestracji pierwszy miesiąc za darmo
+
+==================================================================
+
+Promocja:
+Tylko dziś do 20:00 można pobrać swoje statystyki jak nie masz konata premium
+
+oferta na update do konta premium promocyjna cena ograniczona czasowo!!!
+
+=======================================================
+
+Instruktaż poruszania się po podstawowych funkacjach portalu
+
+Filmik promocyjny z najważniejszymi funkcjonalonościami
+
+==========================================================
+
+* Dodanie możliwości dodania pliku zdjęcia ćwiczenia 
+
+==============================================================
