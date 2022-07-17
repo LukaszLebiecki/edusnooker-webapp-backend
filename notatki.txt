@@ -16,6 +16,8 @@
 
 Plan działania:
 
+0. Dodać nazwe cwiczenia w karcie part2 i part3
+
 1. Wykres aktywności na stronie home 
 (api na backend które wystawi tablice 0-11 miesiące 
 z liczbą wykonywanych ćwiczeń w danym miesiący czyli np [3,1,1...])
