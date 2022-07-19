@@ -71,5 +71,13 @@ class ProgressService {
         ExerciseDto exerciseDto = ExerciseMapper.map(exercise);
         return exerciseDto;
     }
+
+    public int[] getChartsHomeByUserId(String userId) {
+        int[] getProgressChartsByUserId = new int[12];
+        for (int i = 1; i < 12; i++) {
+            getProgressChartsByUserId[i-1] = (int) progressRepository.findAllProgressByUserIdAAndDateTimeExercise(userId, i).stream().count();
+        }
+        return getProgressChartsByUserId;
+    }
 }
 

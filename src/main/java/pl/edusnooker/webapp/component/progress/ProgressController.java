@@ -56,4 +56,10 @@ class ProgressController {
         return new ResponseEntity<>(newProgress, HttpStatus.OK);
     }
 
+    @PostMapping("{userId}/progress/chartsHome")
+    ResponseEntity<int[]> getChartsHome(@PathVariable String userId) {
+        int[] chartsHome = progressService.getChartsHomeByUserId(userId);
+
+        return ResponseEntity.ok(chartsHome);
+    }
 }
