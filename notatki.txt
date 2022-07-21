@@ -16,6 +16,9 @@
 
 Plan działania:
 
+-1. Wykres przenieść do statystyk tam będą same takie wykresy jeden pod drugim z róznymi statystykami,
+	natomiast na stronie home wstawić trzy countery 1) liczba zdobytych punktów 2) liczba zaliczonych ćwiczeń 3) liczba wykonanych ćwiczeń
+
 0. Dodać nazwe cwiczenia w karcie part2 i part3
 
 1. Wykres aktywności na stronie home
