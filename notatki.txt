@@ -16,6 +16,10 @@
 
 Plan działania:
 
+-1. Dodanie przycisku powrotu do strony home 
+
+0. Dodanie wykresów statystyk
+
 1. Dodawanie ćwiczć do ulubionych
 	- tablica z trzema ulubionymi ćwiczeniami
 	- na początku deflautowe ćwiczenie ulubione czyli brak ćwiczenia - jeśli brak to wyświetla ... jeśli jest to karta ćwiczenia
