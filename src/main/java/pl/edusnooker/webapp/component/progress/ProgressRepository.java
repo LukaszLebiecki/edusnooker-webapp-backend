@@ -21,5 +21,6 @@ public interface ProgressRepository extends CrudRepository<Progress, Long> {
     @Query ("SELECT p FROM Progress p WHERE p.userId = :userId AND EXTRACT (month FROM p.dateTimeExercise) = :x")
     List<Progress> findAllProgressByUserIdAAndDateTimeExercise(String userId, int x);
 
+    List<Progress> findAllByUserId(String userId);
 
 }

@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseDto;
 import pl.edusnooker.webapp.component.progress.dto.ProgressChartsHomeDto;
+import pl.edusnooker.webapp.component.progress.dto.ProgressCounterHomeDto;
 import pl.edusnooker.webapp.component.progress.dto.ProgressExerciseDto;
 import pl.edusnooker.webapp.component.progress.dto.ProgressLevelInfoDto;
 
@@ -63,5 +64,11 @@ class ProgressController {
         ProgressChartsHomeDto progressChartsHomeDto = new ProgressChartsHomeDto();
         progressChartsHomeDto.setChartsHome(chartsHome);
         return ResponseEntity.ok(progressChartsHomeDto);
+    }
+
+    @GetMapping("{userId}/progress/counterHome")
+    ResponseEntity<ProgressCounterHomeDto> getCounterHome(@PathVariable String userId) {
+        ProgressCounterHomeDto counterHome = progressService.getCounterHome(userId);
+        return ResponseEntity.ok(counterHome);
     }
 }

@@ -16,31 +16,24 @@
 
 Plan działania:
 
--1. Wykres przenieść do statystyk tam będą same takie wykresy jeden pod drugim z róznymi statystykami,
-	natomiast na stronie home wstawić trzy countery 1) liczba zdobytych punktów 2) liczba zaliczonych ćwiczeń 3) liczba wykonanych ćwiczeń
-
-0. Dodać nazwe cwiczenia w karcie part2 i part3
-
-1. Wykres aktywności na stronie home
-
-2. Dodawanie ćwiczć do ulubionych
+1. Dodawanie ćwiczć do ulubionych
 	- tablica z trzema ulubionymi ćwiczeniami
 	- na początku deflautowe ćwiczenie ulubione czyli brak ćwiczenia - jeśli brak to wyświetla ... jeśli jest to karta ćwiczenia
 	- implementacja listy ćwiczeń dostępnych do wybrania do ulubionych
 	- lista ćwiczeń tylko dostępnych dla danego użytkownika (zczytanie z progress użytkownika i wywnioskowanie jakie to ćiwczenia logike zrobić po stronie backendu)
 	
-3. Sugerowane ćwiczenie 
+2. Sugerowane ćwiczenie
 	- logica po stronie backendu po wywyłani api dostaje konkretne jedno ćwiczenie
 
-4. Dodać obsługe uderzenia bonus
+3. Dodać obsługe uderzenia bonus
 
-5. Naprawić możliwość przechodzenia do poziomów z poziomu paska przeglądarki a ćwiczenie nie odblokowane
+4. Naprawić możliwość przechodzenia do poziomów z poziomu paska przeglądarki a ćwiczenie nie odblokowane
 
-6. Dodać przekirowanie po udanej rejestracji do okna z informacja o wysłanym e-mailu i przyciskiem przekierowującym do strony logowania
+5. Dodać przekirowanie po udanej rejestracji do okna z informacja o wysłanym e-mailu i przyciskiem przekierowującym do strony logowania
 
-7. Obsłużyć zapytania do api progress gdy tego progresu nie ma!
+6. Obsłużyć zapytania do api progress gdy tego progresu nie ma!
 
-8. Naparawić tworzenie daty ostatniego logowania
+7. Naparawić tworzenie daty ostatniego logowania
 
 
 ============================================

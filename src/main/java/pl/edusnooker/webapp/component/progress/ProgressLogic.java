@@ -108,4 +108,29 @@ class ProgressLogic {
         return (int) count;
     }
 
+    public int getAllProgressExercisePerformed(String userId) {
+        return (int) progressRepository.findAllByUserId(userId)
+                .stream()
+                .count();
+    }
+
+    public int getAllProgressPointScored(String userId) {
+        int pointsScored = 0;
+        List<Progress> allByUserId = progressRepository.findAllByUserId(userId);
+        for (Progress progress : allByUserId) {
+            pointsScored += progress.getResultNumberOfPoint();
+        }
+        return pointsScored;
+    }
+
+    public int getAllProgressCompletedExercises(String userId) {
+        int completedExercises = 0;
+        List<Progress> allByUserId = progressRepository.findAllByUserId(userId);
+        for (Progress progress : allByUserId) {
+            if (progress.getResultNumberOfPoint() >= progress.getNumberOfPointsToPassed()) {
+                completedExercises += 1;
+            }
+        }
+        return completedExercises;
+    }
 }

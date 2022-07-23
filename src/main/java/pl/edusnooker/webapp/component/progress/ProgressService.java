@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import pl.edusnooker.webapp.component.exercise.Exercise;
 import pl.edusnooker.webapp.component.exercise.ExerciseMapper;
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseDto;
+import pl.edusnooker.webapp.component.progress.dto.ProgressCounterHomeDto;
 import pl.edusnooker.webapp.component.progress.dto.ProgressExerciseDto;
 import pl.edusnooker.webapp.component.progress.dto.ProgressLevelInfoDto;
 
@@ -78,6 +79,14 @@ class ProgressService {
             getProgressChartsByUserId[i-1] = (int) progressRepository.findAllProgressByUserIdAAndDateTimeExercise(userId, i).stream().count();
         }
         return getProgressChartsByUserId;
+    }
+
+    public ProgressCounterHomeDto getCounterHome(String userId) {
+        ProgressCounterHomeDto progressCounterHomeDto = new ProgressCounterHomeDto();
+        progressCounterHomeDto.setPointScored(progressLogic.getAllProgressPointScored(userId));
+        progressCounterHomeDto.setExercisePerformed(progressLogic.getAllProgressExercisePerformed(userId));
+        progressCounterHomeDto.setCompletedExercises(progressLogic.getAllProgressCompletedExercises(userId));
+        return progressCounterHomeDto;
     }
 }
 
