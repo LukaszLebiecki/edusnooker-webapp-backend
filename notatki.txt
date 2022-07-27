@@ -18,23 +18,7 @@ Plan działania:
 
 -1. Dodanie przycisku powrotu do strony home 
 
-0. Dodanie wykresów statystyk (pomyśleć o poziomach i statystykach odnośnie zaliczania kolejnych poziomów)
-    - ilość punktów zdobytych w danym miesiącu (ilość punktów, miesiące)
-    - ilość zaliczonych ćwiczeń w poszczególnych miesiącach ( zaliczone ćwiczenia, miesiące)
-    - ilość wykonywanych ćwiczeń w poszczególnych miesiącach (wykonanae ćwiczenie, misiące)
-
-    - ilość zdobytych punktów w danym dniu (ilość punktów, dni miesiąca)
-    - ilość zaliczonych ćwiczeń w poszczególnych dniach (zaliczone ćwiczenia, dni miesiąca)
-    - ilość wykonanych ćwiczeń w poszczególnych dniach (wykonane ćwiczenie, dni miesiąca)
-
-    - ilość zdobtytych punktów w danym dniu tygodnia w które dni najwiecej zdobywam punktów (poniedziałek, wtorek, itd.)
-    - ilość zaliczonych ćwiczeń w danym dniu tygodnia w które dni najwiecej zdobywam punktów (poniedziałek, wtorek, itd.)
-    - ilość wykonanych ćwiczeń w danym dniu tygodnia w które dni najwiecej zdobywam punktów (poniedziałek, wtorek, itd.)
-
-    - ilość zdobtytych punktów o danej porze dnia (godziny 0:00 - 24:00)
-    - ilość zaliczonych ćwiczeń o danej porze dnia (godziny 0:00 - 24:00)
-    - ilość wykonanych ćwiczeń o danej porze dnia (godziny 0:00 - 24:00)
-
+0. Dodanie wykresów statystyk rest API backend and load to frontend
 
 1. Dodawanie ćwiczć do ulubionych
 	- tablica z trzema ulubionymi ćwiczeniami
