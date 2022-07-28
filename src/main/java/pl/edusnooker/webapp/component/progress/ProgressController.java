@@ -5,10 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseDto;
-import pl.edusnooker.webapp.component.progress.dto.ProgressChartsHomeDto;
-import pl.edusnooker.webapp.component.progress.dto.ProgressCounterHomeDto;
-import pl.edusnooker.webapp.component.progress.dto.ProgressExerciseDto;
-import pl.edusnooker.webapp.component.progress.dto.ProgressLevelInfoDto;
+import pl.edusnooker.webapp.component.progress.dto.*;
 
 import java.util.List;
 
@@ -71,4 +68,25 @@ class ProgressController {
         ProgressCounterHomeDto counterHome = progressService.getCounterHome(userId);
         return ResponseEntity.ok(counterHome);
     }
+
+    @GetMapping("{userId}/statistic/{month}/{year}")
+    ResponseEntity<ProgressStatisticsDto> getStatistic(@PathVariable String userId, @PathVariable int year, @PathVariable int month) {
+        ProgressStatisticsDto progressStatisticsDto = new ProgressStatisticsDto();
+
+        progressStatisticsDto.setPointsScoredToYear(progressService.getPointsScoredToYear(userId, year));
+        progressStatisticsDto.setExercisesPerformedToYear(progressService.getExercisesPerformedToYear(userId, year));
+        progressStatisticsDto.setExercisesCompletedToYear(progressService.getExercisesCompletedToYear(userId, year));
+
+        progressStatisticsDto.setPointsScoredToMonth(progressService.getPointsScoredToMonth(userId, year, month));
+        progressStatisticsDto.setExercisesPerformedToMonth(progressService.getExercisesPerformedToMonth(userId, year, month));
+        progressStatisticsDto.setExercisesCompletedToMonth(progressService.getExercisesCompletedToMonth(userId, year, month));
+
+        progressStatisticsDto.setPointsScoredToHour(progressService.getPointsScoredToHour(userId));
+        progressStatisticsDto.setExercisesPerformedToHour(progressService.getExercisesPerformedToHour(userId));
+        progressStatisticsDto.setExercisesCompletedToHour(progressService.getExercisesCompletedToHour(userId));
+
+        return ResponseEntity.ok(progressStatisticsDto);
+    }
+
+
 }

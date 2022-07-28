@@ -9,9 +9,11 @@ import pl.edusnooker.webapp.component.progress.dto.ProgressCounterHomeDto;
 import pl.edusnooker.webapp.component.progress.dto.ProgressExerciseDto;
 import pl.edusnooker.webapp.component.progress.dto.ProgressLevelInfoDto;
 
+
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
+
 
 
 @Service
@@ -74,9 +76,14 @@ class ProgressService {
     }
 
     public int[] getChartsHomeByUserId(String userId) {
+        LocalDateTime now = LocalDateTime.now();
+        int year = now.getYear();
         int[] getProgressChartsByUserId = new int[12];
-        for (int i = 1; i < 12; i++) {
-            getProgressChartsByUserId[i-1] = (int) progressRepository.findAllProgressByUserIdAAndDateTimeExercise(userId, i).stream().count();
+        for (int i = 1; i <= 12; i++) {
+            getProgressChartsByUserId[i - 1] = (int) progressRepository
+                    .findAllProgressByUserIdAndDateTimeExerciseToYearAndMonth(userId, i, year)
+                    .stream()
+                    .count();
         }
         return getProgressChartsByUserId;
     }
@@ -87,6 +94,117 @@ class ProgressService {
         progressCounterHomeDto.setExercisePerformed(progressLogic.getAllProgressExercisePerformed(userId));
         progressCounterHomeDto.setCompletedExercises(progressLogic.getAllProgressCompletedExercises(userId));
         return progressCounterHomeDto;
+    }
+
+    public int[] getPointsScoredToYear(String userId, int year) {
+        int[] getPointsScoredToYear = new int[12];
+        for (int i = 1; i <= 12; i++) {
+            Integer points = progressRepository
+                    .findAllProgressByUserIdAndDateTimeExerciseToYearAndMonth(userId, i, year)
+                    .stream()
+                    .map(progress -> progress.getResultNumberOfPoint())
+                    .reduce(0, Integer::sum);
+            getPointsScoredToYear[i - 1] = points;
+        }
+        return getPointsScoredToYear;
+    }
+
+    public int[] getExercisesPerformedToYear(String userId, int year) {
+        int[] getExercisesPerformedToYear = new int[12];
+        for (int i = 1; i <= 12; i++) {
+            getExercisesPerformedToYear[i - 1] = (int) progressRepository
+                    .findAllProgressByUserIdAndDateTimeExerciseToYearAndMonth(userId, i, year)
+                    .stream()
+                    .count();
+        }
+        return getExercisesPerformedToYear;
+    }
+
+    public int[] getExercisesCompletedToYear(String userId, int year) {
+        int[] getExercisesCompletedToYear = new int[12];
+        for (int i = 1; i <= 12; i++) {
+            getExercisesCompletedToYear[i - 1] = (int) progressRepository
+                    .findAllProgressByUserIdAndDateTimeExerciseToYearAndMonth(userId, i, year)
+                    .stream()
+                    .filter(progress -> progress.getResultNumberOfPoint() >= progress.getNumberOfPointsToPassed())
+                    .count();
+        }
+        return getExercisesCompletedToYear;
+    }
+
+    public int[] getPointsScoredToMonth(String userId, int year, int month) {
+        int daysInMonth = progressLogic.geDayCount(year, month);
+        int[] getPointsScoredToMonth = new int[daysInMonth];
+        for (int i = 1; i <= daysInMonth; i++) {
+            Integer points = progressRepository
+                    .findAllProgressByUserIdAndDateTimeExerciseToYearAndMonthAndDay(userId, month, year, i)
+                    .stream()
+                    .map(progress -> progress.getResultNumberOfPoint())
+                    .reduce(0, Integer::sum);
+            getPointsScoredToMonth[i-1] = points;
+        }
+        return getPointsScoredToMonth;
+    }
+
+    public int[] getExercisesPerformedToMonth(String userId, int year, int month) {
+        int daysInMonth = progressLogic.geDayCount(year, month);
+        int[] getExercisesPerformedToMonth = new int[daysInMonth];
+        for (int i = 1; i <= daysInMonth; i++) {
+            getExercisesPerformedToMonth[i - 1] = (int) progressRepository
+                    .findAllProgressByUserIdAndDateTimeExerciseToYearAndMonthAndDay(userId, month, year, i)
+                    .stream()
+                    .count();
+        }
+        return getExercisesPerformedToMonth;
+    }
+
+    public int[] getExercisesCompletedToMonth(String userId, int year, int month) {
+        int daysInMonth = progressLogic.geDayCount(year, month);
+        int[] getExercisesCompletedToMonth = new int[daysInMonth];
+        for (int i = 1; i <= daysInMonth; i++) {
+            getExercisesCompletedToMonth[i - 1] = (int) progressRepository
+                    .findAllProgressByUserIdAndDateTimeExerciseToYearAndMonthAndDay(userId, month, year, i)
+                    .stream()
+                    .filter(progress -> progress.getResultNumberOfPoint() >= progress.getNumberOfPointsToPassed())
+                    .count();
+        }
+        return getExercisesCompletedToMonth;
+    }
+
+    public int[] getPointsScoredToHour(String userId) {
+        int[] getPointsScoredToHour = new int[24];
+        for (int i = 1; i <= 24; i++) {
+            Integer points = progressRepository
+                    .findAllProgressByUserIdAndDateTimeExerciseToHour(userId, i)
+                    .stream()
+                    .map(progress -> progress.getResultNumberOfPoint())
+                    .reduce(0, Integer::sum);
+            getPointsScoredToHour[i-1] = points;
+        }
+        return getPointsScoredToHour;
+    }
+
+    public int[] getExercisesPerformedToHour(String userId) {
+        int[] getExercisesPerformedToHour = new int[24];
+        for (int i = 1; i <= 24; i++) {
+            getExercisesPerformedToHour[i - 1] = (int) progressRepository
+                    .findAllProgressByUserIdAndDateTimeExerciseToHour(userId, i)
+                    .stream()
+                    .count();
+        }
+        return getExercisesPerformedToHour;
+    }
+
+    public int[] getExercisesCompletedToHour(String userId) {
+        int[] getExercisesCompletedToHour = new int[24];
+        for (int i = 1; i <= 24; i++) {
+            getExercisesCompletedToHour[i - 1] = (int) progressRepository
+                    .findAllProgressByUserIdAndDateTimeExerciseToHour(userId, i)
+                    .stream()
+                    .filter(progress -> progress.getResultNumberOfPoint() >= progress.getNumberOfPointsToPassed())
+                    .count();
+        }
+        return getExercisesCompletedToHour;
     }
 }
 

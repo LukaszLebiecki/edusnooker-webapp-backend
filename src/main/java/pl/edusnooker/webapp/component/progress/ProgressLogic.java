@@ -8,6 +8,7 @@ import pl.edusnooker.webapp.component.progress.dto.ProgressLevelInfoDto;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.YearMonth;
 import java.util.List;
 import java.util.Optional;
 
@@ -133,4 +134,9 @@ class ProgressLogic {
         }
         return completedExercises;
     }
+
+    public int geDayCount(int year, int month) {
+        return YearMonth.of(year, month).lengthOfMonth();
+    }
+
 }
