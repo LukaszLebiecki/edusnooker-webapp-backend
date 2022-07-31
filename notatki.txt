@@ -16,7 +16,7 @@
 
 Plan działania:
 
-1. Poprawić ładowanie statystyk na stronie home oraz ogólnie statystyk
+1. Dodać możliwość wyboru roku lub miesiąca na stronie statystyk
 
 2. Dodać przycisk przechodzenia do poprzedniej strony lub strony home
 
