@@ -1,6 +1,5 @@
 package pl.edusnooker.webapp.component.progress;
 
-
 import org.springframework.stereotype.Service;
 import pl.edusnooker.webapp.component.exercise.Exercise;
 import pl.edusnooker.webapp.component.exercise.ExerciseMapper;
@@ -9,11 +8,9 @@ import pl.edusnooker.webapp.component.progress.dto.ProgressCounterHomeDto;
 import pl.edusnooker.webapp.component.progress.dto.ProgressExerciseDto;
 import pl.edusnooker.webapp.component.progress.dto.ProgressLevelInfoDto;
 
-
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
-
 
 
 @Service
@@ -27,7 +24,6 @@ class ProgressService {
         this.progressLogic = progressLogic;
         this.progressRepository = progressRepository;
     }
-
 
     List<ProgressLevelInfoDto> getAllProgressLevelInfoByUser(String userId) {
         List<ProgressLevelInfoDto> progressLevelInfoDtoList = new ArrayList<>();
@@ -141,7 +137,7 @@ class ProgressService {
                     .stream()
                     .map(progress -> progress.getResultNumberOfPoint())
                     .reduce(0, Integer::sum);
-            getPointsScoredToMonth[i-1] = points;
+            getPointsScoredToMonth[i - 1] = points;
         }
         return getPointsScoredToMonth;
     }
@@ -179,7 +175,7 @@ class ProgressService {
                     .stream()
                     .map(progress -> progress.getResultNumberOfPoint())
                     .reduce(0, Integer::sum);
-            getPointsScoredToHour[i-1] = points;
+            getPointsScoredToHour[i - 1] = points;
         }
         return getPointsScoredToHour;
     }
@@ -206,5 +202,18 @@ class ProgressService {
         }
         return getExercisesCompletedToHour;
     }
-}
 
+    public int[] getProgressYear(String userId) {
+        List<Integer> integerList = progressRepository.findAllByUserIdOrderByDateTimeExerciseDesc(userId)
+                .stream()
+                .map(Progress::getDateTimeExercise)
+                .map(LocalDateTime::getYear)
+                .distinct()
+                .toList();
+        int[] progressYear = new int[integerList.size()];
+        for (int i = 0; i < integerList.size(); i++) {
+            progressYear[i] = integerList.get(i);
+        }
+        return progressYear;
+    }
+}

@@ -63,6 +63,14 @@ class ProgressController {
         return ResponseEntity.ok(progressChartsHomeDto);
     }
 
+    @GetMapping("{userId}/statistic/years")
+    ResponseEntity<ProgressYearDto> getProgressYear(@PathVariable String userId) {
+        int[] progressYear = progressService.getProgressYear(userId);
+        ProgressYearDto progressYearDto = new ProgressYearDto();
+        progressYearDto.setProgressYear(progressYear);
+        return ResponseEntity.ok(progressYearDto);
+    }
+
     @GetMapping("{userId}/progress/counterHome")
     ResponseEntity<ProgressCounterHomeDto> getCounterHome(@PathVariable String userId) {
         ProgressCounterHomeDto counterHome = progressService.getCounterHome(userId);
