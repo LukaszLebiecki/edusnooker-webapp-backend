@@ -16,19 +16,17 @@
 
 Plan działania:
 
-1. Statystyki godzina wykonania ćwiczenia (godzina serwera vs godzina uzytkownika?)
+1. Wykonać osobno api dla wersji demo i obostrzenia dostępu do poszczególnych api
 
-2. Wykonać osobno api dla wersji demo i obostrzenia dostępu do poszczególnych api
+2. Dodać treść do techniki
 
-3. Dodać treść do techniki
+3. zaimplementowac strone statute
 
-4. zaimplementowac strone statute
+4. zaimplementowac strone privacy policy
 
-5. zaimplementowac strone privacy policy
+5. zaimplementowac strone contact
 
-6. zaimplementowac strone contact
-
-7. Dodawanie ćwiczć do ulubionych
+6. Dodawanie ćwiczć do ulubionych
 	- tablica z trzema ulubionymi ćwiczeniami
 	- na początku deflautowe ćwiczenie ulubione czyli brak ćwiczenia - jeśli brak to wyświetla ... jeśli jest to karta ćwiczenia
 	- implementacja listy ćwiczeń dostępnych do wybrania do ulubionych
@@ -36,11 +34,11 @@ Plan działania:
 	(Wykonać na frontend liste leveli i cwiczen (wzorowac sie na strefa kursu), level i każdy level rozwija liste exercise,
 	 docelowo po kliknieciu cwiczenie ma sie zapisac do ulubionych (ULUBIONE ĆWICZENIA UŻYTKOWNIKA))
 
-8. Naprawić możliwość przechodzenia do poziomów z poziomu paska przeglądarki a ćwiczenie nie odblokowane
+7. Naprawić możliwość przechodzenia do poziomów z poziomu paska przeglądarki a ćwiczenie nie odblokowane
 
-9. Dodać przekirowanie po udanej rejestracji do okna z informacja o wysłanym e-mailu i przyciskiem przekierowującym do strony logowania
+8. Dodać przekirowanie po udanej rejestracji do okna z informacja o wysłanym e-mailu i przyciskiem przekierowującym do strony logowania
 
-10. Naparawić tworzenie daty ostatniego logowania
+9. Naparawić tworzenie daty ostatniego logowania
 
 
 ============================================
