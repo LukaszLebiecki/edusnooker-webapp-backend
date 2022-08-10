@@ -16,13 +16,11 @@
 
 Plan działania:
 
-1. Dodać logike obsługi bonusu w ćwiczeniu
+1. Statystyki godzina wykonania ćwiczenia (godzina serwera vs godzina uzytkownika?)
 
-2. Statystyki godzina wykonania ćwiczenia (godzina serwera vs godzina uzytkownika?)
+2. Wykonać osobno api dla wersji demo i obostrzenia dostępu do poszczególnych api
 
-3. Wykonać osobno api dla wersji demo i obostrzenia dostępu do poszczególnych api
-
-4. Dodawanie ćwiczć do ulubionych
+3. Dodawanie ćwiczć do ulubionych
 	- tablica z trzema ulubionymi ćwiczeniami
 	- na początku deflautowe ćwiczenie ulubione czyli brak ćwiczenia - jeśli brak to wyświetla ... jeśli jest to karta ćwiczenia
 	- implementacja listy ćwiczeń dostępnych do wybrania do ulubionych
@@ -30,11 +28,11 @@ Plan działania:
 	(Wykonać na frontend liste leveli i cwiczen (wzorowac sie na strefa kursu), level i każdy level rozwija liste exercise,
 	 docelowo po kliknieciu cwiczenie ma sie zapisac do ulubionych (ULUBIONE ĆWICZENIA UŻYTKOWNIKA))
 
-5. Naprawić możliwość przechodzenia do poziomów z poziomu paska przeglądarki a ćwiczenie nie odblokowane
+4. Naprawić możliwość przechodzenia do poziomów z poziomu paska przeglądarki a ćwiczenie nie odblokowane
 
-6. Dodać przekirowanie po udanej rejestracji do okna z informacja o wysłanym e-mailu i przyciskiem przekierowującym do strony logowania
+5. Dodać przekirowanie po udanej rejestracji do okna z informacja o wysłanym e-mailu i przyciskiem przekierowującym do strony logowania
 
-7. Naparawić tworzenie daty ostatniego logowania
+6. Naparawić tworzenie daty ostatniego logowania
 
 
 ============================================
