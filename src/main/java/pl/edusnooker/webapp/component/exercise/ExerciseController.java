@@ -28,6 +28,7 @@ class ExerciseController {
 
 
     @GetMapping("/level")
+    @PreAuthorize("hasAnyAuthority('user:basic')")
     ResponseEntity<List<ExerciseLevelInfoDto>> getLevelAll() {
 
         if (exerciseService.getAllLevelInfo().isEmpty()) {
@@ -38,6 +39,7 @@ class ExerciseController {
     }
 
     @GetMapping("/level/{idLevel}")
+    @PreAuthorize("hasAnyAuthority('user:basic')")
     ResponseEntity<ExerciseLevelInfoDto> getLevel(@PathVariable int idLevel) {
         Level[] values = Level.values();
         String name = values[idLevel].name();
@@ -50,6 +52,7 @@ class ExerciseController {
     }
 
     @GetMapping("/level/{idLevel}/exercise")
+    @PreAuthorize("hasAnyAuthority('user:basic')")
     ResponseEntity<List<ExerciseDto>> getAllExerciseByLevel(@PathVariable int idLevel) {
         Level[] values = Level.values();
         String name = values[idLevel].name();
@@ -62,6 +65,7 @@ class ExerciseController {
     }
 
     @GetMapping("/exercise/{id}")
+    @PreAuthorize("hasAnyAuthority('user:basic')")
     ResponseEntity<ExerciseDto> getExerciseById(@PathVariable String id) {
         if (exerciseService.getExerciseById(id).isEmpty()) {
             return ResponseEntity.notFound().build();
@@ -71,6 +75,7 @@ class ExerciseController {
     }
 
     @GetMapping("/exercise")
+    @PreAuthorize("hasAnyAuthority('user:basic')")
     ResponseEntity<List<ExerciseDto>> getExercises() {
         if (exerciseService.getAllExercises().isEmpty()) {
             return ResponseEntity.notFound().build();
@@ -84,6 +89,7 @@ class ExerciseController {
     }
 
     @PostMapping("/exercise/add")
+    @PreAuthorize("hasAnyAuthority('user:delete')")
     ResponseEntity<Exercise> addNewExercise(@RequestParam("name") String name,
                                             @RequestParam("description") String description,
                                             @RequestParam("videoUrl") String videoUrl,
@@ -114,6 +120,7 @@ class ExerciseController {
     }
 
     @PostMapping("/exercise/update")
+    @PreAuthorize("hasAnyAuthority('user:delete')")
     ResponseEntity<Exercise> updateExercise(@RequestParam("currentExerciseId") String currentExerciseId,
                                             @RequestParam("name") String name,
                                             @RequestParam("description") String description,

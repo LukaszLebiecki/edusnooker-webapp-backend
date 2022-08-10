@@ -18,6 +18,9 @@ Plan działania:
 
 1. Wykonać osobno api dla wersji demo i obostrzenia dostępu do poszczególnych api
 
+    - wykonać osobne api dla wersji demo do wczytywania cwiczen (np. tylko poziom white)
+    - na frontendzie przed odpytanie servera sprawdzic jaka role ma uzytkownik i na tej podstawie odpytac odpowiedni endpoint
+
 2. Dodać treść do techniki
 
 3. zaimplementowac strone statute
