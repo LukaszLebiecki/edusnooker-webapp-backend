@@ -55,6 +55,12 @@ class ExerciseService {
         return levelInfoDtoList;
     }
 
+    List<ExerciseLevelInfoDto> getAllLevelInfoDemo() {
+        List<ExerciseLevelInfoDto> levelInfoDtoList = new ArrayList<>();
+        levelInfoDtoList.add(getLevelInfo(Level.WHITE));
+        return levelInfoDtoList;
+    }
+
     List<Exercise> getAllExercises() {
         List<Exercise> exerciseList = exerciseRepository.findAll();
         exerciseList.sort(Comparator.comparing(Exercise::getExerciseId));

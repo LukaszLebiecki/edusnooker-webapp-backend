@@ -57,6 +57,7 @@ public class UserController extends ExceptionHandling {
     }
 
     @PostMapping("/add")
+    @PreAuthorize("hasAnyAuthority('user:delete')")
     public ResponseEntity<User> addNewUser(@RequestParam("firstName") String firstName,
                                            @RequestParam("lastName") String lastName,
                                            @RequestParam("username") String username,
@@ -70,6 +71,7 @@ public class UserController extends ExceptionHandling {
     }
 
     @PostMapping("/update")
+    @PreAuthorize("hasAnyAuthority('user:demo')")
     public ResponseEntity<User> update(@RequestParam("currentUsername") String currentUsername,
                                        @RequestParam("firstName") String firstName,
                                        @RequestParam("lastName") String lastName,
@@ -84,18 +86,21 @@ public class UserController extends ExceptionHandling {
     }
 
     @GetMapping("/find/{username}")
+    @PreAuthorize("hasAnyAuthority('user:delete')")
     public ResponseEntity<User> getUser(@PathVariable("username") String username) {
         User user = userService.findUserByUsername(username);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
     @GetMapping("/list")
+    @PreAuthorize("hasAnyAuthority('user:delete')")
     public ResponseEntity<List<User>> getAllUsers() {
         List<User> users = userService.getUsers();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
     @GetMapping("/resetpassword/{email}")
+    @PreAuthorize("hasAnyAuthority('user:demo')")
     public ResponseEntity<HttpResponse> resetPassword(@PathVariable("email") String email) throws EmailNotFoundException, MessagingException {
         userService.resetPassword(email);
         return response(HttpStatus.OK, EMAIL_SENT + email);
@@ -109,6 +114,7 @@ public class UserController extends ExceptionHandling {
     }
 
     @PostMapping("/updateProfileImage")
+    @PreAuthorize("hasAnyAuthority('user:delete')")
     public ResponseEntity<User> updateProfileImage(@RequestParam("username") String username,
                                                    @RequestParam(value = "profileImage") MultipartFile profileImage) throws EmailExistException, IOException, UsernameExistException, NotAnImageFileException {
         User user = userService.updateProfileImage(username, profileImage);

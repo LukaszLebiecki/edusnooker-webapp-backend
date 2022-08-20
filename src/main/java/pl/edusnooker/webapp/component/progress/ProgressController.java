@@ -3,6 +3,7 @@ package pl.edusnooker.webapp.component.progress;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseDto;
 import pl.edusnooker.webapp.component.progress.dto.*;
@@ -19,6 +20,7 @@ class ProgressController {
     }
 
     @GetMapping("{userId}/progress")
+    @PreAuthorize("hasAnyAuthority('user:demo')")
     ResponseEntity<List<ProgressLevelInfoDto>> getAllProgressByLevel(@PathVariable String userId) {
         List<ProgressLevelInfoDto> allProgressLevelInfoByUser = progressService.getAllProgressLevelInfoByUser(userId);
         if (allProgressLevelInfoByUser.isEmpty()) {
@@ -29,6 +31,7 @@ class ProgressController {
     }
 
     @GetMapping("{userId}/progress/{levelId}")
+    @PreAuthorize("hasAnyAuthority('user:demo')")
     ResponseEntity<List<ProgressExerciseDto>> getAllProgressExercise(@PathVariable String userId, @PathVariable int levelId) {
         List<ProgressExerciseDto> progressExerciseInfo = progressService.getProgressExerciseInfo(levelId, userId);
         if (progressExerciseInfo.isEmpty()) {
@@ -39,12 +42,14 @@ class ProgressController {
     }
 
     @GetMapping("{userId}/progress/lastexercise")
+    @PreAuthorize("hasAnyAuthority('user:demo')")
     ResponseEntity<ExerciseDto> getLastExercise(@PathVariable String userId) {
         ExerciseDto exerciseLast = progressService.getLastExerciseInfo(userId);
         return ResponseEntity.ok(exerciseLast);
     }
 
     @PostMapping("/progress/add")
+    @PreAuthorize("hasAnyAuthority('user:demo')")
     ResponseEntity<Progress> addProgress(@RequestParam("idExercise") String idExercise,
                                          @RequestParam("numberLevel") int numberLevel,
                                          @RequestParam("numberOfPointsToPassed") int numberOfPointsToPassed,
@@ -56,6 +61,7 @@ class ProgressController {
     }
 
     @GetMapping("{userId}/progress/chartshome")
+    @PreAuthorize("hasAnyAuthority('user:demo')")
     ResponseEntity<ProgressChartsHomeDto> getChartsHome(@PathVariable String userId) {
         int[] chartsHome = progressService.getChartsHomeByUserId(userId);
         ProgressChartsHomeDto progressChartsHomeDto = new ProgressChartsHomeDto();
@@ -64,6 +70,7 @@ class ProgressController {
     }
 
     @GetMapping("{userId}/statistic/years")
+    @PreAuthorize("hasAnyAuthority('user:demo')")
     ResponseEntity<ProgressYearDto> getProgressYear(@PathVariable String userId) {
         int[] progressYear = progressService.getProgressYear(userId);
         ProgressYearDto progressYearDto = new ProgressYearDto();
@@ -72,12 +79,14 @@ class ProgressController {
     }
 
     @GetMapping("{userId}/progress/counterHome")
+    @PreAuthorize("hasAnyAuthority('user:demo')")
     ResponseEntity<ProgressCounterHomeDto> getCounterHome(@PathVariable String userId) {
         ProgressCounterHomeDto counterHome = progressService.getCounterHome(userId);
         return ResponseEntity.ok(counterHome);
     }
 
     @GetMapping("{userId}/statistic/{month}/{year}")
+    @PreAuthorize("hasAnyAuthority('user:demo')")
     ResponseEntity<ProgressStatisticsDto> getStatistic(@PathVariable String userId, @PathVariable int year, @PathVariable int month) {
         ProgressStatisticsDto progressStatisticsDto = new ProgressStatisticsDto();
 

@@ -30,7 +30,6 @@ class ExerciseController {
     @GetMapping("/level")
     @PreAuthorize("hasAnyAuthority('user:basic')")
     ResponseEntity<List<ExerciseLevelInfoDto>> getLevelAll() {
-
         if (exerciseService.getAllLevelInfo().isEmpty()) {
             return ResponseEntity.notFound().build();
         } else {
@@ -38,8 +37,19 @@ class ExerciseController {
         }
     }
 
+    @GetMapping("/level/demo")
+    @PreAuthorize("hasAnyAuthority('user:demo')")
+    ResponseEntity<List<ExerciseLevelInfoDto>> getLevelAllDemo() {
+        if (exerciseService.getAllLevelInfo().isEmpty()) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.ok(exerciseService.getAllLevelInfoDemo());
+        }
+    }
+
+
     @GetMapping("/level/{idLevel}")
-    @PreAuthorize("hasAnyAuthority('user:basic')")
+    @PreAuthorize("hasAnyAuthority('user:demo')")
     ResponseEntity<ExerciseLevelInfoDto> getLevel(@PathVariable int idLevel) {
         Level[] values = Level.values();
         String name = values[idLevel].name();
@@ -56,6 +66,19 @@ class ExerciseController {
     ResponseEntity<List<ExerciseDto>> getAllExerciseByLevel(@PathVariable int idLevel) {
         Level[] values = Level.values();
         String name = values[idLevel].name();
+        Level level = Level.valueOf(name);
+        if (exerciseService.getAllExerciseByLevel(level).isEmpty()) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.ok(exerciseService.getAllExerciseByLevel(level));
+        }
+    }
+
+    @GetMapping("/level/0/exercise")
+    @PreAuthorize("hasAnyAuthority('user:demo')")
+    ResponseEntity<List<ExerciseDto>> getAllExerciseByLevel() {
+        Level[] values = Level.values();
+        String name = values[0].name();
         Level level = Level.valueOf(name);
         if (exerciseService.getAllExerciseByLevel(level).isEmpty()) {
             return ResponseEntity.notFound().build();
