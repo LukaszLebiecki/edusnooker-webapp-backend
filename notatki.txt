@@ -16,15 +16,13 @@
 
 Plan działania:
 
-1. zaimplementowac strone contact
+1. zaimplementowac strone statute
 
-2. zaimplementowac strone statute
+2. zaimplementowac strone privacy policy
 
-3. zaimplementowac strone privacy policy
+3. Dodać treść do techniki
 
-4. Dodać treść do techniki
-
-5. Dodawanie ćwiczć do ulubionych
+4. Dodawanie ćwiczć do ulubionych
 	- tablica z trzema ulubionymi ćwiczeniami
 	- na początku deflautowe ćwiczenie ulubione czyli brak ćwiczenia - jeśli brak to wyświetla ... jeśli jest to karta ćwiczenia
 	- implementacja listy ćwiczeń dostępnych do wybrania do ulubionych
@@ -32,11 +30,11 @@ Plan działania:
 	(Wykonać na frontend liste leveli i cwiczen (wzorowac sie na strefa kursu), level i każdy level rozwija liste exercise,
 	 docelowo po kliknieciu cwiczenie ma sie zapisac do ulubionych (ULUBIONE ĆWICZENIA UŻYTKOWNIKA))
 
-6. Naprawić możliwość przechodzenia do poziomów z poziomu paska przeglądarki a ćwiczenie nie odblokowane
+5. Naprawić możliwość przechodzenia do poziomów z poziomu paska przeglądarki a ćwiczenie nie odblokowane
 
-7. Dodać przekirowanie po udanej rejestracji do okna z informacja o wysłanym e-mailu i przyciskiem przekierowującym do strony logowania
+6. Dodać przekirowanie po udanej rejestracji do okna z informacja o wysłanym e-mailu i przyciskiem przekierowującym do strony logowania
 
-8. Naparawić tworzenie daty ostatniego logowania
+7. Naparawić tworzenie daty ostatniego logowania
 
 
 ============================================
