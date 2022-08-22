@@ -36,6 +36,17 @@ Plan działania:
 
 7. Naparawić tworzenie daty ostatniego logowania
 
+8. Dowiedzieć się o metodzie płatności i o wystawieniu rachunku dla kupującego (fv czy paragon) przy odnowieniu subskrybcji automatyczne towrzenei fv itp.
+
+9. Promowanie platformy na fb zaplanować kampanie:
+    - stworzyć stronę edusnooker na fb
+    - dodawać posty o postępach prac nad aplikacją oraz planowaną datą premiery
+    - stworzyć fanpage
+    - dodawać posty np dwa razy w tygodniu (wtorek co nowego, sobota pomysły na ćwqiczenia i dyskusja o tym)
+    - konkurs i możliwośc wygrania darmowego miesiąca
+    - prośba o wsparcie finansowe w celu rozwoju itp.
+    - pytać ludzi o sugestie co do ćwiczeń i funkcjonalności aplikacji
+
 
 ============================================
 
