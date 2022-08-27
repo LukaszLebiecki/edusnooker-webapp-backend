@@ -16,15 +16,15 @@
 
 Plan działania:
 
-1. Dodać treść do techniki
-
-2. Dodawanie ćwiczć do ulubionych
+1. Dodawanie ćwiczć do ulubionych
 	- tablica z trzema ulubionymi ćwiczeniami
 	- na początku deflautowe ćwiczenie ulubione czyli brak ćwiczenia - jeśli brak to wyświetla ... jeśli jest to karta ćwiczenia
 	- implementacja listy ćwiczeń dostępnych do wybrania do ulubionych
 	- lista ćwiczeń tylko dostępnych dla danego użytkownika (zczytanie z progress użytkownika i wywnioskowanie jakie to ćiwczenia logike zrobić po stronie backendu)
 	(Wykonać na frontend liste leveli i cwiczen (wzorowac sie na strefa kursu), level i każdy level rozwija liste exercise,
 	 docelowo po kliknieciu cwiczenie ma sie zapisac do ulubionych (ULUBIONE ĆWICZENIA UŻYTKOWNIKA))
+
+2. Renderować rysunki do działu technique
 
 3. Naprawić możliwość przechodzenia do poziomów z poziomu paska przeglądarki a ćwiczenie nie odblokowane
 
