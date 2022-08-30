@@ -30,6 +30,17 @@ class ProgressController {
         }
     }
 
+    @GetMapping("{userId}/progress/all")
+    @PreAuthorize("hasAnyAuthority('user:demo')")
+    ResponseEntity<List<ProgressExerciseDto>> getProgressExercise(@PathVariable String userId) {
+        List<ProgressExerciseDto> progressExerciseInfo = progressService.getProgressExerciseAllInfo(userId);
+        if (progressExerciseInfo.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.ok(progressExerciseInfo);
+        }
+    }
+
     @GetMapping("{userId}/progress/{levelId}")
     @PreAuthorize("hasAnyAuthority('user:demo')")
     ResponseEntity<List<ProgressExerciseDto>> getAllProgressExercise(@PathVariable String userId, @PathVariable int levelId) {

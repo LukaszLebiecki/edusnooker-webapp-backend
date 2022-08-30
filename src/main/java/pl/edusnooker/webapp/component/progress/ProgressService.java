@@ -52,6 +52,20 @@ class ProgressService {
         return progressExerciseDtoList.stream().sorted().toList();
     }
 
+    public List<ProgressExerciseDto> getProgressExerciseAllInfo(String userId) {
+        List<Progress> allProgressByLevel = progressLogic.getAllProgress(userId);
+        Set<ProgressExerciseDto> collect = allProgressByLevel.stream().map(p -> progressLogic.create(p, userId))
+                .peek(e -> {
+                    int theBestResult = e.getTheBestResult();
+                    int resultToPass = e.getResultToPass();
+                    if (theBestResult >= resultToPass)
+                        e.setPass(true);
+                })
+                .collect(Collectors.toSet());
+        List<ProgressExerciseDto> progressExerciseDtoList = collect.stream().toList();
+        return progressExerciseDtoList.stream().sorted().toList();
+    }
+
     Progress addProgress(String idExercise, int numberLevel, int numberOfPointsToPassed,
                          int resultNumberOfPoint, String userId) {
         Progress progress = new Progress();
@@ -216,4 +230,5 @@ class ProgressService {
         }
         return progressYear;
     }
+
 }

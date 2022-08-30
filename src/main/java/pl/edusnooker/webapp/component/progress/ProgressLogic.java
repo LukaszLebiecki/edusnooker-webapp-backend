@@ -97,6 +97,10 @@ class ProgressLogic {
         return progressRepository.findAllByNumberLevelAndUserId(numberLevel, userId);
     }
 
+    public List<Progress> getAllProgress(String userId) {
+        return progressRepository.findAllByUserIdOrderByDateTimeExerciseDesc(userId);
+    }
+
     private static boolean isCompleteExercise(Progress progress) {
         return progress.getResultNumberOfPoint() >= progress.getNumberOfPointsToPassed();
     }
