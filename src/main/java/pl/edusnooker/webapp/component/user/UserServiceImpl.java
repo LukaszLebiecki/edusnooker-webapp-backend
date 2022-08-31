@@ -94,6 +94,9 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         user.setRole(ROLE_DEMO.name());
         user.setAuthorities(ROLE_DEMO.getAuthorities());
         user.setProfileImageUrl(getTemporaryProfileImageUrl(username));
+        user.setFavoriteSlotOne("e000");
+        user.setFavoriteSlotTwo("e000");
+        user.setFavoriteSlotThree("e000");
         userRepository.save(user);
 //        LOGGER.info("New user password: " + password);
         emailService.sendNewPasswordEmail(firstName, password, email);
@@ -132,6 +135,9 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         user.setRole(getRoleEnumName(role).name());
         user.setAuthorities(getRoleEnumName(role).getAuthorities());
         user.setProfileImageUrl(getTemporaryProfileImageUrl(username));
+        user.setFavoriteSlotOne("e000");
+        user.setFavoriteSlotTwo("e000");
+        user.setFavoriteSlotThree("e000");
         userRepository.save(user);
         saveProfileImage(user, profileImage);
         return user;

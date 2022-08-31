@@ -97,6 +97,38 @@ class ExerciseController {
         }
     }
 
+    @GetMapping("{user}/exercise/slot/one")
+    @PreAuthorize("hasAnyAuthority('user:basic')")
+    ResponseEntity<ExerciseDto> getExerciseSlotOne(@PathVariable String user) {
+        if (exerciseService.getExerciseSlotOne(user).isEmpty()) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.ok(exerciseService.getExerciseSlotOne(user).get());
+        }
+    }
+
+    @GetMapping("{user}/exercise/slot/two")
+    @PreAuthorize("hasAnyAuthority('user:basic')")
+    ResponseEntity<ExerciseDto> getExerciseSlotTwo(@PathVariable String user) {
+        if (exerciseService.getExerciseSlotTwo(user).isEmpty()) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.ok(exerciseService.getExerciseSlotTwo(user).get());
+        }
+    }
+
+    @GetMapping("{user}/exercise/slot/three")
+    @PreAuthorize("hasAnyAuthority('user:basic')")
+    ResponseEntity<ExerciseDto> getExerciseSlotThree(@PathVariable String user) {
+        if (exerciseService.getExerciseSlotThree(user).isEmpty()) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.ok(exerciseService.getExerciseSlotThree(user).get());
+        }
+    }
+
+
+
     @GetMapping("/exercise")
     @PreAuthorize("hasAnyAuthority('user:basic')")
     ResponseEntity<List<ExerciseDto>> getExercises() {

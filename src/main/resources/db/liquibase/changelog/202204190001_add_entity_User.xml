@@ -23,6 +23,9 @@
             <column name="authorities" type="VARCHAR(300)" />
             <column name="is_active" type="BOOLEAN"/>
             <column name="is_not_locked" type="BOOLEAN"/>
+            <column name="favorite_slot_one" type="VARCHAR(20)"/>
+            <column name="favorite_slot_two" type="VARCHAR(20)"/>
+            <column name="favorite_slot_three" type="VARCHAR(20)"/>
         </createTable>
     </changeSet>
 

@@ -17,8 +17,8 @@
 Plan działania:
 
 1. Dodawanie ćwiczć do ulubionych
-	- api na back end dla każdego slotu
-	- obsługa api na frontend
+    - zapisywanie do ulubionych
+	- update slot one, two and three
 
 2. Renderować rysunki do działu technique
 

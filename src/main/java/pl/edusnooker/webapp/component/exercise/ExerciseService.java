@@ -3,7 +3,8 @@ package pl.edusnooker.webapp.component.exercise;
 import org.springframework.stereotype.Service;
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseDto;
 import pl.edusnooker.webapp.component.exercise.dto.ExerciseLevelInfoDto;
-import pl.edusnooker.webapp.component.exercise.dto.ExerciseListDto;
+import pl.edusnooker.webapp.component.user.User;
+import pl.edusnooker.webapp.component.user.UserRepository;
 import pl.edusnooker.webapp.enumeration.Level;
 
 
@@ -14,15 +15,32 @@ import java.util.*;
 class ExerciseService {
     private final ExerciseRepository exerciseRepository;
     private final ExerciseLogic exerciseLogic;
+    private final UserRepository userRepository;
 
-    public ExerciseService(ExerciseRepository exerciseRepository, ExerciseLogic exerciseLogic) {
+    public ExerciseService(ExerciseRepository exerciseRepository, ExerciseLogic exerciseLogic, UserRepository userRepository) {
         this.exerciseRepository = exerciseRepository;
         this.exerciseLogic = exerciseLogic;
+        this.userRepository = userRepository;
     }
 
 
     Optional<ExerciseDto> getExerciseById(String id) {
         return exerciseRepository.findByExerciseId(id).map(ExerciseMapper::map);
+    }
+
+    Optional<ExerciseDto> getExerciseSlotOne(String userId) {
+        User user = userRepository.findAllByUserId(userId);
+        return exerciseRepository.findByExerciseId(user.getFavoriteSlotOne()).map(ExerciseMapper::map);
+    }
+
+    Optional<ExerciseDto> getExerciseSlotTwo(String userId) {
+        User user = userRepository.findAllByUserId(userId);
+        return exerciseRepository.findByExerciseId(user.getFavoriteSlotTwo()).map(ExerciseMapper::map);
+    }
+
+    Optional<ExerciseDto> getExerciseSlotThree(String userId) {
+        User user = userRepository.findAllByUserId(userId);
+        return exerciseRepository.findByExerciseId(user.getFavoriteSlotThree()).map(ExerciseMapper::map);
     }
 
     List<ExerciseDto> getAllExerciseByLevel(Level level) {

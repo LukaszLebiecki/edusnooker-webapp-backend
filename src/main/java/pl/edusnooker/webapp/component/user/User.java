@@ -36,5 +36,8 @@ public class User implements Serializable {
     @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private List<Progress> progressList = new ArrayList<>();
+    private String favoriteSlotOne;
+    private String favoriteSlotTwo;
+    private String favoriteSlotThree;
 
 }
