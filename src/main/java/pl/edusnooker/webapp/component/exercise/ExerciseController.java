@@ -101,7 +101,9 @@ class ExerciseController {
     @PreAuthorize("hasAnyAuthority('user:basic')")
     ResponseEntity<ExerciseDto> getExerciseSlotOne(@PathVariable String user) {
         if (exerciseService.getExerciseSlotOne(user).isEmpty()) {
-            return ResponseEntity.notFound().build();
+            ExerciseDto emptyExercie = new ExerciseDto();
+            emptyExercie.setExerciseId("e000");
+            return ResponseEntity.ok(emptyExercie);
         } else {
             return ResponseEntity.ok(exerciseService.getExerciseSlotOne(user).get());
         }
@@ -111,7 +113,9 @@ class ExerciseController {
     @PreAuthorize("hasAnyAuthority('user:basic')")
     ResponseEntity<ExerciseDto> getExerciseSlotTwo(@PathVariable String user) {
         if (exerciseService.getExerciseSlotTwo(user).isEmpty()) {
-            return ResponseEntity.notFound().build();
+            ExerciseDto emptyExercie = new ExerciseDto();
+            emptyExercie.setExerciseId("e000");
+            return ResponseEntity.ok(emptyExercie);
         } else {
             return ResponseEntity.ok(exerciseService.getExerciseSlotTwo(user).get());
         }
@@ -121,7 +125,9 @@ class ExerciseController {
     @PreAuthorize("hasAnyAuthority('user:basic')")
     ResponseEntity<ExerciseDto> getExerciseSlotThree(@PathVariable String user) {
         if (exerciseService.getExerciseSlotThree(user).isEmpty()) {
-            return ResponseEntity.notFound().build();
+            ExerciseDto emptyExercie = new ExerciseDto();
+            emptyExercie.setExerciseId("e000");
+            return ResponseEntity.ok(emptyExercie);
         } else {
             return ResponseEntity.ok(exerciseService.getExerciseSlotThree(user).get());
         }
