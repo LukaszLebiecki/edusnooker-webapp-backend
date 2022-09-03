@@ -161,6 +161,30 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
+    public User updateUserSlotOne(String currentUserId, String favoriteSlotOne) {
+        User currentUser = userRepository.findAllByUserId(currentUserId);
+        currentUser.setFavoriteSlotOne(favoriteSlotOne);
+        userRepository.save(currentUser);
+        return currentUser;
+    }
+
+    @Override
+    public User updateUserSlotTwo(String currentUserId, String favoriteSlotTwo) {
+        User currentUser = userRepository.findAllByUserId(currentUserId);
+        currentUser.setFavoriteSlotTwo(favoriteSlotTwo);
+        userRepository.save(currentUser);
+        return currentUser;
+    }
+
+    @Override
+    public User updateUserSlotThree(String currentUserId, String favoriteSlotThree) {
+        User currentUser = userRepository.findAllByUserId(currentUserId);
+        currentUser.setFavoriteSlotThree(favoriteSlotThree);
+        userRepository.save(currentUser);
+        return currentUser;
+    }
+
+    @Override
     public void deleteUser(String username) throws IOException {
         User user = userRepository.findByUsername(username);
         Path userFolder = Paths.get(USER_FOLDER + user.getUsername()).toAbsolutePath().normalize();

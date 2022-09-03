@@ -85,6 +85,30 @@ public class UserController extends ExceptionHandling {
         return new ResponseEntity<>(updatedUser, HttpStatus.OK);
     }
 
+    @PostMapping("/update/slotone")
+    @PreAuthorize("hasAnyAuthority('user:demo')")
+    public ResponseEntity<User> updateSlotOne(@RequestParam("currentUserId") String currentUserId,
+                                       @RequestParam("favoriteSlot") String favoriteSlot) throws EmailExistException, IOException, UsernameExistException, NotAnImageFileException {
+        User updatedUser = userService.updateUserSlotOne(currentUserId, favoriteSlot);
+        return new ResponseEntity<>(updatedUser, HttpStatus.OK);
+    }
+
+    @PostMapping("/update/slottwo")
+    @PreAuthorize("hasAnyAuthority('user:demo')")
+    public ResponseEntity<User> updateSlotTwo(@RequestParam("currentUserId") String currentUserId,
+                                       @RequestParam("favoriteSlot") String favoriteSlot) throws EmailExistException, IOException, UsernameExistException, NotAnImageFileException {
+        User updatedUser = userService.updateUserSlotTwo(currentUserId, favoriteSlot);
+        return new ResponseEntity<>(updatedUser, HttpStatus.OK);
+    }
+
+    @PostMapping("/update/slotthree")
+    @PreAuthorize("hasAnyAuthority('user:demo')")
+    public ResponseEntity<User> updateSlotThree(@RequestParam("currentUserId") String currentUserId,
+                                              @RequestParam("favoriteSlot") String favoriteSlot) throws EmailExistException, IOException, UsernameExistException, NotAnImageFileException {
+        User updatedUser = userService.updateUserSlotThree(currentUserId, favoriteSlot);
+        return new ResponseEntity<>(updatedUser, HttpStatus.OK);
+    }
+
     @GetMapping("/find/{username}")
     @PreAuthorize("hasAnyAuthority('user:delete')")
     public ResponseEntity<User> getUser(@PathVariable("username") String username) {

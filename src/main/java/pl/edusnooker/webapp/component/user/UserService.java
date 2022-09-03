@@ -24,6 +24,12 @@ public interface UserService {
 
     User updateUser(String currentUsername, String newFirstName, String newLastName, String newUsername, String newEmail, String role, boolean isNonLocked, boolean isActive, MultipartFile profileImage) throws EmailExistException, UsernameExistException, IOException, NotAnImageFileException;
 
+    User updateUserSlotOne(String currentUserId, String favoriteSlotOne) throws EmailExistException, UsernameExistException, IOException, NotAnImageFileException;
+
+    User updateUserSlotTwo(String currentUserId, String favoriteSlotTwo) throws EmailExistException, UsernameExistException, IOException, NotAnImageFileException;
+
+    User updateUserSlotThree(String currentUserId, String favoriteSlotThree) throws EmailExistException, UsernameExistException, IOException, NotAnImageFileException;
+
     void deleteUser(String username) throws IOException;
 
     void resetPassword(String email) throws MessagingException, EmailNotFoundException;
