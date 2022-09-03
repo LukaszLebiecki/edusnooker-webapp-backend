@@ -43,7 +43,7 @@ class ExerciseService {
         return exerciseRepository.findByExerciseId(user.getFavoriteSlotThree()).map(ExerciseMapper::map);
     }
 
-    List<ExerciseDto> getAllExerciseByLevel(Level level) {
+    List<ExerciseDto> getAllExerciseByLevel(String level) {
         List<ExerciseDto> exerciseListDtoList = exerciseRepository.findAllByLevel(level)
                 .stream()
                 .map(ExerciseMapper::map)
@@ -51,31 +51,31 @@ class ExerciseService {
         return exerciseListDtoList;
     }
 
-    ExerciseLevelInfoDto getLevelInfo(Level level) {
+    ExerciseLevelInfoDto getLevelInfo(String level) {
         long count = exerciseRepository.findAllByLevel(level).stream().count();
         ExerciseLevelInfoDto exerciseLevelInfoDto = new ExerciseLevelInfoDto();
-        exerciseLevelInfoDto.setName(level.name());
+        exerciseLevelInfoDto.setName(level);
         exerciseLevelInfoDto.setNumberOfExercise((int) count);
-        exerciseLevelInfoDto.setNumberOfPointToTarget(level.getNumberOfPointToTarget());
+        exerciseLevelInfoDto.setNumberOfPointToTarget(1); // todo zaimplementować ile ćwiczeń trzeba zaliczyć aby odblokwać nastepny poziom
         return exerciseLevelInfoDto;
     }
 
     List<ExerciseLevelInfoDto> getAllLevelInfo() {
         List<ExerciseLevelInfoDto> levelInfoDtoList = new ArrayList<>();
-        levelInfoDtoList.add(getLevelInfo(Level.WHITE));
-        levelInfoDtoList.add(getLevelInfo(Level.RED));
-        levelInfoDtoList.add(getLevelInfo(Level.YELLOW));
-        levelInfoDtoList.add(getLevelInfo(Level.GREEN));
-        levelInfoDtoList.add(getLevelInfo(Level.BROWN));
-        levelInfoDtoList.add(getLevelInfo(Level.BLUE));
-        levelInfoDtoList.add(getLevelInfo(Level.PINK));
-        levelInfoDtoList.add(getLevelInfo(Level.BLACK));
+        levelInfoDtoList.add(getLevelInfo(Level.WHITE.name()));
+        levelInfoDtoList.add(getLevelInfo(Level.RED.name()));
+        levelInfoDtoList.add(getLevelInfo(Level.YELLOW.name()));
+        levelInfoDtoList.add(getLevelInfo(Level.GREEN.name()));
+        levelInfoDtoList.add(getLevelInfo(Level.BROWN.name()));
+        levelInfoDtoList.add(getLevelInfo(Level.BLUE.name()));
+        levelInfoDtoList.add(getLevelInfo(Level.PINK.name()));
+        levelInfoDtoList.add(getLevelInfo(Level.BLACK.name()));
         return levelInfoDtoList;
     }
 
     List<ExerciseLevelInfoDto> getAllLevelInfoDemo() {
         List<ExerciseLevelInfoDto> levelInfoDtoList = new ArrayList<>();
-        levelInfoDtoList.add(getLevelInfo(Level.WHITE));
+        levelInfoDtoList.add(getLevelInfo(Level.WHITE.name()));
         return levelInfoDtoList;
     }
 
@@ -86,7 +86,7 @@ class ExerciseService {
     }
 
     Exercise addNewExercise(String name, String description, String videoUrl, String img, int numberOfPointsToPassed,
-                            int maxPoints, int numberOfAttempts,int numberOfStrokesInOneAttempt ,Level level, boolean isWhite, boolean isRed,
+                            int maxPoints, int numberOfAttempts,int numberOfStrokesInOneAttempt ,String level, boolean isWhite, boolean isRed,
                             boolean isYellow, boolean isGreen, boolean isBrown, boolean isBlue, boolean isPink,
                             boolean isBlack, boolean isButtonPass, boolean isBonusPoint, String bonusInfo,
                             int bonusNumberOfPoints, int length) {
@@ -120,7 +120,7 @@ class ExerciseService {
 
     Exercise updateExercise(String currentExerciseId, String name, String description, String videoUrl,
                                    String img, int numberOfPointsToPassed, int maxPoints, int numberOfAttempts, int numberOfStrokesInOneAttempt,
-                                   Level level, boolean isWhite, boolean isRed, boolean isYellow, boolean isGreen,
+                                   String level, boolean isWhite, boolean isRed, boolean isYellow, boolean isGreen,
                                    boolean isBrown, boolean isBlue, boolean isPink, boolean isBlack,
                                    boolean isButtonPass, boolean isBonusPoint, String bonusInfo,
                                    int bonusNumberOfPoints, int length) {

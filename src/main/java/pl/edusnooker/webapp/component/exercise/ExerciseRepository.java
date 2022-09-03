@@ -8,13 +8,13 @@ import java.util.Optional;
 
 public interface ExerciseRepository extends CrudRepository<Exercise, Long> {
 
-    List<Exercise> findAllByLevel(Level level);
+    List<Exercise> findAllByLevel(String level);
 
     List<Exercise> findAll();
 
     Optional<Exercise> findByExerciseId(String id);
 
-    List<Exercise> findAllByLevelOrderByExerciseIdDesc(Level level);
+    List<Exercise> findAllByLevelOrderByExerciseIdDesc(String level);
 
 
 }

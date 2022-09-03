@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
 
-    <changeSet id="202204140001_dev_import_exercise" author="lebiecki" context="dev">
+    <changeSet id="202204140001_dev_import_exercise" author="lebiecki">
         <loadData encoding="UTF-8"
                   file="db/liquibase/testdata/exercise.csv"
                   separator=";"

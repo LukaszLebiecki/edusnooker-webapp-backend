@@ -20,7 +20,7 @@ public class Exercise {
     private int maxPoints;
     private int numberOfStrokesInOneAttempt;
     private int numberOfAttempts;
-    private Level level;
+    private String level;
     private boolean isWhite;
     private boolean isRed;
     private boolean isYellow;

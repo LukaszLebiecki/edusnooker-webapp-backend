@@ -36,6 +36,7 @@ import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.springframework.http.MediaType.*;
 import static pl.edusnooker.webapp.constant.FileConstant.*;
 import static pl.edusnooker.webapp.constant.UserImplConstant.*;
+import static pl.edusnooker.webapp.enumeration.Role.ROLE_ADMIN;
 import static pl.edusnooker.webapp.enumeration.Role.ROLE_DEMO;
 
 @Service

@@ -54,10 +54,10 @@ class ExerciseController {
         Level[] values = Level.values();
         String name = values[idLevel].name();
         Level level = Level.valueOf(name);
-        if (exerciseService.getLevelInfo(level) == null) {
+        if (exerciseService.getLevelInfo(name) == null) {
             return ResponseEntity.notFound().build();
         } else {
-            return ResponseEntity.ok(exerciseService.getLevelInfo(level));
+            return ResponseEntity.ok(exerciseService.getLevelInfo(name));
         }
     }
 
@@ -67,10 +67,10 @@ class ExerciseController {
         Level[] values = Level.values();
         String name = values[idLevel].name();
         Level level = Level.valueOf(name);
-        if (exerciseService.getAllExerciseByLevel(level).isEmpty()) {
+        if (exerciseService.getAllExerciseByLevel(name).isEmpty()) {
             return ResponseEntity.notFound().build();
         } else {
-            return ResponseEntity.ok(exerciseService.getAllExerciseByLevel(level));
+            return ResponseEntity.ok(exerciseService.getAllExerciseByLevel(name));
         }
     }
 
@@ -80,10 +80,10 @@ class ExerciseController {
         Level[] values = Level.values();
         String name = values[0].name();
         Level level = Level.valueOf(name);
-        if (exerciseService.getAllExerciseByLevel(level).isEmpty()) {
+        if (exerciseService.getAllExerciseByLevel(name).isEmpty()) {
             return ResponseEntity.notFound().build();
         } else {
-            return ResponseEntity.ok(exerciseService.getAllExerciseByLevel(level));
+            return ResponseEntity.ok(exerciseService.getAllExerciseByLevel(name));
         }
     }
 
@@ -159,7 +159,7 @@ class ExerciseController {
                                             @RequestParam("maxPoints") int maxPoints,
                                             @RequestParam("numberOfAttempts") int numberOfAttempts,
                                             @RequestParam("numberOfStrokesInOneAttempt") int numberOfStrokesInOneAttempt,
-                                            @RequestParam("level") Level level,
+                                            @RequestParam("level") String level,
                                             @RequestParam("isWhite") String isWhite,
                                             @RequestParam("isRed") String isRed,
                                             @RequestParam("isYellow") String isYellow,
@@ -174,7 +174,7 @@ class ExerciseController {
                                             @RequestParam("bonusNumberOfPoints") int bonusNumberOfPoints,
                                             @RequestParam("length") int length) {
         Exercise newExercise = exerciseService.addNewExercise(name, description, videoUrl, img, numberOfPointsToPassed,
-                maxPoints, numberOfAttempts, numberOfStrokesInOneAttempt,level, Boolean.parseBoolean(isWhite), Boolean.parseBoolean(isRed),
+                maxPoints, numberOfAttempts, numberOfStrokesInOneAttempt, level, Boolean.parseBoolean(isWhite), Boolean.parseBoolean(isRed),
                 Boolean.parseBoolean(isYellow), Boolean.parseBoolean(isGreen), Boolean.parseBoolean(isBrown),
                 Boolean.parseBoolean(isBlue), Boolean.parseBoolean(isPink), Boolean.parseBoolean(isBlack),
                 Boolean.parseBoolean(isButtonPass), Boolean.parseBoolean(isBonusPoint), bonusInfo, bonusNumberOfPoints,
@@ -193,7 +193,7 @@ class ExerciseController {
                                             @RequestParam("maxPoints") int maxPoints,
                                             @RequestParam("numberOfAttempts") int numberOfAttempts,
                                             @RequestParam("numberOfStrokesInOneAttempt") int numberOfStrokesInOneAttempt,
-                                            @RequestParam("level") Level level,
+                                            @RequestParam("level") String level,
                                             @RequestParam("isWhite") boolean isWhite,
                                             @RequestParam("isRed") boolean isRed,
                                             @RequestParam("isYellow") boolean isYellow,

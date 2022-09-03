@@ -14,11 +14,12 @@ class ExerciseLogic {
         this.exerciseRepository = exerciseRepository;
     }
 
-    String generateExerciseId(Level level) {
-        int numberLevel = level.getNumberLevel();
+    String generateExerciseId(String level) {
+        Level levelValue = Level.valueOf(level);
+        int numberLevel = levelValue.getNumberLevel();
         String nextString;
 
-        List<Exercise> allByLevelOrderByExerciseIdDesc = exerciseRepository.findAllByLevelOrderByExerciseIdDesc(level);
+        List<Exercise> allByLevelOrderByExerciseIdDesc = exerciseRepository.findAllByLevelOrderByExerciseIdDesc(levelValue.name());
         Exercise exercise = allByLevelOrderByExerciseIdDesc.stream()
                 .findFirst()
                 .orElse(new Exercise("empty"));
