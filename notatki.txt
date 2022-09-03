@@ -16,23 +16,21 @@
 
 Plan działania:
 
-1. Dodać pole do exercise - length exercise
+1. Uruchomić bazę danych na produkcji mysql
 
-2. Uruchomić bazę danych na produkcji mysql
+2. Renderować rysunki do działu technique
 
-3. Renderować rysunki do działu technique
+3. Taksty z snookersuccessfull
 
-4. Taksty z snookersuccessfull
+4. Naprawić możliwość przechodzenia do poziomów z poziomu paska przeglądarki a ćwiczenie nie odblokowane
 
-5. Naprawić możliwość przechodzenia do poziomów z poziomu paska przeglądarki a ćwiczenie nie odblokowane
+5. Dodać przekirowanie po udanej rejestracji do okna z informacja o wysłanym e-mailu i przyciskiem przekierowującym do strony logowania
 
-6. Dodać przekirowanie po udanej rejestracji do okna z informacja o wysłanym e-mailu i przyciskiem przekierowującym do strony logowania
+6. Naparawić tworzenie daty ostatniego logowania
 
-7. Naparawić tworzenie daty ostatniego logowania
+7. Dowiedzieć się o metodzie płatności i o wystawieniu rachunku dla kupującego (fv czy paragon) przy odnowieniu subskrybcji automatyczne towrzenei fv itp.
 
-8. Dowiedzieć się o metodzie płatności i o wystawieniu rachunku dla kupującego (fv czy paragon) przy odnowieniu subskrybcji automatyczne towrzenei fv itp.
-
-9. Promowanie platformy na fb zaplanować kampanie:
+8. Promowanie platformy na fb zaplanować kampanie:
     - stworzyć stronę edusnooker na fb
     - dodawać posty o postępach prac nad aplikacją oraz planowaną datą premiery
     - stworzyć fanpage

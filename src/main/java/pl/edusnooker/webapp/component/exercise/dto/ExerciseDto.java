@@ -27,4 +27,5 @@ public class ExerciseDto {
     private boolean isBonusPoint;
     private String bonusInfo;
     private int bonusNumberOfPoints;
+    private int length;
 }

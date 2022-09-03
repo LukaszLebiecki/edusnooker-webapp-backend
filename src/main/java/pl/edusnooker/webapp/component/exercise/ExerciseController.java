@@ -171,12 +171,14 @@ class ExerciseController {
                                             @RequestParam("isButtonPass") String isButtonPass,
                                             @RequestParam("isBonusPoint") String isBonusPoint,
                                             @RequestParam("bonusInfo") String bonusInfo,
-                                            @RequestParam("bonusNumberOfPoints") int bonusNumberOfPoints) {
+                                            @RequestParam("bonusNumberOfPoints") int bonusNumberOfPoints,
+                                            @RequestParam("length") int length) {
         Exercise newExercise = exerciseService.addNewExercise(name, description, videoUrl, img, numberOfPointsToPassed,
                 maxPoints, numberOfAttempts, numberOfStrokesInOneAttempt,level, Boolean.parseBoolean(isWhite), Boolean.parseBoolean(isRed),
                 Boolean.parseBoolean(isYellow), Boolean.parseBoolean(isGreen), Boolean.parseBoolean(isBrown),
                 Boolean.parseBoolean(isBlue), Boolean.parseBoolean(isPink), Boolean.parseBoolean(isBlack),
-                Boolean.parseBoolean(isButtonPass), Boolean.parseBoolean(isBonusPoint), bonusInfo, bonusNumberOfPoints);
+                Boolean.parseBoolean(isButtonPass), Boolean.parseBoolean(isBonusPoint), bonusInfo, bonusNumberOfPoints,
+                length);
         return new ResponseEntity<>(newExercise, HttpStatus.OK);
     }
 
@@ -203,10 +205,11 @@ class ExerciseController {
                                             @RequestParam("isButtonPass") boolean isButtonPass,
                                             @RequestParam("isBonusPoint") boolean isBonusPoint,
                                             @RequestParam("bonusInfo") String bonusInfo,
-                                            @RequestParam("bonusNumberOfPoints") int bonusNumberOfPoints) {
+                                            @RequestParam("bonusNumberOfPoints") int bonusNumberOfPoints,
+                                            @RequestParam("length") int length) {
         Exercise updatedExercise = exerciseService.updateExercise(currentExerciseId, name, description, videoUrl, img, numberOfPointsToPassed,
                 maxPoints, numberOfAttempts, numberOfStrokesInOneAttempt, level, isWhite, isRed, isYellow, isGreen, isBrown, isBlue, isPink, isBlack,
-                isButtonPass, isBonusPoint, bonusInfo, bonusNumberOfPoints);
+                isButtonPass, isBonusPoint, bonusInfo, bonusNumberOfPoints, length);
         return new ResponseEntity<>(updatedExercise, HttpStatus.OK);
     }
 

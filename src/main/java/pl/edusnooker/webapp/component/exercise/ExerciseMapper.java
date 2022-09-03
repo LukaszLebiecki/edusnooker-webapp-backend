@@ -27,6 +27,7 @@ public class ExerciseMapper {
         dto.setBonusPoint(exercise.isBonusPoint());
         dto.setBonusInfo(exercise.getBonusInfo());
         dto.setBonusNumberOfPoints(exercise.getBonusNumberOfPoints());
+        dto.setLength(exercise.getLength());
         return dto;
     }
 

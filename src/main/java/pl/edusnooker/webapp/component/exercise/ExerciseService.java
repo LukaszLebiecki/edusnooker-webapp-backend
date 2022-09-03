@@ -89,7 +89,7 @@ class ExerciseService {
                             int maxPoints, int numberOfAttempts,int numberOfStrokesInOneAttempt ,Level level, boolean isWhite, boolean isRed,
                             boolean isYellow, boolean isGreen, boolean isBrown, boolean isBlue, boolean isPink,
                             boolean isBlack, boolean isButtonPass, boolean isBonusPoint, String bonusInfo,
-                            int bonusNumberOfPoints) {
+                            int bonusNumberOfPoints, int length) {
         Exercise exercise = new Exercise("empty");
         exercise.setExerciseId(exerciseLogic.generateExerciseId(level));
         exercise.setName(name);
@@ -113,6 +113,7 @@ class ExerciseService {
         exercise.setBonusPoint(isBonusPoint);
         exercise.setBonusInfo(bonusInfo);
         exercise.setBonusNumberOfPoints(bonusNumberOfPoints);
+        exercise.setLength(length);
         exerciseRepository.save(exercise);
         return exercise;
     }
@@ -122,7 +123,7 @@ class ExerciseService {
                                    Level level, boolean isWhite, boolean isRed, boolean isYellow, boolean isGreen,
                                    boolean isBrown, boolean isBlue, boolean isPink, boolean isBlack,
                                    boolean isButtonPass, boolean isBonusPoint, String bonusInfo,
-                                   int bonusNumberOfPoints) {
+                                   int bonusNumberOfPoints, int length) {
         Exercise currentExercise = exerciseRepository.findByExerciseId(currentExerciseId).get(); // TODO obsłużyć jak nie znajdzie ćwiczenia w bazie!
         currentExercise.setName(name);
         currentExercise.setDescription(description);
@@ -145,6 +146,7 @@ class ExerciseService {
         currentExercise.setBonusPoint(isBonusPoint);
         currentExercise.setBonusInfo(bonusInfo);
         currentExercise.setBonusNumberOfPoints(bonusNumberOfPoints);
+        currentExercise.setLength(length);
         exerciseRepository.save(currentExercise);
         return currentExercise;
     }
