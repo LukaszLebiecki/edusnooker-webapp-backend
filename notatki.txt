@@ -22,15 +22,13 @@ Plan działania:
 
 3. Taksty z snookersuccessfull
 
-4. Naprawić możliwość przechodzenia do poziomów z poziomu paska przeglądarki a ćwiczenie nie odblokowane
+4. Dodać przekirowanie po udanej rejestracji do okna z informacja o wysłanym e-mailu i przyciskiem przekierowującym do strony logowania
 
-5. Dodać przekirowanie po udanej rejestracji do okna z informacja o wysłanym e-mailu i przyciskiem przekierowującym do strony logowania
+5. Naparawić tworzenie daty ostatniego logowania
 
-6. Naparawić tworzenie daty ostatniego logowania
+6. Dowiedzieć się o metodzie płatności i o wystawieniu rachunku dla kupującego (fv czy paragon) przy odnowieniu subskrybcji automatyczne towrzenei fv itp.
 
-7. Dowiedzieć się o metodzie płatności i o wystawieniu rachunku dla kupującego (fv czy paragon) przy odnowieniu subskrybcji automatyczne towrzenei fv itp.
-
-8. Promowanie platformy na fb zaplanować kampanie:
+7. Promowanie platformy na fb zaplanować kampanie:
     - stworzyć stronę edusnooker na fb
     - dodawać posty o postępach prac nad aplikacją oraz planowaną datą premiery
     - stworzyć fanpage
@@ -42,9 +40,6 @@ Plan działania:
 
 ============================================
 
-UWAGA: mam duplikacje kodu który realizauje ćwiczenie!!!
-
-============================================
 SPIS KOSZTÓW:
 - opłata za domene - opłacona do 2025-06-08 ("edusnooker.com")
 - opłata za server VPS - 900zł
@@ -55,7 +50,6 @@ SPIS KOSZTÓW:
 - licencja java (free) -> korzystać z open jdk 11!!!!
 - final cut pro - 1400zł
 - kurs docker - 300zł
-
 
 
 ============================================
@@ -105,34 +99,9 @@ przy stole snookerowym
 
 =================================================
 
-implementacje płatności stirpe.com !!!
+implementacje płatności stripe.com !!!
 
 ==============================================
-
-wszystkie ikony dostępne ale po kliknięciu np w statystyki wyskakuje komunikat dostęp tylko dla pakietu pro
-wykup i odrazu możliwość i zachęta do przejścia do płatności
-
-========================================
-
-ROLE:
-- DEMO
-- BASIC
-- PREMIUM
-- ADMIN
-
-====================================
-
-Zaplanuj trening(funkcjonalność w wersji premium):
-- możliwość planowania następnego treningu (określenie jakie ćwiczenie (ćwiczenia)) - pokaże odrazu ile czasu potrzeba 
-na wykonanie treningu, określenia czasu kiedy - godzina przed treningiem przyjdzie przypomnienie na e-mail (sms) o zblizajacym
-sie zaplanowanym treningu,
-możliwość planowania treningów na miesiąc do przodu
-
-Zaplanuj trening(funkcjonalność w wersji basic):
-- mozliwość zaplanowania tylko jednego (następnego treningu)
-
-
-=============================================
 
 przesyłania pliku ze zdjęciem a w polu link do zdjęcia (nazwa)
 
@@ -145,25 +114,7 @@ można wysyłać e mail do użytkownika co miesiąc z podsumowaniem jego trening
 
 ===========================================================
 
-kilka wersiji subskrybcji:
-1. basic - dostęp do ćwiczeń (brak dostępu do statystyk tylko podstawowe)
-2. premium - dostęp do ćwiczeń oraz do statystyk zaawanosowanych statystyk i wykresów oraz rozbudowany moduł zplanuj trening
-
-========================================================
-
-Dodać tablice wyników ze zliczaniem statystyk
-Przycisk z zachętą do akcji "Zagraj mecz" 
-
-=================================================
-
 Dodać tablice wyników moduł zeby rozegrać mecz shotout (tylko w wersji premium)
 Przycisk z zachętą do akcji "Zagraj mecz shotout"
-
-=======================================================
-
-Promocja:
-Tylko dziś do 20:00 można pobrać swoje statystyki jak nie masz konata premium
-
-oferta na update do konta premium promocyjna cena ograniczona czasowo!!!
 
 =======================================================

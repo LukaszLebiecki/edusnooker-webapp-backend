@@ -86,7 +86,7 @@ public class UserController extends ExceptionHandling {
     }
 
     @PostMapping("/update/slotone")
-    @PreAuthorize("hasAnyAuthority('user:demo')")
+    @PreAuthorize("hasAnyAuthority('user:basic')")
     public ResponseEntity<User> updateSlotOne(@RequestParam("currentUserId") String currentUserId,
                                        @RequestParam("favoriteSlot") String favoriteSlot) throws EmailExistException, IOException, UsernameExistException, NotAnImageFileException {
         User updatedUser = userService.updateUserSlotOne(currentUserId, favoriteSlot);
@@ -94,7 +94,7 @@ public class UserController extends ExceptionHandling {
     }
 
     @PostMapping("/update/slottwo")
-    @PreAuthorize("hasAnyAuthority('user:demo')")
+    @PreAuthorize("hasAnyAuthority('user:basic')")
     public ResponseEntity<User> updateSlotTwo(@RequestParam("currentUserId") String currentUserId,
                                        @RequestParam("favoriteSlot") String favoriteSlot) throws EmailExistException, IOException, UsernameExistException, NotAnImageFileException {
         User updatedUser = userService.updateUserSlotTwo(currentUserId, favoriteSlot);
@@ -102,7 +102,7 @@ public class UserController extends ExceptionHandling {
     }
 
     @PostMapping("/update/slotthree")
-    @PreAuthorize("hasAnyAuthority('user:demo')")
+    @PreAuthorize("hasAnyAuthority('user:basic')")
     public ResponseEntity<User> updateSlotThree(@RequestParam("currentUserId") String currentUserId,
                                               @RequestParam("favoriteSlot") String favoriteSlot) throws EmailExistException, IOException, UsernameExistException, NotAnImageFileException {
         User updatedUser = userService.updateUserSlotThree(currentUserId, favoriteSlot);
