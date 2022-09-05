@@ -1,34 +1,30 @@
 =================================
-{
+"dev"
     "username": admin
     "password": jxZXzFOZkp
-}
-=================================
-{
+
     "username": user
     "password": v7Z7IxUVqx
-}
-=================================
-
---spring.profiles.active=dev
 
 =================================
 
 Plan działania:
 
-1. Uruchomić bazę danych na produkcji mysql
+1. Dodać przekirowanie po udanej rejestracji do okna z informacja o wysłanym e-mailu i przyciskiem przekierowującym do strony logowania
 
-2. Renderować rysunki do działu technique
+2. Naparawić tworzenie daty ostatniego logowania
 
-3. Taksty z snookersuccessfull
+3. Naprawić date wykonania ćwiczenia (teraz jest 2godziny do tyłu?)
 
-4. Dodać przekirowanie po udanej rejestracji do okna z informacja o wysłanym e-mailu i przyciskiem przekierowującym do strony logowania
+4. Wykonać stronę z płatnością (subskrubcja, co się posiada w suskrybcji ile kosztuje itp.)
 
-5. Naparawić tworzenie daty ostatniego logowania
+5. Renderować rysunki do działu technique
 
-6. Dowiedzieć się o metodzie płatności i o wystawieniu rachunku dla kupującego (fv czy paragon) przy odnowieniu subskrybcji automatyczne towrzenei fv itp.
+6. Taksty z snookersuccessfull - dopracować teksty w technique
 
-7. Promowanie platformy na fb zaplanować kampanie:
+7. Dowiedzieć się o metodzie płatności i o wystawieniu rachunku dla kupującego (fv czy paragon) przy odnowieniu subskrybcji automatyczne towrzenei fv itp.
+
+8. Promowanie platformy na fb zaplanować kampanie:
     - stworzyć stronę edusnooker na fb
     - dodawać posty o postępach prac nad aplikacją oraz planowaną datą premiery
     - stworzyć fanpage
@@ -61,8 +57,6 @@ SPIS KOSZTÓW:
 
 nagrody za zaliczone ćwiczenia!:
 - kolejne odznaki doświadczenia
-- maskotka z gazdzetami za zaliczone ćwiczenie dostaje się gazety którymi można
-personalizować maskotke
 
 ==================================================
 
@@ -73,10 +67,6 @@ Zrobić koszulki eduSnookek ogólnie gadzety !
 Zrobić onboarding (samouczek) !!!!!!!!!!
 Instruktaż poruszania się po podstawowych funkacjach portalu
 Filmik promocyjny z najważniejszymi funkcjonalonościami
-
-==================================================
-
-Logowanie oAuth (logowanie przez google, facebook)
 
 ==================================================
 
