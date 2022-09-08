@@ -10,6 +10,8 @@
 
 Plan działania:
 
+0. Wgrać certyfikat SSL
+
 1. Dodać przekirowanie po udanej rejestracji do okna z informacja o wysłanym e-mailu i przyciskiem przekierowującym do strony logowania
 
 2. Naparawić tworzenie daty ostatniego logowania
