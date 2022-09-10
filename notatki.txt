@@ -49,17 +49,6 @@ SPIS KOSZTÓW:
 - final cut pro - 1400zł
 - kurs docker - 300zł
 
-
-============================================
->>>>>>>>> Luźne spisane pomysły <<<<<<<<<<<<
-============================================
-\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
-
-==================================================
-
-nagrody za zaliczone ćwiczenia!:
-- kolejne odznaki doświadczenia
-
 ==================================================
 
 Zrobić koszulki eduSnookek ogólnie gadzety !
@@ -91,10 +80,6 @@ przy stole snookerowym
 
 =================================================
 
-implementacje płatności stripe.com !!!
-
-==============================================
-
 przesyłania pliku ze zdjęciem a w polu link do zdjęcia (nazwa)
 
 =======================================
@@ -105,8 +90,3 @@ można wysyłać e mail do użytkownika co miesiąc z podsumowaniem jego trening
 (Kurs Spring Framework dla zaawansowanych: Task Scheduler)
 
 ===========================================================
-
-Dodać tablice wyników moduł zeby rozegrać mecz shotout (tylko w wersji premium)
-Przycisk z zachętą do akcji "Zagraj mecz shotout"
-
-=======================================================
