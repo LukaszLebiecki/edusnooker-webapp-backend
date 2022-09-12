@@ -10,13 +10,15 @@
 
 Plan działania:
 
-1. Zmienić wygląd zakładki MY ACCOUNT
+1. Wykonać stronę z płatnością (subskrubcja, co się posiada w suskrybcji ile kosztuje itp.)
+
+2. Zmienić wygląd zakładki MY ACCOUNT
     (permissions from role zlikwidować i tylko informacja czy konto opłacone i wersja premium czy demo)
     i naparawić tworzenie daty ostatniego logowania
 
-2. Naprawić date wykonania ćwiczenia (teraz jest 2godziny do tyłu?)
+3. Naprawić date wykonania ćwiczenia (teraz jest 2godziny do tyłu?)
 
-3. Wykonać stronę z płatnością (subskrubcja, co się posiada w suskrybcji ile kosztuje itp.)
+4. Wykonać stronę z płatnością (subskrubcja, co się posiada w suskrybcji ile kosztuje itp.)
 
 5. Renderować rysunki do działu technique
 
