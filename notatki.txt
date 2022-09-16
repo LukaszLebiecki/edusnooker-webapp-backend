@@ -12,6 +12,8 @@ Plan działania:
 
 1. Wykonać stronę z płatnością (subskrubcja, co się posiada w suskrybcji ile kosztuje itp.)
 
+1a. Uzupełnić w ćwiczeniach długość treningu
+
 2. Zmienić wygląd zakładki MY ACCOUNT
     (permissions from role zlikwidować i tylko informacja czy konto opłacone i wersja premium czy demo)
     i naparawić tworzenie daty ostatniego logowania
