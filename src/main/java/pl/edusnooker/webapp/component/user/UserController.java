@@ -137,7 +137,7 @@ public class UserController extends ExceptionHandling {
     }
 
     @PostMapping("/updateProfileImage")
-    @PreAuthorize("hasAnyAuthority('user:delete')")
+    @PreAuthorize("hasAnyAuthority('user:demo')")
     public ResponseEntity<User> updateProfileImage(@RequestParam("username") String username,
                                                    @RequestParam(value = "profileImage") MultipartFile profileImage) throws EmailExistException, IOException, UsernameExistException, NotAnImageFileException {
         User user = userService.updateProfileImage(username, profileImage);
