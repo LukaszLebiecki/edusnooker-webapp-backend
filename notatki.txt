@@ -10,8 +10,6 @@
 
 Plan działania:
 
-0. Wykonać stronę z płatnością (subskrubcja, co się posiada w suskrybcji ile kosztuje itp.)
-
 1. Dodać możliwość usunięcia własnego konta (pomyśleć jak to zrobić!!!)
 
 2. Naparawić tworzenie daty ostatniego logowania
