@@ -50,6 +50,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     private LoginAttemptService loginAttemptService;
     private EmailService emailService;
 
+
     public UserServiceImpl(UserRepository userRepository,
                            BCryptPasswordEncoder bCryptPasswordEncoder,
                            LoginAttemptService loginAttemptService,

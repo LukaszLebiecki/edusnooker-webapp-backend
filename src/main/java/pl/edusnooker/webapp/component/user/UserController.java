@@ -136,6 +136,13 @@ public class UserController extends ExceptionHandling {
         return response(HttpStatus.OK, USER_DELETE_SUCCESSFULLY);
     }
 
+    @DeleteMapping("/deletemyaccount/{username}")
+    @PreAuthorize("isFullyAuthenticated()")
+    public ResponseEntity<HttpResponse> deleteMyAccount(@PathVariable("username") String username) throws IOException {
+        userService.deleteUser(username);
+        return response(HttpStatus.OK, USER_DELETE_SUCCESSFULLY);
+    }
+
     @PostMapping("/updateProfileImage")
     @PreAuthorize("hasAnyAuthority('user:demo')")
     public ResponseEntity<User> updateProfileImage(@RequestParam("username") String username,

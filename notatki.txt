@@ -10,7 +10,7 @@
 
 Plan działania:
 
-1. Dodać możliwość usunięcia własnego konta (pomyśleć jak to zrobić!!!)
+1. Wprowadzić walidacje przy podawaniu e-mail przy usuwaniu konta
 
 2. Naparawić tworzenie daty ostatniego logowania
 
