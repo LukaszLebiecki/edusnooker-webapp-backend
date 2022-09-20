@@ -10,21 +10,15 @@
 
 Plan działania:
 
-1. Wprowadzić walidacje przy podawaniu e-mail przy usuwaniu konta
+1. Naprawić date wykonania ćwiczenia (teraz jest 2godziny do tyłu?)
 
-2. Naparawić tworzenie daty ostatniego logowania
+2. Renderować rysunki do działu technique
 
-3. Naprawić date wykonania ćwiczenia (teraz jest 2godziny do tyłu?)
+3. Taksty z snookersuccessfull - dopracować teksty w technique
 
-4. Wykonać stronę z płatnością (subskrubcja, co się posiada w suskrybcji ile kosztuje itp.)
+4. Dowiedzieć się o metodzie płatności i o wystawieniu rachunku dla kupującego (fv czy paragon) przy odnowieniu subskrybcji automatyczne towrzenei fv itp.
 
-5. Renderować rysunki do działu technique
-
-6. Taksty z snookersuccessfull - dopracować teksty w technique
-
-7. Dowiedzieć się o metodzie płatności i o wystawieniu rachunku dla kupującego (fv czy paragon) przy odnowieniu subskrybcji automatyczne towrzenei fv itp.
-
-8. Promowanie platformy na fb zaplanować kampanie:
+5. Promowanie platformy na fb zaplanować kampanie:
     - stworzyć stronę edusnooker na fb
     - dodawać posty o postępach prac nad aplikacją oraz planowaną datą premiery
     - stworzyć fanpage
