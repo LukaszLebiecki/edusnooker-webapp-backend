@@ -16,9 +16,13 @@ Plan działania:
 
 3. Taksty z snookersuccessfull - dopracować teksty w technique
 
-4. Dowiedzieć się o metodzie płatności i o wystawieniu rachunku dla kupującego (fv czy paragon) przy odnowieniu subskrybcji automatyczne towrzenei fv itp.
+4. Utworzyć loading page (strona gdzie można się zalogować, lub dołączyć za free, info co to za aplikacja, np. dzięki aplikacji sledzisz swoje postepy w snookerze itp.)
 
-5. Promowanie platformy na fb zaplanować kampanie:
+5. Dowiedzieć się o metodzie płatności i o wystawieniu rachunku dla kupującego (fv czy paragon) przy odnowieniu subskrybcji automatyczne towrzenei fv itp.
+
+6. Dla subskrybentów którzy subskrybują już x miesięcy nagrody w postaci kubków czy koszulek
+
+7. Promowanie platformy na fb zaplanować kampanie:
     - stworzyć stronę edusnooker na fb
     - dodawać posty o postępach prac nad aplikacją oraz planowaną datą premiery
     - stworzyć fanpage
