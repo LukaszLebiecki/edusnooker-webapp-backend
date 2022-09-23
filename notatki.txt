@@ -12,13 +12,11 @@ Plan działania:
 
 1. Naprawić date wykonania ćwiczenia (teraz jest 2godziny do tyłu?)
 
-2. Utworzyć loading page (strona gdzie można się zalogować, lub dołączyć za free, info co to za aplikacja, np. dzięki aplikacji sledzisz swoje postepy w snookerze itp.)
+2. Dowiedzieć się o metodzie płatności i o wystawieniu rachunku dla kupującego (fv czy paragon) przy odnowieniu subskrybcji automatyczne towrzenei fv itp.
 
-3. Dowiedzieć się o metodzie płatności i o wystawieniu rachunku dla kupującego (fv czy paragon) przy odnowieniu subskrybcji automatyczne towrzenei fv itp.
+3. Dla subskrybentów którzy subskrybują już x miesięcy nagrody w postaci kubków czy koszulek
 
-4. Dla subskrybentów którzy subskrybują już x miesięcy nagrody w postaci kubków czy koszulek
-
-5. Promowanie platformy na fb zaplanować kampanie:
+4. Promowanie platformy na fb zaplanować kampanie:
     - stworzyć stronę edusnooker na fb
     - dodawać posty o postępach prac nad aplikacją oraz planowaną datą premiery
     - stworzyć fanpage
