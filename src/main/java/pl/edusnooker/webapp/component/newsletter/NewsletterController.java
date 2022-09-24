@@ -5,6 +5,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.edusnooker.webapp.http.HttpResponse;
 
+import javax.mail.MessagingException;
+
 @RestController
 @RequestMapping("api")
 class NewsletterController {
@@ -18,7 +20,7 @@ class NewsletterController {
 
 
     @PostMapping("/newsletter/add")
-    ResponseEntity<Newsletter> addNewNewsletter(@RequestParam("email") String email) {
+    ResponseEntity<Newsletter> addNewNewsletter(@RequestParam("email") String email) throws MessagingException {
         Newsletter newsletter = newsletterService.addNewNewsletter(email);
         return new ResponseEntity<>(newsletter, HttpStatus.OK);
     }
