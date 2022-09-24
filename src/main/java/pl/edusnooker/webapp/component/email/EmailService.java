@@ -51,8 +51,8 @@ public class EmailService {
         message.setSubject("Edu Snooker - thanks for joining");
         message.setText("Hello, \n \n I am very glad that you joined us. " +
                 "\n \n You are probably looking forward to trying out how eduSnooker works." +
-                "\n I am asking for a moment of patience." +
-                "\n \n I am constantly working on the next exercises and functions of the application.\nI will keep you updated on the application stage." +
+                "\n \n I am asking for a moment of patience." +
+                "\n \n I am constantly working on the next exercises and functions of the application.\nI will keep you updated on the progress application." +
                 "\n \n If you have any questions, please reply to this email.\n I am happy to answer your questions." +
                 "\n \n Regards" +
                 "\n Lukas | edusnooker.com");

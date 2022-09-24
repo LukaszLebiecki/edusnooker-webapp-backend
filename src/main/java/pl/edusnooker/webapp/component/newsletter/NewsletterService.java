@@ -21,7 +21,7 @@ public class NewsletterService {
     Newsletter addNewNewsletter(String email) throws MessagingException {
         Newsletter newsletter = new Newsletter();
         Optional<Newsletter> byEmail = newsletterRepository.findByEmail(email);
-        if (byEmail.isPresent()) {
+        if (byEmail.isEmpty()) {
             newsletter.setEmail(email);
             newsletterRepository.save(newsletter);
             emailService.sendEmailNewsletter(email);
