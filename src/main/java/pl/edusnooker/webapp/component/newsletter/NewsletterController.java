@@ -19,8 +19,8 @@ class NewsletterController {
     }
 
 
-    @PostMapping("/newsletter/add")
-    ResponseEntity<Newsletter> addNewNewsletter(@RequestParam("email") String email) throws MessagingException {
+    @GetMapping("/newsletter/add/{email}")
+    ResponseEntity<Newsletter> addNewNewsletter(@PathVariable("email") String email) throws MessagingException {
         Newsletter newsletter = newsletterService.addNewNewsletter(email);
         return new ResponseEntity<>(newsletter, HttpStatus.OK);
     }
