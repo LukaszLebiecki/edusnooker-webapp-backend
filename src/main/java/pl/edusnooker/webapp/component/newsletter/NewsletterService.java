@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import pl.edusnooker.webapp.component.email.EmailService;
 
 import javax.mail.MessagingException;
+import java.util.Optional;
 
 @Service
 public class NewsletterService {
@@ -19,10 +20,14 @@ public class NewsletterService {
 
     Newsletter addNewNewsletter(String email) throws MessagingException {
         Newsletter newsletter = new Newsletter();
-        newsletter.setEmail(email);
-        newsletterRepository.save(newsletter);
-        emailService.sendEmailNewsletter(email);
-        return newsletter;
+        Optional<Newsletter> byEmail = newsletterRepository.findByEmail(email);
+        if (byEmail.isPresent()) {
+            newsletter.setEmail(email);
+            newsletterRepository.save(newsletter);
+            emailService.sendEmailNewsletter(email);
+            return newsletter;
+        }
+        return new Newsletter();
     }
 
     void deleteNewsletter(String email) {
