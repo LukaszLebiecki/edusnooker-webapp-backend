@@ -48,12 +48,12 @@ public class EmailService {
         message.setFrom(new InternetAddress(FROM_EMAIL));
         message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email, false));
         message.setRecipients(Message.RecipientType.CC, InternetAddress.parse(CC_EMAIL, false));
-        message.setSubject(EMAIL_SUBJECT);
+        message.setSubject("Edu Snooker - thanks for joining");
         message.setText("Hello, \n \n I am very glad that you joined us. " +
                 "\n \n You are probably looking forward to trying out how eduSnooker works." +
-                "\n \n I am asking for a moment of patience." +
-                "\n \n I am constantly working on the next exercises and functions of the application. I will keep you updated on the application stage." +
-                "\n \n If you have any questions, please reply to this email. I am happy to answer your questions." +
+                "\n I am asking for a moment of patience." +
+                "\n \n I am constantly working on the next exercises and functions of the application.\nI will keep you updated on the application stage." +
+                "\n \n If you have any questions, please reply to this email.\n I am happy to answer your questions." +
                 "\n \n Regards" +
                 "\n Lukas | edusnooker.com");
         message.setSentDate(new Date());
