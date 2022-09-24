@@ -10,6 +10,7 @@
     <include file="changelog/202204150002_add_columns_Level_to_Exercise_mysql.xml" relativeToChangelogFile="true"/>
     <include file="changelog/202204190001_add_entity_User.xml" relativeToChangelogFile="true"/>
     <include file="changelog/202204240001_add_entity_Progress.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/202209240001_add_entity_Newsletter.xml" relativeToChangelogFile="true"/>
 
 
     <!--    COMMON data (dane test dla prod i dev)    -->
