@@ -18,15 +18,17 @@ Plan działania:
 
 4. Wykonać koszulke z logo eduSnooker
 
-5. Naprawić date wykonania ćwiczenia (teraz jest 2godziny do tyłu?)
+5. Opinie użytkowników - jak to ogarnąć gdzie wyswietlać gdzie zbierać
 
-6. How to add my website to google
+6. Naprawić date wykonania ćwiczenia (teraz jest 2godziny do tyłu?)
 
-7. Dowiedzieć się o metodzie płatności i o wystawieniu rachunku dla kupującego (fv czy paragon) przy odnowieniu subskrybcji automatyczne towrzenei fv itp.
+7. How to add my website to google
 
-8. Dla subskrybentów którzy subskrybują już x miesięcy nagrody w postaci kubków czy koszulek
+8. Dowiedzieć się o metodzie płatności i o wystawieniu rachunku dla kupującego (fv czy paragon) przy odnowieniu subskrybcji automatyczne towrzenei fv itp.
 
-9. Promowanie platformy na fb zaplanować kampanie:
+9. Dla subskrybentów którzy subskrybują już x miesięcy nagrody w postaci kubków czy koszulek
+
+10. Promowanie platformy na fb zaplanować kampanie:
     - stworzyć stronę edusnooker na fb
     - dodawać posty o postępach prac nad aplikacją oraz planowaną datą premiery
     - stworzyć fanpage
