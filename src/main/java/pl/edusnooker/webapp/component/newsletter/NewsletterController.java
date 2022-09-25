@@ -20,9 +20,9 @@ class NewsletterController {
 
 
     @GetMapping("/newsletter/add/{email}")
-    ResponseEntity<Newsletter> addNewNewsletter(@PathVariable("email") String email) throws MessagingException {
-        Newsletter newsletter = newsletterService.addNewNewsletter(email);
-        return new ResponseEntity<>(newsletter, HttpStatus.OK);
+    public ResponseEntity<HttpResponse> addNewNewsletter(@PathVariable("email") String email) throws MessagingException {
+        newsletterService.addNewNewsletter(email);
+        return response(HttpStatus.OK, "Your sign up was successful.");
     }
 
     @DeleteMapping("/newsletter/delete/{email}")
