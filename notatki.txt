@@ -10,25 +10,17 @@
 
 Plan działania:
 
-1. Weryfikacja emaili czy przesyałna tekst to email!! oraz blokada wyslania maila przez boot milnionow maili przez boota)
+0. Kolejne ćwiczenia!
 
-2. Wyłączyć logi zapytan hybernate
+1. Wprowadzić metode płatności "stripe.com".
 
-3. Pozycjonowanie strony w google
+2. Pozycjonowanie strony w google
 
-4. Wykonać koszulke z logo eduSnooker
+3. Wykonać koszulke z logo eduSnooker
 
-5. Opinie użytkowników - jak to ogarnąć gdzie wyswietlać gdzie zbierać
+4. Naprawić date wykonania ćwiczenia (teraz jest 2godziny do tyłu?)
 
-6. Naprawić date wykonania ćwiczenia (teraz jest 2godziny do tyłu?)
-
-7. How to add my website to google
-
-8. Dowiedzieć się o metodzie płatności i o wystawieniu rachunku dla kupującego (fv czy paragon) przy odnowieniu subskrybcji automatyczne towrzenei fv itp.
-
-9. Dla subskrybentów którzy subskrybują już x miesięcy nagrody w postaci kubków czy koszulek
-
-10. Promowanie platformy na fb zaplanować kampanie:
+5. Promowanie platformy na fb zaplanować kampanie:
     - stworzyć stronę edusnooker na fb
     - dodawać posty o postępach prac nad aplikacją oraz planowaną datą premiery
     - stworzyć fanpage
@@ -53,7 +45,9 @@ SPIS KOSZTÓW:
 
 ==================================================
 
-Zrobić koszulki eduSnookek ogólnie gadzety !
+* Opinie użytkowników - jak to ogarnąć gdzie wyswietlać gdzie zbierać
+* Zrobić koszulki eduSnookek ogólnie gadzety !
+* Dla subskrybentów którzy subskrybują już x miesięcy nagrody w postaci kubków czy koszulek
 
 ==================================================
 
