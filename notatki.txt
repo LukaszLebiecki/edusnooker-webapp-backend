@@ -14,19 +14,21 @@ Plan działania:
 
 1. Zmienić teksty przy levelach!!! oraz liczbe punktów aby odblokować nastepny poziom oraz napisać wyjasnienie!!!
 
-2. Wprowadzić metode płatności "stripe.com".
+2. Zaimplementować ile ćwiczeń trzeba zaliczyć aby odblokwać nastepny poziom
 
-3. Zapis logów do pliku
+3. Wprowadzić metode płatności "stripe.com".
 
-4. automatyczny backup bazy danych
+4. Zapis logów do pliku
 
-5. Pozycjonowanie strony w google
+5. automatyczny backup bazy danych
 
-6. Wykonać koszulke z logo eduSnooker
+6. Pozycjonowanie strony w google
 
-7. Naprawić date wykonania ćwiczenia (teraz jest 2godziny do tyłu?)
+7. Wykonać koszulke z logo eduSnooker
 
-8. Promowanie platformy na fb zaplanować kampanie:
+8. Naprawić date wykonania ćwiczenia (teraz jest 2godziny do tyłu?)
+
+9. Promowanie platformy na fb zaplanować kampanie:
     - stworzyć stronę edusnooker na fb
     - dodawać posty o postępach prac nad aplikacją oraz planowaną datą premiery
     - stworzyć fanpage

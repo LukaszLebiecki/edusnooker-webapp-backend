@@ -13,16 +13,11 @@
     <include file="changelog/202209240001_add_entity_Newsletter.xml" relativeToChangelogFile="true"/>
 
 
-    <!--    COMMON data (dane test dla prod i dev)    -->
-
-
     <!--    PROD data     -->
-
-
-    <!--    DEV data     -->
     <include file="testdata/202205070001_dev_import_user.xml" relativeToChangelogFile="true"/>
     <include file="testdata/202204140001_dev_import_exercise.xml" relativeToChangelogFile="true"/>
     <include file="testdata/202204240003_dev_import_progress.xml" relativeToChangelogFile="true"/>
+    <include file="testdata/202209300001_add_exercises.xml" relativeToChangelogFile="true"/>
 
 
 
