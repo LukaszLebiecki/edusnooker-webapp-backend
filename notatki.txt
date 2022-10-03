@@ -22,9 +22,7 @@ Plan działania:
 
 5. Wykonać koszulke z logo eduSnooker
 
-6. Naprawić date wykonania ćwiczenia (teraz jest 2godziny do tyłu?) - problem z ładowaniem wykresów !!!
-
-7. Promowanie platformy na fb zaplanować kampanie:
+6. Promowanie platformy na fb zaplanować kampanie:
     - stworzyć stronę edusnooker na fb
     - dodawać posty o postępach prac nad aplikacją oraz planowaną datą premiery
     - stworzyć fanpage
