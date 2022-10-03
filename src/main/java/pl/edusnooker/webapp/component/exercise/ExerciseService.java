@@ -56,7 +56,7 @@ class ExerciseService {
         ExerciseLevelInfoDto exerciseLevelInfoDto = new ExerciseLevelInfoDto();
         exerciseLevelInfoDto.setName(level);
         exerciseLevelInfoDto.setNumberOfExercise((int) count);
-        exerciseLevelInfoDto.setNumberOfPointToTarget(8); // todo zaimplementować ile ćwiczeń trzeba zaliczyć aby odblokwać nastepny poziom
+        exerciseLevelInfoDto.setNumberOfPointToTarget(exerciseLogic.pointToPass(level));
         return exerciseLevelInfoDto;
     }
 

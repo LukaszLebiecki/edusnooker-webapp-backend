@@ -12,8 +12,6 @@ Plan działania:
 
 0. Kolejne ćwiczenia!
 
-2. Zaimplementować ile ćwiczeń trzeba zaliczyć aby odblokwać nastepny poziom
-
 3. Wprowadzić metode płatności "stripe.com".
 
 4. Zapis logów do pliku
