@@ -12,19 +12,19 @@ Plan działania:
 
 0. Kolejne ćwiczenia!
 
-3. Wprowadzić metode płatności "stripe.com".
+1. Wprowadzić metode płatności "stripe.com".
 
-4. Zapis logów do pliku
+2. Zapis logów do pliku
 
-5. automatyczny backup bazy danych
+3. automatyczny backup bazy danych
 
-6. Pozycjonowanie strony w google
+4. Pozycjonowanie strony w google
 
-7. Wykonać koszulke z logo eduSnooker
+5. Wykonać koszulke z logo eduSnooker
 
-8. Naprawić date wykonania ćwiczenia (teraz jest 2godziny do tyłu?)
+6. Naprawić date wykonania ćwiczenia (teraz jest 2godziny do tyłu?) - problem z ładowaniem wykresów !!!
 
-9. Promowanie platformy na fb zaplanować kampanie:
+7. Promowanie platformy na fb zaplanować kampanie:
     - stworzyć stronę edusnooker na fb
     - dodawać posty o postępach prac nad aplikacją oraz planowaną datą premiery
     - stworzyć fanpage
