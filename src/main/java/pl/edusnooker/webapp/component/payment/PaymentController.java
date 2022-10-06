@@ -23,6 +23,7 @@ public class PaymentController {
     @PostMapping("checkout")
     @PreAuthorize("hasAnyAuthority('user:demo')")
     public String subscriptionWithCheckoutPage(@RequestBody Payment checkout) throws StripeException {
+        init();
         SessionCreateParams params = new SessionCreateParams.Builder().setSuccessUrl(checkout.getSuccessUrl())
                 .setCancelUrl(checkout.getCancelUrl()).addPaymentMethodType(SessionCreateParams.PaymentMethodType.CARD)
                 .setMode(SessionCreateParams.Mode.SUBSCRIPTION).addLineItem(new SessionCreateParams.LineItem.Builder()
