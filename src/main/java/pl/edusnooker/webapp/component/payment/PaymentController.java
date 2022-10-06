@@ -10,18 +10,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import pl.edusnooker.webapp.constant.StripeConstant;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import static pl.edusnooker.webapp.constant.StripeConstant.SECRET_KEY;
 
 @RestController
 @RequestMapping("api")
 public class PaymentController {
 
-    // todo Ukryć przy prod!
-    String secretKey = "sk_test_51LpHi7LJcGDwiGcWjUyw4MnjWaOAsJoYmQFw5fj55BgUk503vjf1pWhxYzXF6VeLCApewoJrlWYMT5oR2ORt2R3G00ZbanFYpx";
-
+    String secretKey = SECRET_KEY;
     private static Gson gson = new Gson();
+
 
     @PostMapping("checkout")
     @PreAuthorize("hasAnyAuthority('user:demo')")
