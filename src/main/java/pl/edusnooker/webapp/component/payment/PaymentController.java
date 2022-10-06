@@ -18,16 +18,24 @@ import java.util.Map;
 @RequestMapping("api")
 public class PaymentController {
 
+    // todo Ukryć przy prod!
+    String secretKey = "sk_test_51LpHi7LJcGDwiGcWjUyw4MnjWaOAsJoYmQFw5fj55BgUk503vjf1pWhxYzXF6VeLCApewoJrlWYMT5oR2ORt2R3G00ZbanFYpx";
+
     private static Gson gson = new Gson();
 
     @PostMapping("checkout")
     @PreAuthorize("hasAnyAuthority('user:demo')")
     public String subscriptionWithCheckoutPage(@RequestBody Payment checkout) throws StripeException {
-        init();
-        SessionCreateParams params = new SessionCreateParams.Builder().setSuccessUrl(checkout.getSuccessUrl())
-                .setCancelUrl(checkout.getCancelUrl()).addPaymentMethodType(SessionCreateParams.PaymentMethodType.CARD)
-                .setMode(SessionCreateParams.Mode.SUBSCRIPTION).addLineItem(new SessionCreateParams.LineItem.Builder()
-                        .setQuantity(1L).setPrice(checkout.getPriceId()).build())
+        init(secretKey);
+        SessionCreateParams params = new SessionCreateParams.Builder()
+                .setSuccessUrl(checkout.getSuccessUrl())
+                .setCancelUrl(checkout.getCancelUrl())
+                .addPaymentMethodType(SessionCreateParams.PaymentMethodType.CARD)
+                .setMode(SessionCreateParams.Mode.SUBSCRIPTION)
+                .addLineItem(new SessionCreateParams.LineItem.Builder()
+                        .setQuantity(1L)
+                        .setPrice(checkout.getPriceId())
+                        .build())
                 .build();
 
         try {
@@ -44,7 +52,7 @@ public class PaymentController {
         }
     }
 
-    private static void init() {
-        Stripe.apiKey = "sk_test_51LpHi7LJcGDwiGcWjUyw4MnjWaOAsJoYmQFw5fj55BgUk503vjf1pWhxYzXF6VeLCApewoJrlWYMT5oR2ORt2R3G00ZbanFYpx";
+    private static void init(String secretKey) {
+        Stripe.apiKey = secretKey;
     }
 }
