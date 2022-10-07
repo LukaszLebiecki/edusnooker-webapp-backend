@@ -57,9 +57,10 @@ public class PaymentController {
     }
 
     @PostMapping("webhook/subscriptionCreate")
-    public ResponseEntity<String> subscriptionCreate(@RequestBody String requestBody) {
-        System.out.println("##Webhook working##" + requestBody);
-        return new ResponseEntity<>(requestBody, HttpStatus.OK);
+    public ResponseEntity<String> subscriptionCreate(@RequestBody Webhook webhook) {
+        System.out.println("##Webhook working##" + webhook.getCurrentPeriodEnd() +
+                " " + webhook.getCustomer_email());
+        return new ResponseEntity<>(webhook.toString(), HttpStatus.OK);
     }
 
     private static void init(String secretKey) {
