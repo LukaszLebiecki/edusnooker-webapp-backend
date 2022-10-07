@@ -16,6 +16,7 @@ public class PaymentService {
     public User setUserStripeId(String email, String stripeId) {
         User currentUser = findUserByEmail(email);
         currentUser.setStripeId(stripeId);
+        userRepository.save(currentUser);
         return currentUser;
     }
 

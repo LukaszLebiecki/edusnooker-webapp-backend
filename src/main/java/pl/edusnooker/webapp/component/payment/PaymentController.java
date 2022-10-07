@@ -68,7 +68,7 @@ public class PaymentController {
     @PostMapping("webhook/userCreate")
     public ResponseEntity<String> subscriptionCreate(@RequestBody StripeCreateUser stripeCreateUser) {
         User user = paymentService.setUserStripeId(stripeCreateUser.data.object.email, stripeCreateUser.getId());
-        return new ResponseEntity<>(gson.toJson(user), HttpStatus.OK);
+        return new ResponseEntity<>(gson.toJson(stripeCreateUser), HttpStatus.OK);
     }
 
     private static void init(String secretKey) {
