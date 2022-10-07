@@ -5,6 +5,8 @@ import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
 import com.stripe.model.checkout.Session;
 import com.stripe.param.checkout.SessionCreateParams;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,6 +33,7 @@ public class PaymentController {
         SessionCreateParams params = new SessionCreateParams.Builder()
                 .setSuccessUrl(checkout.getSuccessUrl())
                 .setCancelUrl(checkout.getCancelUrl())
+                .setCustomerEmail(checkout.getEmail())
                 .addPaymentMethodType(SessionCreateParams.PaymentMethodType.CARD)
                 .setMode(SessionCreateParams.Mode.SUBSCRIPTION)
                 .addLineItem(new SessionCreateParams.LineItem.Builder()
@@ -51,6 +54,12 @@ public class PaymentController {
             responseData.put("error", messageData);
             return gson.toJson(responseData);
         }
+    }
+
+    @PostMapping("webhook/subscriptionCreate")
+    public ResponseEntity<String> subscriptionCreate(@RequestBody String requestBody) {
+        System.out.println("##Webhook working##" + requestBody);
+        return new ResponseEntity<>(requestBody, HttpStatus.OK);
     }
 
     private static void init(String secretKey) {

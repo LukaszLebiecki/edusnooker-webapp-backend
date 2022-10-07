@@ -7,4 +7,5 @@ public class Payment {
     private String priceId;
     private String successUrl;
     private String cancelUrl;
+    private String email;
 }
