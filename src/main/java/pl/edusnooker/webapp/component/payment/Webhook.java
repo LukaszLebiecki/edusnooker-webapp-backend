@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class Webhook {
-    private String currentPeriodEnd;
-    private String customer_email;
+    private String id;
+    private String object;
 
 }
