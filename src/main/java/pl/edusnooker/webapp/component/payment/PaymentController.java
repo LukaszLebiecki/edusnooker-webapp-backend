@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.edusnooker.webapp.component.payment.webhook.StripeCreateUser;
+import pl.edusnooker.webapp.component.user.User;
+import pl.edusnooker.webapp.component.user.UserRepository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,7 +29,11 @@ public class PaymentController {
 
     String secretKey = SECRET_KEY;
     private static Gson gson = new Gson();
+    private PaymentService paymentService;
 
+    public PaymentController(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
 
     @PostMapping("checkout")
     @PreAuthorize("hasAnyAuthority('user:demo')")
@@ -59,11 +65,10 @@ public class PaymentController {
         }
     }
 
-    @PostMapping("webhook/subscriptionCreate")
+    @PostMapping("webhook/userCreate")
     public ResponseEntity<String> subscriptionCreate(@RequestBody StripeCreateUser stripeCreateUser) {
-        System.out.println("##Webhook working##" + stripeCreateUser.getId() +
-                " " + stripeCreateUser.data.object.email);
-        return new ResponseEntity<>(gson.toJson(stripeCreateUser), HttpStatus.OK);
+        User user = paymentService.setUserStripeId(stripeCreateUser.data.object.email, stripeCreateUser.getId());
+        return new ResponseEntity<>(gson.toJson(user), HttpStatus.OK);
     }
 
     private static void init(String secretKey) {

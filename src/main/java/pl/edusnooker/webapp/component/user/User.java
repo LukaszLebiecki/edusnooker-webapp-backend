@@ -39,5 +39,7 @@ public class User implements Serializable {
     private String favoriteSlotOne;
     private String favoriteSlotTwo;
     private String favoriteSlotThree;
+    private String stripeId;
+    private Date nextPay;
 
 }

@@ -11,6 +11,7 @@
     <include file="changelog/202204190001_add_entity_User.xml" relativeToChangelogFile="true"/>
     <include file="changelog/202204240001_add_entity_Progress.xml" relativeToChangelogFile="true"/>
     <include file="changelog/202209240001_add_entity_Newsletter.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/202210080001_add_columns_to_User.xml" relativeToChangelogFile="true"/>
 
 
     <!--    PROD data     -->
@@ -18,8 +19,6 @@
     <include file="testdata/202204140001_dev_import_exercise.xml" relativeToChangelogFile="true"/>
     <include file="testdata/202204240003_dev_import_progress.xml" relativeToChangelogFile="true"/>
     <include file="testdata/202209300001_add_exercises.xml" relativeToChangelogFile="true"/>
-
-
 
 
 </databaseChangeLog>
