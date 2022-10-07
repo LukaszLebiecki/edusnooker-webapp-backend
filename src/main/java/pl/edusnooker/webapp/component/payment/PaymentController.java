@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import pl.edusnooker.webapp.component.payment.webhook.StripeCreateUser;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static pl.edusnooker.webapp.constant.StripeConstant.SECRET_KEY;
@@ -57,10 +60,10 @@ public class PaymentController {
     }
 
     @PostMapping("webhook/subscriptionCreate")
-    public ResponseEntity<String> subscriptionCreate(@RequestBody Webhook webhook) {
-        System.out.println("##Webhook working##" + webhook.getId() +
-                " " + webhook.getObject());
-        return new ResponseEntity<>(gson.toJson(webhook), HttpStatus.OK);
+    public ResponseEntity<String> subscriptionCreate(@RequestBody StripeCreateUser stripeCreateUser) {
+        System.out.println("##Webhook working##" + stripeCreateUser.getId() +
+                " " + stripeCreateUser.data.email);
+        return new ResponseEntity<>(gson.toJson(stripeCreateUser), HttpStatus.OK);
     }
 
     private static void init(String secretKey) {
