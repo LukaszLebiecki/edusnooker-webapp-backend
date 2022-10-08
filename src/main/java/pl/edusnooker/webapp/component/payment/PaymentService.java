@@ -5,6 +5,7 @@ import pl.edusnooker.webapp.component.user.User;
 import pl.edusnooker.webapp.component.user.UserRepository;
 import pl.edusnooker.webapp.enumeration.Role;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 @Service
@@ -24,7 +25,8 @@ public class PaymentService {
     }
 
     public User setUserRole(String stripeId, int currentPeriodEnd) {
-        Date nextPay = new Date(currentPeriodEnd);
+        Timestamp ts = new Timestamp(currentPeriodEnd);
+        Date nextPay = new Date(ts.getTime());
         User userByStripeId = findUserByStripeId(stripeId);
         userByStripeId.setRole(getRoleEnumName("ROLE_BASIC").name());
         userByStripeId.setAuthorities(getRoleEnumName("ROLE_BASIC").getAuthorities());
