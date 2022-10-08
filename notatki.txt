@@ -13,10 +13,11 @@ Plan działania:
 0. Kolejne ćwiczenia!
 
 1. Wprowadzić metode płatności "stripe.com".
-    - po udanej płatności przełączenie użytkownika na role basic(premium)
     - po udanej płatności wysłać e-mail z rachunkiem
     - wyświetlić date kolejnego obciążenia
     - umożiwić anulowanie subscrypcji
+    - po wygaśnięciu subscrypcji przełączyć konto na demo
+    - do metody delete user wprowadzić usuniecie subscrypcji
 
 2. Możliwość odblokowania wszystkich poziomów z panelu myaccount lub idz po kolei bez odblokowywyania zalecane uzytkownik sam wybiera!
 
@@ -27,15 +28,6 @@ Plan działania:
 5. Pozycjonowanie strony w google
 
 6. Wykonać koszulke z logo eduSnooker
-
-7. Promowanie platformy na fb zaplanować kampanie:
-    - stworzyć stronę edusnooker na fb
-    - dodawać posty o postępach prac nad aplikacją oraz planowaną datą premiery
-    - stworzyć fanpage
-    - dodawać posty np dwa razy w tygodniu (wtorek co nowego, sobota pomysły na ćwqiczenia i dyskusja o tym)
-    - konkurs i możliwośc wygrania darmowego miesiąca
-    - prośba o wsparcie finansowe w celu rozwoju itp.
-    - pytać ludzi o sugestie co do ćwiczeń i funkcjonalności aplikacji
 
 
 ============================================
