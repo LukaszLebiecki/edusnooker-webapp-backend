@@ -67,14 +67,14 @@ public class PaymentController {
 
     @PostMapping("webhook/userCreate")
     public ResponseEntity<String> userCreateToStripe(@RequestBody StripeCreateUser stripeCreateUser) {
-        paymentService.setUserStripeId(stripeCreateUser.data.object.email, stripeCreateUser.data.object.id);
+        paymentService.setUserStripeId(stripeCreateUser.getData().getObject().getEmail(), stripeCreateUser.getData().getObject().getId());
         return new ResponseEntity<>(gson.toJson(stripeCreateUser), HttpStatus.OK);
     }
 
     @PostMapping("webhook/subscriptionCreate")
     public ResponseEntity<String> subscriptionCreate(@RequestBody StripeCreateSubscription stripeCreateSubscription) {
        // todo opóźnić program
-        paymentService.setUserRole(stripeCreateSubscription.data.object.customer, stripeCreateSubscription.data.object.currentPeriodEnd);
+        paymentService.setUserRole(stripeCreateSubscription.getData().getObject().getCustomer(), stripeCreateSubscription.getData().getObject().getCurrentPeriodEnd());
 
         return new ResponseEntity<>(gson.toJson(stripeCreateSubscription), HttpStatus.OK);
     }

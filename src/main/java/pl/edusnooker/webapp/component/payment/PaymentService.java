@@ -23,8 +23,9 @@ public class PaymentService {
         return currentUser;
     }
 
-    public User setUserRole(String stripeId, int currentPeriodEnd) {
-        Date nextPay = new Date(currentPeriodEnd);
+    public User setUserRole(String stripeId, String currentPeriodEnd) {
+        int integer = Integer.parseInt(currentPeriodEnd);
+        Date nextPay = new Date(integer);
         User userByStripeId = findUserByStripeId(stripeId);
         userByStripeId.setRole(getRoleEnumName("ROLE_BASIC").name());
         userByStripeId.setAuthorities(getRoleEnumName("ROLE_BASIC").getAuthorities());

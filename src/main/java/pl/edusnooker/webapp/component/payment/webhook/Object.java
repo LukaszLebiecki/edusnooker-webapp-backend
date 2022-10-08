@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class Object {
-    public String id;
-    public String email;
-    public int currentPeriodEnd;
-    public String customer;
+    private String id;
+    private String email;
+    private String currentPeriodEnd;
+    private String customer;
 }
