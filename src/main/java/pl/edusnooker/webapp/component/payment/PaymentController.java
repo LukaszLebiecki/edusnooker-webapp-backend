@@ -74,7 +74,7 @@ public class PaymentController {
     @PostMapping("webhook/subscriptionCreate")
     public ResponseEntity<String> subscriptionCreate(@RequestBody StripeCreateSubscription stripeCreateSubscription) {
         System.out.println("o dostałem stripa i teraz chce czekać 5 sek");
-        robotTest();
+        // todo wstrzymanie ale jak?
         System.out.println("po uplywie 5 sekund moge dac odpowiedz do serwera stripe");
         return new ResponseEntity<>(gson.toJson(stripeCreateSubscription), HttpStatus.OK);
     }
@@ -85,13 +85,5 @@ public class PaymentController {
         Stripe.apiKey = secretKey;
     }
 
-    public void robotTest() {
-        try {
-            robot = new Robot();
-            robot.delay(5000);
-        } catch (AWTException e) {
-            System.err.println("Co ten robot wyprawia?!");
-            e.printStackTrace();
-        }
-    }
+
 }
