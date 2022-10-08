@@ -6,6 +6,6 @@ import lombok.Data;
 public class Object {
     public String id;
     public String email;
-    public String currentPeriodEnd;
+    public int currentPeriodEnd;
     public String customer;
 }

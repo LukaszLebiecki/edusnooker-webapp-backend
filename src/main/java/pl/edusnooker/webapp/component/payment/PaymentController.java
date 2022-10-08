@@ -73,9 +73,9 @@ public class PaymentController {
 
     @PostMapping("webhook/subscriptionCreate")
     public ResponseEntity<String> subscriptionCreate(@RequestBody StripeCreateSubscription stripeCreateSubscription) {
-        System.out.println("o dostałem stripa i teraz chce czekać 5 sek");
-        // todo wstrzymanie ale jak?
-        System.out.println("po uplywie 5 sekund moge dac odpowiedz do serwera stripe");
+       // todo opóźnić program
+        paymentService.setUserRole(stripeCreateSubscription.data.object.customer, stripeCreateSubscription.data.object.currentPeriodEnd);
+
         return new ResponseEntity<>(gson.toJson(stripeCreateSubscription), HttpStatus.OK);
     }
 
