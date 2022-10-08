@@ -14,8 +14,7 @@ Plan działania:
 
 1. Wprowadzić metode płatności "stripe.com".
     - po udanej płatności wysłać e-mail z rachunkiem
-    - wyświetlić date kolejnego obciążenia
-    - umożiwić anulowanie subscrypcji
+    - umożiwić anulowanie subscrypcji (anulowanie ale nie przełącznie konta na demo dopiero po upływie czasu oplaconego...)
     - po wygaśnięciu subscrypcji przełączyć konto na demo
     - do metody delete user wprowadzić usuniecie subscrypcji
 
