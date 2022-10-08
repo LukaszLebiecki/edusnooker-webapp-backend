@@ -74,9 +74,9 @@ public class PaymentController {
     @PostMapping("webhook/subscriptionCreate")
     public ResponseEntity<String> subscriptionCreate(@RequestBody StripeCreateSubscription stripeCreateSubscription) throws InterruptedException {
         System.out.println("teraz chcę opóźnić program");
-        Thread.sleep(9000);
-        System.out.println("program po 9 sekundach");
-        paymentService.setUserRole(stripeCreateSubscription.getData().getObject().getCustomer(), stripeCreateSubscription.getData().getObject().getCurrentPeriodEnd());
+        Thread.sleep(2000);
+        System.out.println("program po 2 sekundach");
+//        paymentService.setUserRole(stripeCreateSubscription.getData().getObject().getCustomer(), stripeCreateSubscription.getData().getObject().getCurrentPeriodEnd());
 
         return new ResponseEntity<>(gson.toJson(stripeCreateSubscription), HttpStatus.OK);
     }
