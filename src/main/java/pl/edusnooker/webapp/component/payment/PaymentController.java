@@ -70,7 +70,7 @@ public class PaymentController {
     public ICustomerPortal subscriptionPanel(@RequestBody SubPanel subPanel) throws StripeException {
         init(secretKey);
         com.stripe.param.billingportal.SessionCreateParams params = com.stripe.param.billingportal.SessionCreateParams.builder()
-                .setCustomer("cus_Mb1eHSTCkY1How") // todo wartość testowa!!!
+                .setCustomer(subPanel.getCustomerId())
                 .setReturnUrl(subPanel.getReturnUrl())
                 .build();
 
@@ -89,7 +89,7 @@ public class PaymentController {
 
     @PostMapping("webhook/subscriptionCreate")
     public ResponseEntity<String> subscriptionCreate(@RequestBody StripeCreateSubscription stripeCreateSubscription) throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(4000);
         paymentService.setUserRole(stripeCreateSubscription.getData().getObject().getCustomer(), stripeCreateSubscription.getData().getObject().getCurrent_period_end());
         return new ResponseEntity<>(gson.toJson(stripeCreateSubscription), HttpStatus.OK);
     }
