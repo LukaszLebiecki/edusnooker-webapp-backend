@@ -65,6 +65,22 @@ public class PaymentController {
         }
     }
 
+    @PostMapping("create-customer-portal-session")
+    @PreAuthorize("hasAnyAuthority('user:basic')")
+    public ICustomerPortal subscriptionPanel(@RequestBody SubPanel subPanel) throws StripeException {
+        init(secretKey);
+        com.stripe.param.billingportal.SessionCreateParams params = com.stripe.param.billingportal.SessionCreateParams.builder()
+                .setCustomer("cus_Mb1eHSTCkY1How") // todo wartość testowa!!!
+                .setReturnUrl(subPanel.getReturnUrl())
+                .build();
+
+        com.stripe.model.billingportal.Session session = com.stripe.model.billingportal.Session.create(params);
+
+        ICustomerPortal iCustomerPortal = new ICustomerPortal();
+        iCustomerPortal.setUrl(session.getUrl());
+        return iCustomerPortal;
+    }
+
     @PostMapping("webhook/userCreate")
     public ResponseEntity<String> userCreateToStripe(@RequestBody StripeCreateUser stripeCreateUser) {
         paymentService.setUserStripeId(stripeCreateUser.getData().getObject().getEmail(), stripeCreateUser.getData().getObject().getId());
