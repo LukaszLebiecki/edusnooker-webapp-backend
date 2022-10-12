@@ -71,7 +71,7 @@ public class UserController extends ExceptionHandling {
     }
 
     @PostMapping("/update")
-    @PreAuthorize("hasAnyAuthority('user:demo')")
+    @PreAuthorize("hasAnyAuthority('user:delete')")
     public ResponseEntity<User> update(@RequestParam("currentUsername") String currentUsername,
                                        @RequestParam("firstName") String firstName,
                                        @RequestParam("lastName") String lastName,
@@ -82,6 +82,18 @@ public class UserController extends ExceptionHandling {
                                        @RequestParam("isNotLocked") String isNotLocked,
                                        @RequestParam(value = "profileImage", required = false) MultipartFile profileImage) throws EmailExistException, IOException, UsernameExistException, NotAnImageFileException {
         User updatedUser = userService.updateUser(currentUsername, firstName, lastName, username, email, role, Boolean.parseBoolean(isActive), Boolean.parseBoolean(isNotLocked), profileImage);
+        return new ResponseEntity<>(updatedUser, HttpStatus.OK);
+    }
+
+    @PostMapping("/updateuser")
+    @PreAuthorize("hasAnyAuthority('user:demo')")
+    public ResponseEntity<User> updateUser(@RequestParam("currentUsername") String currentUsername,
+                                       @RequestParam("firstName") String firstName,
+                                       @RequestParam("lastName") String lastName,
+                                       @RequestParam("username") String username,
+                                       @RequestParam("email") String email,
+                                       @RequestParam(value = "profileImage", required = false) MultipartFile profileImage) throws EmailExistException, IOException, UsernameExistException, NotAnImageFileException {
+        User updatedUser = userService.updateUserToUser(currentUsername, firstName, lastName, username, email, profileImage);
         return new ResponseEntity<>(updatedUser, HttpStatus.OK);
     }
 
@@ -131,14 +143,14 @@ public class UserController extends ExceptionHandling {
 
     @DeleteMapping("/delete/{username}")
     @PreAuthorize("hasAnyAuthority('user:delete')")
-    public ResponseEntity<HttpResponse> deleteUser(@PathVariable("username") String username) throws IOException {
+    public ResponseEntity<HttpResponse> deleteUser(@PathVariable("username") String username) throws IOException, MessagingException {
         userService.deleteUser(username);
         return response(HttpStatus.OK, USER_DELETE_SUCCESSFULLY);
     }
 
     @DeleteMapping("/deletemyaccount/{username}")
     @PreAuthorize("isFullyAuthenticated()")
-    public ResponseEntity<HttpResponse> deleteMyAccount(@PathVariable("username") String username) throws IOException {
+    public ResponseEntity<HttpResponse> deleteMyAccount(@PathVariable("username") String username) throws IOException, MessagingException {
         userService.deleteUser(username);
         return response(HttpStatus.OK, USER_DELETE_SUCCESSFULLY);
     }

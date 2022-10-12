@@ -163,6 +163,18 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
+    public User updateUserToUser(String currentUsername, String newFirstName, String newLastName, String newUsername, String newEmail, MultipartFile profileImage) throws EmailExistException, UsernameExistException, IOException, NotAnImageFileException {
+        User currentUser = validateNewUsernameAndEmail(currentUsername, newUsername, newEmail);
+        currentUser.setFirstName(newFirstName);
+        currentUser.setLastName(newLastName);
+        currentUser.setUsername(newUsername);
+        currentUser.setEmail(newEmail);
+        userRepository.save(currentUser);
+        saveProfileImage(currentUser, profileImage);
+        return currentUser;
+    }
+
+    @Override
     public User updateUserSlotOne(String currentUserId, String favoriteSlotOne) {
         User currentUser = userRepository.findAllByUserId(currentUserId);
         currentUser.setFavoriteSlotOne(favoriteSlotOne);
@@ -187,11 +199,12 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
-    public void deleteUser(String username) throws IOException {
+    public void deleteUser(String username) throws IOException, MessagingException {
         User user = userRepository.findByUsername(username);
         Path userFolder = Paths.get(USER_FOLDER + user.getUsername()).toAbsolutePath().normalize();
         FileUtils.deleteDirectory(new File(userFolder.toString()));
         userRepository.deleteById(user.getId());
+        emailService.sendEmailDeleteUser(username, user.getEmail());
     }
 
     @Override
