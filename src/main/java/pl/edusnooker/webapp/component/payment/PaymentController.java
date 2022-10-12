@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.edusnooker.webapp.component.payment.webhook.StripeCreateSubscription;
 import pl.edusnooker.webapp.component.payment.webhook.StripeCreateUser;
+import pl.edusnooker.webapp.component.payment.webhook.StripeEndSubscription;
 
 
 import java.awt.*;
@@ -92,6 +93,18 @@ public class PaymentController {
         Thread.sleep(4000);
         paymentService.setUserRole(stripeCreateSubscription.getData().getObject().getCustomer(), stripeCreateSubscription.getData().getObject().getCurrent_period_end());
         return new ResponseEntity<>(gson.toJson(stripeCreateSubscription), HttpStatus.OK);
+    }
+
+    @PostMapping("webhook/subscriptionContinue")
+    public ResponseEntity<String> subscriptionContinue(@RequestBody StripeCreateSubscription stripeCreateSubscription) {
+        paymentService.setUserRole(stripeCreateSubscription.getData().getObject().getCustomer(), stripeCreateSubscription.getData().getObject().getCurrent_period_end());
+        return new ResponseEntity<>(gson.toJson(stripeCreateSubscription), HttpStatus.OK);
+    }
+
+    @PostMapping("webhook/subscriptionEnd")
+    public ResponseEntity<String> subscriptionEnd(@RequestBody StripeEndSubscription stripeEndSubscription) {
+        paymentService.setUserRoleDemo(stripeEndSubscription.getData().getObject().getCustomer());
+        return new ResponseEntity<>(gson.toJson(stripeEndSubscription), HttpStatus.OK);
     }
 
 

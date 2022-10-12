@@ -33,6 +33,14 @@ public class PaymentService {
         return userByStripeId;
     }
 
+    public User setUserRoleDemo(String stripeId) {
+        User userByStripeId = findUserByStripeId(stripeId);
+        userByStripeId.setRole(getRoleEnumName("ROLE_DEMO").name());
+        userByStripeId.setAuthorities(getRoleEnumName("ROLE_DEMO").getAuthorities());
+        userRepository.save(userByStripeId);
+        return userByStripeId;
+    }
+
     private User findUserByEmail(String email) {
         return userRepository.findByEmail(email);
     }
