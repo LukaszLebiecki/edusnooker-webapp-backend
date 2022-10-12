@@ -13,7 +13,6 @@ Plan działania:
 0. Kolejne ćwiczenia!
 
 1. Wprowadzić metode płatności "stripe.com".
-    - umożiwić anulowanie subscrypcji (dostęp do panelu klienta stripe aby mogl zarzadzac swoja subscrupcja)
     - po wygaśnięciu subscrypcji przełączyć konto na demo
     - do metody delete user wprowadzić usuniecie subscrypcji
 
