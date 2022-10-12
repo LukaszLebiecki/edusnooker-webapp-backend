@@ -14,13 +14,15 @@ Plan działania:
 
 1. Możliwość odblokowania wszystkich poziomów z panelu myaccount lub idz po kolei bez odblokowywyania zalecane uzytkownik sam wybiera!
 
-2. Zapis logów do pliku
+2. Poprawić dane firmy w statut itd.
 
-3. automatyczny backup bazy danych
+3. Zapis logów do pliku
 
-4. Pozycjonowanie strony w google
+4. automatyczny backup bazy danych
 
-5. Wykonać koszulke z logo eduSnooker
+5. Pozycjonowanie strony w google
+
+6. Wykonać koszulke z logo eduSnooker
 
 
 ============================================
