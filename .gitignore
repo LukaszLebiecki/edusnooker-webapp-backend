@@ -40,3 +40,4 @@ out/
 ### Privet data ###
 
 /src/main/java/pl/edusnooker/webapp/constant/EmailConstant.java
+/src/main/java/pl/edusnooker/webapp/constant/StripeConstant.java
