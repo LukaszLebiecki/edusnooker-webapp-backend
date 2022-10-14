@@ -12,6 +12,7 @@
     <include file="changelog/202204240001_add_entity_Progress.xml" relativeToChangelogFile="true"/>
     <include file="changelog/202209240001_add_entity_Newsletter.xml" relativeToChangelogFile="true"/>
     <include file="changelog/202210080001_add_columns_to_User.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/202210140001_add_columns_to_User.xml" relativeToChangelogFile="true"/>
 
 
     <!--    PROD data     -->

@@ -41,5 +41,6 @@ public class User implements Serializable {
     private String favoriteSlotThree;
     private String stripeId;
     private Date nextPay;
+    private boolean isProgressMode;
 
 }

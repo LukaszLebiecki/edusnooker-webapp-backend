@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import pl.edusnooker.webapp.component.email.EmailService;
+import pl.edusnooker.webapp.component.user.dto.UserProgressMode;
 import pl.edusnooker.webapp.enumeration.Role;
 import pl.edusnooker.webapp.exception.domain.EmailExistException;
 import pl.edusnooker.webapp.exception.domain.EmailNotFoundException;
@@ -36,7 +37,6 @@ import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.springframework.http.MediaType.*;
 import static pl.edusnooker.webapp.constant.FileConstant.*;
 import static pl.edusnooker.webapp.constant.UserImplConstant.*;
-import static pl.edusnooker.webapp.enumeration.Role.ROLE_ADMIN;
 import static pl.edusnooker.webapp.enumeration.Role.ROLE_DEMO;
 
 @Service
@@ -99,6 +99,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         user.setFavoriteSlotOne("e000");
         user.setFavoriteSlotTwo("e000");
         user.setFavoriteSlotThree("e000");
+        user.setProgressMode(true);
         userRepository.save(user);
 //        LOGGER.info("New user password: " + password);
         emailService.sendNewPasswordEmail(firstName, password, email);
@@ -140,6 +141,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         user.setFavoriteSlotOne("e000");
         user.setFavoriteSlotTwo("e000");
         user.setFavoriteSlotThree("e000");
+        user.setProgressMode(true);
         userRepository.save(user);
         saveProfileImage(user, profileImage);
         return user;
@@ -171,6 +173,22 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         currentUser.setEmail(newEmail);
         userRepository.save(currentUser);
         saveProfileImage(currentUser, profileImage);
+        return currentUser;
+    }
+
+    @Override
+    public UserProgressMode getUserProgressMode(String currentUserId) {
+        User currentUser = userRepository.findAllByUserId(currentUserId);
+        UserProgressMode userProgressMode = new UserProgressMode();
+        userProgressMode.setProgressMode(currentUser.isProgressMode());
+        return userProgressMode;
+    }
+
+    @Override
+    public User updateUserProgressMode(String currentUserId, boolean progressMode) {
+        User currentUser = userRepository.findAllByUserId(currentUserId);
+        currentUser.setProgressMode(progressMode);
+        userRepository.save(currentUser);
         return currentUser;
     }
 

@@ -1,6 +1,7 @@
 package pl.edusnooker.webapp.component.user;
 
 import org.springframework.web.multipart.MultipartFile;
+import pl.edusnooker.webapp.component.user.dto.UserProgressMode;
 import pl.edusnooker.webapp.exception.domain.EmailExistException;
 import pl.edusnooker.webapp.exception.domain.EmailNotFoundException;
 import pl.edusnooker.webapp.exception.domain.NotAnImageFileException;
@@ -37,4 +38,8 @@ public interface UserService {
     void resetPassword(String email) throws MessagingException, EmailNotFoundException;
 
     User updateProfileImage(String username, MultipartFile profileImage) throws EmailExistException, UsernameExistException, IOException, NotAnImageFileException;
+
+    UserProgressMode getUserProgressMode(String currentUserId);
+
+    User updateUserProgressMode(String currentUserId, boolean progressMode);
 }

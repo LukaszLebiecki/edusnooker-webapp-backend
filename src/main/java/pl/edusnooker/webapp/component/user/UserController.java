@@ -8,6 +8,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import pl.edusnooker.webapp.component.user.dto.UserProgressMode;
 import pl.edusnooker.webapp.exception.domain.*;
 import pl.edusnooker.webapp.http.HttpResponse;
 import pl.edusnooker.webapp.utility.JWTTokenProvider;
@@ -94,6 +95,21 @@ public class UserController extends ExceptionHandling {
                                        @RequestParam("email") String email,
                                        @RequestParam(value = "profileImage", required = false) MultipartFile profileImage) throws EmailExistException, IOException, UsernameExistException, NotAnImageFileException {
         User updatedUser = userService.updateUserToUser(currentUsername, firstName, lastName, username, email, profileImage);
+        return new ResponseEntity<>(updatedUser, HttpStatus.OK);
+    }
+
+    @GetMapping("/get/progressmode/{userId}")
+    @PreAuthorize("hasAnyAuthority('user:basic')")
+    public ResponseEntity<UserProgressMode> getProgressMode(@PathVariable("userId") String userId) {
+        UserProgressMode userProgressMode = userService.getUserProgressMode(userId);
+        return new ResponseEntity<>(userProgressMode, HttpStatus.OK);
+    }
+
+    @PostMapping("/update/progressmode")
+    @PreAuthorize("hasAnyAuthority('user:basic')")
+    public ResponseEntity<User> updateProgressMode(@RequestParam("currentUserId") String currentUserId,
+                                              @RequestParam("progressMode") boolean progressMode) throws EmailExistException, IOException, UsernameExistException, NotAnImageFileException {
+        User updatedUser = userService.updateUserProgressMode(currentUserId, progressMode);
         return new ResponseEntity<>(updatedUser, HttpStatus.OK);
     }
 
