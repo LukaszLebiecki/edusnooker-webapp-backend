@@ -122,7 +122,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
-    public User addNewUser(String firstName, String lastName, String username, String email, String role, boolean isNonLocked, boolean isActive, MultipartFile profileImage) throws EmailExistException, UsernameExistException, IOException, NotAnImageFileException {
+    public User addNewUser(String firstName, String lastName, String username, String email, String role, boolean isNonLocked, boolean isActive, MultipartFile profileImage) throws EmailExistException, UsernameExistException, IOException, NotAnImageFileException, MessagingException {
         validateNewUsernameAndEmail(EMPTY, username, email);
         User user = new User();
         String password = generatePassword();
@@ -144,6 +144,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         user.setProgressMode(true);
         userRepository.save(user);
         saveProfileImage(user, profileImage);
+        emailService.sendNewPasswordEmail(firstName, password, email);
         return user;
     }
 

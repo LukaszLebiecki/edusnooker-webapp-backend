@@ -66,7 +66,7 @@ public class UserController extends ExceptionHandling {
                                            @RequestParam("role") String role,
                                            @RequestParam("isActive") String isActive,
                                            @RequestParam("isNotLocked") String isNotLocked,
-                                           @RequestParam(value = "profileImage", required = false) MultipartFile profileImage) throws EmailExistException, IOException, UsernameExistException, NotAnImageFileException {
+                                           @RequestParam(value = "profileImage", required = false) MultipartFile profileImage) throws EmailExistException, IOException, UsernameExistException, NotAnImageFileException, MessagingException {
         User newUser = userService.addNewUser(firstName, lastName, username, email, role, Boolean.parseBoolean(isActive), Boolean.parseBoolean(isNotLocked), profileImage);
         return new ResponseEntity<>(newUser, HttpStatus.OK);
     }
