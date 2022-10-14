@@ -124,7 +124,7 @@ class ExerciseService {
                                    boolean isBrown, boolean isBlue, boolean isPink, boolean isBlack,
                                    boolean isButtonPass, boolean isBonusPoint, String bonusInfo,
                                    int bonusNumberOfPoints, int length) {
-        Exercise currentExercise = exerciseRepository.findByExerciseId(currentExerciseId).get(); // TODO obsłużyć jak nie znajdzie ćwiczenia w bazie!
+        Exercise currentExercise = exerciseRepository.findByExerciseId(currentExerciseId).get();
         currentExercise.setName(name);
         currentExercise.setDescription(description);
         currentExercise.setVideoUrl(videoUrl);

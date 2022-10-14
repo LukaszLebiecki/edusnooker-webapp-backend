@@ -12,7 +12,8 @@ Plan działania:
 
 0. Kolejne ćwiczenia!
 
-1. Możliwość odblokowania wszystkich poziomów z panelu myaccount lub idz po kolei bez odblokowywyania zalecane uzytkownik sam wybiera!
+1. Możliwość odblokowania wszystkich poziomów z panelu myaccount lub idz po kolei bez odblokowywyania zalecane uzytkownik sam wybiera
+    progress mode!
 
 2. Poprawić dane firmy w statut itd.
 
