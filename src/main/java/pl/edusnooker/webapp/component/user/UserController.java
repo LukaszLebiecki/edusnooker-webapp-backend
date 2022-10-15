@@ -99,17 +99,17 @@ public class UserController extends ExceptionHandling {
     }
 
     @GetMapping("/get/progressmode/{userId}")
-    @PreAuthorize("hasAnyAuthority('user:basic')")
+    @PreAuthorize("hasAnyAuthority('user:demo')")
     public ResponseEntity<UserProgressMode> getProgressMode(@PathVariable("userId") String userId) {
         UserProgressMode userProgressMode = userService.getUserProgressMode(userId);
         return new ResponseEntity<>(userProgressMode, HttpStatus.OK);
     }
 
     @PostMapping("/update/progressmode")
-    @PreAuthorize("hasAnyAuthority('user:basic')")
+    @PreAuthorize("hasAnyAuthority('user:demo')")
     public ResponseEntity<User> updateProgressMode(@RequestParam("currentUserId") String currentUserId,
-                                              @RequestParam("progressMode") boolean progressMode) throws EmailExistException, IOException, UsernameExistException, NotAnImageFileException {
-        User updatedUser = userService.updateUserProgressMode(currentUserId, progressMode);
+                                              @RequestParam("progressMode") String progressMode) {
+        User updatedUser = userService.updateUserProgressMode(currentUserId, Boolean.parseBoolean(progressMode));
         return new ResponseEntity<>(updatedUser, HttpStatus.OK);
     }
 

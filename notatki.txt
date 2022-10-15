@@ -12,8 +12,7 @@ Plan działania:
 
 0. Kolejne ćwiczenia!
 
-1. Możliwość odblokowania wszystkich poziomów z panelu myaccount lub idz po kolei bez odblokowywyania zalecane uzytkownik sam wybiera
-    progress mode!
+1. Nagrać filmik o statystykach tych wyświetlanych przy każdym ćwiczeniu (tzw histroia wykonywania konkretnego ćwiczenia)
 
 2. Poprawić dane firmy w statut itd.
 
@@ -62,15 +61,6 @@ Filmik promocyjny z najważniejszymi funkcjonalonościami
 - personalizacja platformy!!! (wiadomości z imieniem, dopasowane powiadomienia, ...)
 
 ===================================================
-
-Wykonać Landing page !!! ( landing page free template )
-
-na stronie: zdjęcie komputera, tableta i komórki z odpaloną platformą w przeglądarce
-przy stole snookerowym
-
-( how to add my website to google )
-
-=================================================
 
 przesyłania pliku ze zdjęciem a w polu link do zdjęcia (nazwa)
 
