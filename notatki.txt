@@ -12,15 +12,13 @@ Plan działania:
 
 0. Kolejne ćwiczenia!
 
-4. przyciski subscrybcji dać disabled i naklejke comming soon
+1. Nagrać filmik o statystykach tych wyświetlanych przy każdym ćwiczeniu (tzw histroia wykonywania konkretnego ćwiczenia)
 
-5. Nagrać filmik o statystykach tych wyświetlanych przy każdym ćwiczeniu (tzw histroia wykonywania konkretnego ćwiczenia)
+2. Poprawić dane firmy w statut itd.
 
-6. Poprawić dane firmy w statut itd.
+3. Zapis logów do pliku
 
-7. Zapis logów do pliku
-
-8. automatyczny backup bazy danych
+4. automatyczny backup bazy danych
 
 
 ============================================
