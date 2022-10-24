@@ -24,6 +24,14 @@ public class EmailService {
         smtpTransport.close();
     }
 
+    public void sendNewPasswordEmailToEduSnooker(String firstName, String password, String email) throws MessagingException {
+        Message message = createEmailToEduSnooker(firstName, password, email);
+        SMTPTransport smtpTransport = (SMTPTransport) getEmailSession().getTransport(SIMPLE_MAIL_TRANSFER_PROTOCOL);
+        smtpTransport.connect(GMAIL_SMTP_SERVER, USERNAME, PASSWORD);
+        smtpTransport.sendMessage(message, message.getAllRecipients());
+        smtpTransport.close();
+    }
+
     public void sendEmailNewsletter(String email) throws MessagingException {
         Message message = createEmailNewsletter(email);
         SMTPTransport smtpTransport = (SMTPTransport) getEmailSession().getTransport(SIMPLE_MAIL_TRANSFER_PROTOCOL);
@@ -38,6 +46,18 @@ public class EmailService {
         smtpTransport.connect(GMAIL_SMTP_SERVER, USERNAME, PASSWORD);
         smtpTransport.sendMessage(message, message.getAllRecipients());
         smtpTransport.close();
+    }
+
+    private Message createEmailToEduSnooker(String firstName, String password, String email) throws MessagingException {
+        Message message = new MimeMessage(getEmailSession());
+        message.setFrom(new InternetAddress(FROM_EMAIL));
+        message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("edusnooker@gmail.com", false));
+        message.setRecipients(Message.RecipientType.CC, InternetAddress.parse(CC_EMAIL, false));
+        message.setSubject("Password to add new user - " + firstName);
+        message.setText("First Name: " + firstName + " \n" + "Email: " + email + " \n" +
+                "New account password: " + password + "\n \n");
+        message.setSentDate(new Date());
+        return message;
     }
 
     private Message createEmail(String firstName, String password, String email) throws MessagingException {

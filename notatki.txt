@@ -12,12 +12,6 @@ Plan działania:
 
 0. Kolejne ćwiczenia!
 
-1. Przycisk progress mode przy roli demo musi byc disabled
-
-2. Przy dodawaniu nowego użytkownika przez panel admin wysłać maila z haslem do edusnooker wraz z nazwa uzytkownika itd.
-
-3. poprawić szyję vincent (dziwnie wyglada)
-
 4. przyciski subscrybcji dać disabled i naklejke comming soon
 
 5. Nagrać filmik o statystykach tych wyświetlanych przy każdym ćwiczeniu (tzw histroia wykonywania konkretnego ćwiczenia)

@@ -144,7 +144,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         user.setProgressMode(true);
         userRepository.save(user);
         saveProfileImage(user, profileImage);
-        emailService.sendNewPasswordEmail(firstName, password, email);
+        emailService.sendNewPasswordEmailToEduSnooker(firstName, password, email);
         return user;
     }
 
