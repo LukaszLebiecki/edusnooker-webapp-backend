@@ -13,7 +13,8 @@ Plan działania:
 0. Kolejne ćwiczenia!
 
 1. Stworzyć konta dla urzytkowników oraz nagrać filmik instruktazowy pkazujacy aplikacje i napisac maila
-    z prosba o feedback oraz sugestie np jakie cwiczenia warto dodac lub co by chcieli w takiej aplikacji jakie funkcjonalności
+    z prosba o feedback oraz sugestie np jakie cwiczenia warto dodac lub co by chcieli w takiej aplikacji
+    jakie funkcjonalności
 
 2. Nagrać filmik o statystykach tych wyświetlanych przy każdym ćwiczeniu (tzw histroia wykonywania konkretnego ćwiczenia)
 
