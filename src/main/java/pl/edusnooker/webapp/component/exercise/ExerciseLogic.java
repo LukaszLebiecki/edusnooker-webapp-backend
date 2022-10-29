@@ -54,12 +54,12 @@ class ExerciseLogic {
     public int pointToPass(String level) {
         int result;
         switch (level) {
-            case "WHITE" -> result = 1;
-            case "RED" -> result = 1;
-            case "YELLOW" -> result = 1;
-            case "GREEN" -> result = 1;
-            case "BROWN" -> result = 1;
-            case "BLUE" -> result = 1;
+            case "WHITE" -> result = 10;
+            case "RED" -> result = 8;
+            case "YELLOW" -> result = 9;
+            case "GREEN" -> result = 8;
+            case "BROWN" -> result = 7;
+            case "BLUE" -> result = 7;
             case "PINK" -> result = 1;
             case "BLACK" -> result = 1;
             default -> result = 1;
