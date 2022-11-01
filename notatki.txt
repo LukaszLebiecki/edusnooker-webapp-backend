@@ -24,6 +24,8 @@ Plan działania:
 
 5. automatyczny backup bazy danych
 
+6. Podsumowanie tygodnia (statystyki) wysyłane w każdy poniedziałek
+
 
 ============================================
 
