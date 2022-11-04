@@ -24,6 +24,7 @@
     <include file="testdata/202210240001_add_exercises.xml" relativeToChangelogFile="true"/>
     <include file="testdata/202210280001_add_exercises.xml" relativeToChangelogFile="true"/>
     <include file="testdata/202211010001_add_exercises.xml" relativeToChangelogFile="true"/>
+    <include file="testdata/202211040001_add_exercises.xml" relativeToChangelogFile="true"/>
 
 
 </databaseChangeLog>
