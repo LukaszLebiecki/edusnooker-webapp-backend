@@ -12,21 +12,17 @@ Plan działania:
 
 0. Kolejne ćwiczenia!
 
-1. Zmontować filmiki z ćwiczeń oraz z test access
+1. Nagrać filmik o statystykach tych wyświetlanych przy każdym ćwiczeniu (tzw histroia wykonywania konkretnego ćwiczenia)
 
-2. w zdjęciach ćwiczeń dodać linie jak przebiega ćwiczenie!
+2. Poprawić dane firmy w statut itd.
 
-3. Nagrać filmik o statystykach tych wyświetlanych przy każdym ćwiczeniu (tzw histroia wykonywania konkretnego ćwiczenia)
+3. Zapis logów do pliku
 
-4. Poprawić dane firmy w statut itd.
+4. automatyczny backup bazy danych
 
-5. Zapis logów do pliku
+5. Podsumowanie tygodnia (statystyki) wysyłane w każdy poniedziałek
 
-6. automatyczny backup bazy danych
-
-7. Podsumowanie tygodnia (statystyki) wysyłane w każdy poniedziałek
-
-8. Wprowadzić odznaki BADGES (tak jak na Zwift) zdobywanie konkretnych odznak za np:
+6. Wprowadzić odznaki BADGES (tak jak na Zwift) zdobywanie konkretnych odznak za np:
    - wykonanie pierwszego ćwiczenia (pierwsze koty za płoty)
    - wykonanie trzech ćwiczeń w jednym dniu (hot trik)
    - za wykonanie ćwiczeń codzienie przez 7 dni
