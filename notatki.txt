@@ -12,17 +12,13 @@ Plan działania:
 
 0. Kolejne ćwiczenia!
 
-1. Nagrać filmik o statystykach tych wyświetlanych przy każdym ćwiczeniu (tzw histroia wykonywania konkretnego ćwiczenia)
+1. Ile osób jest online i robi ćwiczenia (na stronie home)
 
 2. Poprawić dane firmy w statut itd.
 
-3. Zapis logów do pliku
+3. Moduł "wyzwania" w którym trzeba powórzyć zagrania mistrzów
 
-4. automatyczny backup bazy danych
-
-5. Podsumowanie tygodnia (statystyki) wysyłane w każdy poniedziałek
-
-6. Wprowadzić odznaki BADGES (tak jak na Zwift) zdobywanie konkretnych odznak za np:
+4. Wprowadzić odznaki BADGES (tak jak na Zwift) zdobywanie konkretnych odznak za np:
    - wykonanie pierwszego ćwiczenia (pierwsze koty za płoty)
    - wykonanie trzech ćwiczeń w jednym dniu (hot trik)
    - za wykonanie ćwiczeń codzienie przez 7 dni
@@ -41,6 +37,12 @@ Plan działania:
    - za zdobycie w sumie pierwszych 147 punktów
    - za zdobycie w sumie 1000 punktów
    - ....
+
+5. Podsumowanie tygodnia (statystyki) wysyłane w każdy poniedziałek
+
+6. automatyczny backup bazy danych
+
+7. Zapis logów do pliku
 
 
 
