@@ -55,13 +55,13 @@ class ExerciseLogic {
         int result;
         switch (level) {
             case "WHITE" -> result = 10;
-            case "RED" -> result = 8;
-            case "YELLOW" -> result = 9;
+            case "RED" -> result = 10;
+            case "YELLOW" -> result = 10;
             case "GREEN" -> result = 8;
             case "BROWN" -> result = 7;
-            case "BLUE" -> result = 7;
-            case "PINK" -> result = 1;
-            case "BLACK" -> result = 1;
+            case "BLUE" -> result = 8;
+            case "PINK" -> result = 10;
+            case "BLACK" -> result = 9;
             default -> result = 1;
 
         }

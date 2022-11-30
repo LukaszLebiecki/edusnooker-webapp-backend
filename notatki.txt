@@ -11,12 +11,18 @@
 Plan działania:
 
 0. Kolejne ćwiczenia!
+    - wbicie dublem do środkowej kieszeni (biała na wprost)
+    - wbicie dublem do środkowej kieszeni z róznych kątów
+    - wbicie dublem do narożnej kieszeni z określonego kąta (nie na wprost)
+    - wyjscie z łatwego znookera (cwiczenie z crazy snooker)
 
 1. Ile osób jest online i robi ćwiczenia (na stronie home)
 
-2. Moduł "wyzwania" w którym trzeba powórzyć zagrania mistrzów
+2. Zmiana płatności na 5 euro i wygląd strony payment
 
-3. Wprowadzić odznaki BADGES (tak jak na Zwift) zdobywanie konkretnych odznak za np:
+3. Moduł "wyzwania" w którym trzeba powórzyć zagrania mistrzów
+
+4. Wprowadzić odznaki BADGES (tak jak na Zwift) zdobywanie konkretnych odznak za np:
    - wykonanie pierwszego ćwiczenia (pierwsze koty za płoty)
    - wykonanie trzech ćwiczeń w jednym dniu (hot trik)
    - za wykonanie ćwiczeń codzienie przez 7 dni
@@ -36,12 +42,11 @@ Plan działania:
    - za zdobycie w sumie 1000 punktów
    - ....
 
-4. Podsumowanie tygodnia (statystyki) wysyłane w każdy poniedziałek
+5. Podsumowanie tygodnia (statystyki) wysyłane w każdy poniedziałek
 
-5. automatyczny backup bazy danych
+6. automatyczny backup bazy danych
 
-6. Zapis logów do pliku
-
+7. Zapis logów do pliku
 
 
 ============================================
