@@ -11,10 +11,6 @@
 Plan działania:
 
 0. Kolejne ćwiczenia!
-    - wbicie dublem do środkowej kieszeni (biała na wprost)
-    - wbicie dublem do środkowej kieszeni z róznych kątów
-    - wbicie dublem do narożnej kieszeni z określonego kąta (nie na wprost)
-    - wyjscie z łatwego znookera (cwiczenie z crazy snooker)
 
 1. Ile osób jest online i robi ćwiczenia (na stronie home)
 
