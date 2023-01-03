@@ -16,9 +16,7 @@ Plan działania:
 
 2. Zmiana płatności na 5 euro i wygląd strony payment
 
-3. Moduł "wyzwania" w którym trzeba powórzyć zagrania mistrzów
-
-4. Wprowadzić odznaki BADGES (tak jak na Zwift) zdobywanie konkretnych odznak za np:
+3. Wprowadzić odznaki BADGES (tak jak na Zwift) zdobywanie konkretnych odznak za np:
    - wykonanie pierwszego ćwiczenia (pierwsze koty za płoty)
    - wykonanie trzech ćwiczeń w jednym dniu (hot trik)
    - za wykonanie ćwiczeń codzienie przez 7 dni
@@ -38,11 +36,11 @@ Plan działania:
    - za zdobycie w sumie 1000 punktów
    - ....
 
-5. Podsumowanie tygodnia (statystyki) wysyłane w każdy poniedziałek
+4. Podsumowanie tygodnia (statystyki) wysyłane w każdy poniedziałek
 
-6. automatyczny backup bazy danych
+5. automatyczny backup bazy danych
 
-7. Zapis logów do pliku
+6. Zapis logów do pliku
 
 
 ============================================
