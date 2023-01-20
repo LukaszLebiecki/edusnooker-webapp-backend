@@ -58,10 +58,10 @@ class ExerciseLogic {
             case "RED" -> result = 10;
             case "YELLOW" -> result = 10;
             case "GREEN" -> result = 8;
-            case "BROWN" -> result = 7;
-            case "BLUE" -> result = 8;
+            case "BROWN" -> result = 9;
+            case "BLUE" -> result = 10;
             case "PINK" -> result = 10;
-            case "BLACK" -> result = 9;
+            case "BLACK" -> result = 14;
             default -> result = 1;
 
         }
