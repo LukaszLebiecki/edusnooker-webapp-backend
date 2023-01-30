@@ -10,9 +10,9 @@
 
 Plan działania:
 
-1. Ile osób jest online i robi ćwiczenia (na stronie home)
+1. Dział MENTAL - uzupełnić perseverance, consistency and routine, outside help
 
-2. Kalendarz taki jak na github lub anki
+2. Dział ogólna sprawność (ćwiczenie rozgrzewkowe i wzmacniające) - ogólno rozwojowe ćwiczenia i opis dlaczego to ważne!
 
 3. Zmiana płatności na 5 euro i wygląd strony payment oraz płatności prawdziwe - zrobić po 12 luty
 
