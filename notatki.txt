@@ -10,18 +10,16 @@
 
 Plan działania:
 
-1. Dział MENTAL - uzupełnić perseverance, consistency and routine, outside help
+1. Dział ogólna sprawność (ćwiczenie rozgrzewkowe i wzmacniające) - ogólno rozwojowe ćwiczenia i opis dlaczego to ważne!
 
-2. Dział ogólna sprawność (ćwiczenie rozgrzewkowe i wzmacniające) - ogólno rozwojowe ćwiczenia i opis dlaczego to ważne!
+2. Zmiana płatności na 5 euro i wygląd strony payment oraz płatności prawdziwe - zrobić po 12 luty
 
-3. Zmiana płatności na 5 euro i wygląd strony payment oraz płatności prawdziwe - zrobić po 12 luty
-
-4. RUTYNA W DOMU:
+3. "BASIC ROUTINE" - porobić różne render stołu do treningu w domu
     - opracować zestaw ćwiczeń w domu
     - opracować sprzęt do ćwiczeń w domu (specjalny stół, miejsce na kij oraz bile, bila biała i czerwona
     w komplecie ze stołem, karty z ćwiczeniami również w komplecie)
 
-5. Wprowadzić odznaki BADGES (tak jak na Zwift) zdobywanie konkretnych odznak za np:
+4. Wprowadzić odznaki BADGES (tak jak na Zwift) zdobywanie konkretnych odznak za np:
    - wykonanie pierwszego ćwiczenia (pierwsze koty za płoty)
    - wykonanie trzech ćwiczeń w jednym dniu (hot trik)
    - za wykonanie ćwiczeń codzienie przez 7 dni
@@ -41,9 +39,9 @@ Plan działania:
    - za zdobycie w sumie 1000 punktów
    - ....
 
-6. automatyczny backup bazy danych
+5. automatyczny backup bazy danych
 
-7. Zapis logów do pliku
+6. Zapis logów do pliku
 
 
 ============================================
