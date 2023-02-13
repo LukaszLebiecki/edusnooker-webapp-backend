@@ -10,9 +10,11 @@
 
 Plan działania:
 
-1. Dział ogólna sprawność (ćwiczenie rozgrzewkowe i wzmacniające) - ogólno rozwojowe ćwiczenia i opis dlaczego to ważne!
+0. Strone z polityką i rodo dla odnosnika bez rejestracji !!!
 
-2. Zmiana płatności na 5 euro i wygląd strony payment oraz płatności prawdziwe - zrobić po 12 luty
+1. Przewijanie strony do góry
+
+2. Dział ogólna sprawność (ćwiczenie rozgrzewkowe i wzmacniające) - ogólno rozwojowe ćwiczenia i opis dlaczego to ważne!
 
 3. "BASIC ROUTINE" - porobić różne render stołu do treningu w domu
     - opracować zestaw ćwiczeń w domu
