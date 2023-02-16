@@ -67,7 +67,7 @@ public class PaymentController {
     }
 
     @PostMapping("create-customer-portal-session")
-    @PreAuthorize("hasAnyAuthority('user:basic')")
+//    @PreAuthorize("hasAnyAuthority('user:basic')")
     public ICustomerPortal subscriptionPanel(@RequestBody SubPanel subPanel) throws StripeException {
         init(secretKey);
         com.stripe.param.billingportal.SessionCreateParams params = com.stripe.param.billingportal.SessionCreateParams.builder()
