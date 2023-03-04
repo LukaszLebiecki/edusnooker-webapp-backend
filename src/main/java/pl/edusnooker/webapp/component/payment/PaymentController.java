@@ -50,6 +50,11 @@ public class PaymentController {
                         .setQuantity(1L)
                         .setPrice(checkout.getPriceId())
                         .build())
+                .setAutomaticTax(
+                        SessionCreateParams.AutomaticTax.builder()
+                                .setEnabled(true)
+                                .build()
+                )
                 .build();
 
         try {
